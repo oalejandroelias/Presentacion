@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 /* This example requires Tailwind CSS v2.0+ */
 const features = [
     { name: 'Origin', description: 'Designed by Good Goods, Inc.' },
@@ -13,7 +15,10 @@ const features = [
       <div className="bg-white">
         <div className="max-w-2xl mx-auto py-24 px-4 grid items-center grid-cols-1 gap-y-16 gap-x-8 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Tutorial</h2>
+            <motion.h2 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Tutorial</motion.h2>
             <p className="mt-4 text-gray-500">
               En este tutorial se muestra como utilizar el SIG.
             </p>

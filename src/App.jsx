@@ -5,10 +5,12 @@ import Pasos from './components/Pasos'
 import Seccion1 from './components/Seccion1'
 import Tutorial1 from './components/Tutorial1'
 import PasosA from './components/PasosA'
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
 
   return (
+    <AnimatePresence>
       <div className="App">
         <Introduccion />
         <Tutorial1 />
@@ -16,6 +18,7 @@ function App() {
         <Pasos />
         <PasosA />
       </div>
+    </AnimatePresence>
   )
 }
 
