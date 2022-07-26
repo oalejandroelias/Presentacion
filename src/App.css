@@ -1,0 +1,25 @@
+.texto{
+  font-family: monospace;
+  border-right: 2.5px solid green;
+
+  animation: cursor .5s infinite, 
+  escribiendo 3.5s steps(33,end);
+  white-space: nowrap;
+  overflow: hidden;
+
+}
+.escribiendo {
+  display: inline-block;
+}
+
+@keyframes cursor {
+
+  0% {border-color: transparent}
+  50% {border-color: green}
+}
+@keyframes escribiendo {
+
+  from{width:0}
+  to{width: 100%}
+  
+}
