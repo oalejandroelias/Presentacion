@@ -12,13 +12,13 @@ const features = [
   
   export default function Tutorial1() {
     return (
-      <div className="bg-white">
+      <div className="">
         <div className="max-w-2xl mx-auto py-24 px-4 grid items-center grid-cols-1 gap-y-16 gap-x-8 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:grid-cols-2">
           <div>
             <motion.h2 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Tutorial</motion.h2>
+            className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Tutorial</motion.h2>
             <p className="mt-4 text-gray-500">
               En este tutorial se muestra como utilizar el SIG.
             </p>
