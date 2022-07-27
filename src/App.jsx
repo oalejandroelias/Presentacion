@@ -1,24 +1,28 @@
 import { useState } from 'react'
 import './App.css'
-import Introduccion from './components/Introduccion'
-import Pasos from './components/Pasos'
-import Seccion1 from './components/Seccion1'
-import Tutorial1 from './components/Tutorial1'
-import PasosA from './components/PasosA'
 import { AnimatePresence } from 'framer-motion';
+import Home from './pages/Home';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
 
   return (
+    <div className="bg:white dark:bg-slate-900">
     <AnimatePresence>
-      <div className="App">
-        <Introduccion />
-        <Tutorial1 />
-        <Seccion1 />
-        <Pasos />
-        <PasosA />
-      </div>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home/>}>
+          </Route>
+            <Route path='/home' element={<Home/>}>
+                {/* <Route index element={<Home/>} /> */}  
+            </Route>
+            {/* <Route path='/about' element={<About/>}>
+                <Route index element={<About/>} />
+            </Route> */}
+          </Routes>
+      </Router>
     </AnimatePresence>
+    </div>
   )
 }
 
