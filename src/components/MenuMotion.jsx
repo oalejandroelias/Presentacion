@@ -18,6 +18,16 @@ const draw = {
 
 export default function MenuMotion() {
   return (
+    <>
+     <motion.svg>
+     cx="100"
+        cy="100"
+        r="80"
+        stroke="#ff0055"
+        variants={draw}
+        custom={1}
+
+     </motion.svg>
     <motion.svg
       width="600"
       height="600"
@@ -134,5 +144,6 @@ export default function MenuMotion() {
         custom={5}
       />
     </motion.svg>
+    </>
   );
 }

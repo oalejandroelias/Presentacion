@@ -4,7 +4,10 @@ import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { motion } from 'framer-motion';
 import ThemeToggle from './ThemeToggle'
-import MenuMotion from './MenuMotion'
+
+const efecto = {
+  
+}
 
 const navigation = [
   { name: 'Copade', href: 'https://www.copade.gob.ar/' },
@@ -24,27 +27,37 @@ function Contenedor() {
           <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
               <motion.h1 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{ opacity: 0, }}
+                animate={{ opacity: 1, rotate: [0,360], }}
                 transition={{
                   ease: 'easeInOut',
                   duration: 1,
                   delay: 0.1,
+                }}
+                whileHover={{
+                  // scale: 1.1,
+                  scale: [1, 1.4, 1.2],
+                 
+                  transition: {
+                    duration: .2,
+                  }
                 }}
               className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
                 <span 
-                  initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                   
+                className="block xl:inline">Gis Copade</span>{' '}
+              </motion.h1>
+              <motion.h2 
+                initial={{ opacity: 0, }}
+                animate={{ opacity: 1, rotate: [0, 360], }}
                 transition={{
                   ease: 'easeInOut',
                   duration: 1,
-                  delay: 0.1,
+                  delay: 1,
                 }}
-                className="block xl:inline">Gis Copade</span>{' '}
-              </motion.h1>
-              <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-5xl">
+              className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-5xl">
                 <span className="block text-indigo-600 xl:inline">Planificación Territorial</span>
-              </h2>
+              </motion.h2>
               <div className="escribiendo">
                 <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 texto">
                 Sistema de Información Geográfica
@@ -79,7 +92,6 @@ function Contenedor() {
           alt=""
         />
       </div>
-      <MenuMotion/>
     </div>
   )
 }
