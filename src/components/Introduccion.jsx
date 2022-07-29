@@ -5,10 +5,6 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { motion } from 'framer-motion';
 import ThemeToggle from './ThemeToggle'
 
-const efecto = {
-  
-}
-
 const navigation = [
   { name: 'Copade', href: 'https://www.copade.gob.ar/' },
   { name: 'Gis Copade', href: 'http://giscopade.neuquen.gov.ar/sig_copade/' },

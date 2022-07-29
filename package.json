@@ -13,9 +13,11 @@
     "@heroicons/react": "^1.0.6",
     "framer-motion": "^6.5.1",
     "react": "^18.2.0",
+    "react-data-table-component": "^7.5.2",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "txml": "^5.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",

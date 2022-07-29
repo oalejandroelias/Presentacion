@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { AnimatePresence } from 'framer-motion';
 import Home from './pages/Home';
+import LayerList from './pages/LayerList'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -16,9 +17,9 @@ function App() {
             <Route path='/home' element={<Home/>}>
                 {/* <Route index element={<Home/>} /> */}  
             </Route>
-            {/* <Route path='/about' element={<About/>}>
-                <Route index element={<About/>} />
-            </Route> */}
+            <Route path='/layerList' element={<LayerList/>}>
+                <Route index element={<LayerList/>} />
+            </Route>
           </Routes>
       </Router>
     </AnimatePresence>
