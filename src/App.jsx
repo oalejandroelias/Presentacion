@@ -3,26 +3,25 @@ import './App.css'
 import { AnimatePresence } from 'framer-motion';
 import Home from './pages/Home';
 import LayerList from './pages/LayerList'
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {HashRouter as Router, Routes, Route} from 'react-router-dom';
+import Contenido from './pages/Contenido';
+import Header from './components/Header';
 
 function App() {
 
   return (
-    <div className="bg:white dark:bg-slate-900">
-    <AnimatePresence>
+    <div className="bg:white dark:bg-slate-900 mb-1">
+      
+    {/* <AnimatePresence> */}
       <Router>
+      <Header />
         <Routes>
-          <Route path='/' element={<Home/>}>
-          </Route>
-            <Route path='/home' element={<Home/>}>
-                {/* <Route index element={<Home/>} /> */}  
-            </Route>
-            <Route path='/layerList' element={<LayerList/>}>
-                <Route index element={<LayerList/>} />
-            </Route>
+          <Route path='/' element={<Home/>} />
+          <Route path='/home' element={<Home/>} />
+          <Route path='/contenido' element={<Contenido/>} />
           </Routes>
       </Router>
-    </AnimatePresence>
+    {/* </AnimatePresence> */}
     </div>
   )
 }
