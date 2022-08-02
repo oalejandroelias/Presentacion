@@ -6,7 +6,7 @@ import ThemeToggle from './ThemeToggle'
 const navigation = [
   { name: "Home", href: "home" },
   { name: "Contenido", href: "contenido" },
-  { name: "Openlayers", href: "https://openlayers.org/" },
+  { name: "Listado", href: "layersList" },
 ];
 
 function classNames(...classes) {
