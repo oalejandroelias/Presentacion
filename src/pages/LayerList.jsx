@@ -4,7 +4,6 @@ import  {XMLParser} from "fast-xml-parser";
 import styled from 'styled-components';
 import Table from "../components/DataTable";
 
-
 const LayerList = () => {
 
   const clickhandler = name => console.log("delete", name);

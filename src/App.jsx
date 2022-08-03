@@ -19,6 +19,7 @@ function App() {
           <Route path='/' element={<Home/>} />
           <Route path='/home' element={<Home/>} />
           <Route path='/layersList' element={<LayerList/>} />
+          <Route path='/contenido' element={<Contenido/>} />
           </Routes>
       </Router>
     {/* </AnimatePresence> */}

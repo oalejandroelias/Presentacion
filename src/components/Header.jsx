@@ -24,7 +24,7 @@ function Nav() {
               <div className="flex-shrink-0">
                 <img
                   className="h-8 w-8"
-                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                  src="https://giscopade.neuquen.gov.ar/sig_copade/img/copade_.png"
                   alt="Workflow"
                 />
               </div>
@@ -110,7 +110,6 @@ function Nav() {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navigation.map((item) => (
                 <Link
-                  target="_blank"
                   key={item.name}
                   to={item.href}
                   className={classNames(

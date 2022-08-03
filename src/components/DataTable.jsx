@@ -1,61 +1,68 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect, useContext } from "react";
 
 import DataTable, { createTheme } from "react-data-table-component";
 import FilterComponent from "./FilterComponent";
+import Modal from "./Modal";
+import { ThemeContext } from "./ThemeContext";
 
-const Table = props => {
+const Table = (props) => {
+  const { theme } = useContext(ThemeContext);
 
-    
+  const [show_modal, setShow_modal] = useState(false);
+  const [name, setName] = useState('')
+  const [title, setTitle] = useState('')
+  const [abstract, setAbstract] = useState('')
+
   const columns = [
     {
       name: "Titulo",
-      selector: row => row.Title,
+      selector: (row) => row.Title,
       sortable: true,
-      grow: 0.8
+      grow: 0.8,
     },
     {
       name: "Nombre",
-      selector: row => row.Name,
+      selector: (row) => row.Name,
       sortable: true,
       grow: 0.8,
-      hide: "sm"
+      hide: "sm",
     },
     {
       name: "Descripción",
-      selector: row => row.Abstract,
+      selector: (row) => row.Abstract,
       sortable: true,
-      grow: 0.8
+      grow: 0.8,
     },
     {
       name: "Vista",
       button: true,
-      cell: row =>
-
-          <>
-            <button
-                className="bg:white dark:bg-slate-900 mb-1 inline-flex px-2 rounded-lg items-center ml-4 hover:bg-gray-200 focus:outline-none  text-gray-900 dark:text-white"
-              onClick={() => props.click(row.name)}
-              style={{ marginRight: "5px" }}
-            >
-              Ver
-            </button>
-          </>
-
-    }
+      cell: (row) => (
+        <>
+          <button
+            className="bg:white dark:bg-slate-900 mb-1 inline-flex px-2 rounded-lg items-center ml-4 hover:bg-gray-200 focus:outline-none  text-gray-900 dark:text-white"
+            onClick={() => {
+              setShow_modal(!show_modal);
+              setTitle(row.Title);
+              setName(row.Name)
+              setAbstract(row.Abstract)
+              console.log(row.Name);
+            }}
+            style={{ marginRight: "5px" }}
+          >
+            Ver
+          </button>
+        </>
+      ),
+    },
   ];
 
   const [filterText, setFilterText] = useState("");
-  const [resetPaginationToggle, setResetPaginationToggle] = useState(
-    false
-  );
-  // const filteredItems = data.filter(
-  //   item => item.name && item.name.includes(filterText)
-  // );
+  const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
+
   const filteredItems = props.data.filter(
-    item =>
-      JSON.stringify(item)
-        .toLowerCase()
-        .indexOf(filterText.toLowerCase()) !== -1
+    (item) =>
+      JSON.stringify(item).toLowerCase().indexOf(filterText.toLowerCase()) !==
+      -1
   );
 
   const subHeaderComponent = useMemo(() => {
@@ -68,7 +75,7 @@ const Table = props => {
 
     return (
       <FilterComponent
-        onFilter={e => setFilterText(e.target.value)}
+        onFilter={(e) => setFilterText(e.target.value)}
         onClear={handleClear}
         filterText={filterText}
       />
@@ -97,47 +104,52 @@ const Table = props => {
   //   },
   // });
 
-  createTheme('dark', {
+  createTheme("dark", {
     background: {
-      default: 'transparent',
-           background: {
-      default: 'transparent',
-    },
-        context: {
-      background: 'transparent',
-      text: '#FFFFFF',
-    },
+      default: "transparent",
+      background: {
+        default: "transparent",
+      },
+      context: {
+        background: "transparent",
+        text: "#FFFFFF",
+      },
     },
   });
 
   const customStyles = {
-
     headCells: {
-        style: {
-            paddingLeft: '8px', // override the cell padding for head cells
-            paddingRight: '8px',
-        },
+      style: {
+        paddingLeft: "8px", // override the cell padding for head cells
+        paddingRight: "8px",
+      },
     },
     cells: {
-        style: {
-            background: window.localStorage.getItem('color-theme') == "light" ? "transparent" : "#0f172a" 
-        },
+      style: {
+        background:
+          window.localStorage.getItem("color-theme") == "light"
+            ? "transparent"
+            : "#0f172a",
+      },
     },
-};
+  };
 
   return (
-    <DataTable
-      theme={window.localStorage.getItem('color-theme') == "light" ? "default" : "dark" }
-      title=""
-      columns={columns}
-      data={filteredItems}
-      defaultSortField="name"
-      striped
-      pagination
-      subHeader
-      subHeaderComponent={subHeaderComponent}
-      customStyles={customStyles}
-    />
+    <>
+      <DataTable
+        theme={theme}
+        title=""
+        columns={columns}
+        data={filteredItems}
+        defaultSortField="name"
+        striped
+        pagination
+        subHeader
+        subHeaderComponent={subHeaderComponent}
+        //customStyles={customStyles}
+      />
+      <Modal show_modal={show_modal} setShow_modal={setShow_modal} title={title} name={name} abstract={abstract} />
+    </>
   );
 };
 
