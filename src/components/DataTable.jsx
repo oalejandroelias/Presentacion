@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 
-import DataTable from "react-data-table-component";
+import DataTable, { createTheme } from "react-data-table-component";
 import FilterComponent from "./FilterComponent";
 
 const Table = props => {
@@ -75,19 +75,59 @@ const Table = props => {
     );
   }, [filterText, resetPaginationToggle]);
 
-  const theme =  {
-    			options: ['default', 'dark'],
-    			control: { type: 'radio' },
-    			description: 'toggle between light and dark themes',
-    			table: {
-    				type: { summary: 'string' },
-    				defaultValue: { summary: 'default' },
-    			},
-    		}
+  // createTheme('light', {
+  //   text: {
+  //     primary: '#268bd2',
+  //     secondary: '#2aa198',
+  //   },
+  //   background: {
+  //     default: '#002b36',
+  //   },
+  //   context: {
+  //     background: '#cb4b16',
+  //     text: '#FFFFFF',
+  //   },
+  //   divider: {
+  //     default: '#073642',
+  //   },
+  //   action: {
+  //     button: 'rgba(0,0,0,.54)',
+  //     hover: 'rgba(0,0,0,.08)',
+  //     disabled: 'rgba(0,0,0,.12)',
+  //   },
+  // });
+
+  createTheme('dark', {
+    background: {
+      default: 'transparent',
+           background: {
+      default: 'transparent',
+    },
+        context: {
+      background: 'transparent',
+      text: '#FFFFFF',
+    },
+    },
+  });
+
+  const customStyles = {
+
+    headCells: {
+        style: {
+            paddingLeft: '8px', // override the cell padding for head cells
+            paddingRight: '8px',
+        },
+    },
+    cells: {
+        style: {
+            background: window.localStorage.getItem('color-theme') == "light" ? "transparent" : "#0f172a" 
+        },
+    },
+};
 
   return (
     <DataTable
-      theme={window.localStorage.getItem('color-theme')}
+      theme={window.localStorage.getItem('color-theme') == "light" ? "default" : "dark" }
       title=""
       columns={columns}
       data={filteredItems}
@@ -96,6 +136,7 @@ const Table = props => {
       pagination
       subHeader
       subHeaderComponent={subHeaderComponent}
+      customStyles={customStyles}
     />
   );
 };
