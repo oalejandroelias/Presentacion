@@ -28,21 +28,19 @@ const LayerList = () => {
 
     const getXMLResponse = async () => {
       const resp = await fetch(
-        "http://giscopade.neuquen.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities"
-         //'https://gist.githubusercontent.com/Pavneet-Sing/d0f3324f2cd3244a6ac8ffc5e8550102/raw/8ebc801b3e4d4987590958978ae58d3f931193a3/XMLResponse.xml'
+        //"http://giscopade.neuquen.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities"
+        'https://gist.githubusercontent.com/Pavneet-Sing/d0f3324f2cd3244a6ac8ffc5e8550102/raw/8ebc801b3e4d4987590958978ae58d3f931193a3/XMLResponse.xml'
       )
         .then((response) => response.text())
         .then((textResponse) => {
           const parser = new XMLParser();
           let obj = parser.parse(textResponse);
-          setCapas(obj.WMS_Capabilities.Capability.Layer.Layer);
-          //setCapas(obj.person);
-     
+          //setCapas(obj.WMS_Capabilities.Capability.Layer.Layer);
+
         })
         .catch((error) => {
           console.log(error);
         });
-
     };
 
     getXMLResponse();

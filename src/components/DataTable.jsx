@@ -12,6 +12,7 @@ const Table = (props) => {
   const [name, setName] = useState('')
   const [title, setTitle] = useState('')
   const [abstract, setAbstract] = useState('')
+  const [baseGeoUrl, setBaseGeoUrl] = useState('')
 
   const columns = [
     {
@@ -45,6 +46,7 @@ const Table = (props) => {
               setTitle(row.Title);
               setName(row.Name)
               setAbstract(row.Abstract)
+              setBaseGeoUrl("http://giscopade.neuquen.gov.ar/geoserver/wms") /**Hacer que sea dinamico para otros servidores */
               console.log(row.Name);
             }}
             style={{ marginRight: "5px" }}
@@ -148,7 +150,7 @@ const Table = (props) => {
         subHeaderComponent={subHeaderComponent}
         //customStyles={customStyles}
       />
-      <Modal show_modal={show_modal} setShow_modal={setShow_modal} title={title} name={name} abstract={abstract} />
+      <Modal show_modal={show_modal} setShow_modal={setShow_modal} title={title} name={name} abstract={abstract} baseGeoUrl={baseGeoUrl} />
     </>
   );
 };

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
-import ThemeToggle from './ThemeToggle'
+import ThemeToggle from '../components/ThemeToggle'
 
 const navigation = [
   { name: "Home", href: "home" },
   { name: "Contenido", href: "contenido" },
   { name: "Listado", href: "layersList" },
+  { name: "Mapa", href: "map_preview" }, /**Solo es temporal */
 ];
 
 function classNames(...classes) {
