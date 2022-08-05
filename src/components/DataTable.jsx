@@ -47,7 +47,6 @@ const Table = (props) => {
               setName(row.Name)
               setAbstract(row.Abstract)
               setBaseGeoUrl("http://giscopade.neuquen.gov.ar/geoserver/wms") /**Hacer que sea dinamico para otros servidores */
-              console.log(row.Name);
             }}
             style={{ marginRight: "5px" }}
           >
@@ -55,6 +54,7 @@ const Table = (props) => {
           </button>
         </>
       ),
+      grow: 0.1,
     },
   ];
 

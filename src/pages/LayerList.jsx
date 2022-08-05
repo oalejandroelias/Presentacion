@@ -3,45 +3,48 @@ import DataTable from "react-data-table-component";
 import  {XMLParser} from "fast-xml-parser";
 import styled from 'styled-components';
 import Table from "../components/DataTable";
+import axios from "axios"
 
 const LayerList = () => {
 
   const clickhandler = name => console.log("delete", name);
   const [capas, setCapas] = useState([])
 
+  //const baseUrl = "http://sigepen.neuquen.gov.ar:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+  //const baseUrl = "http://aicsig.neuquen.gov.ar:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+  const baseUrl = "http://giscopade.neuquen.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+
   useEffect(() => {
-    //     fetch("http://giscopade.neuquen.gov.ar/geoserver/Copade/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=Copade:nqn_ciudades&maxFeatures=50&outputFormat=application%2Fjson"
-    //     // ,{
-    //   //     'mode': 'no-cors',
-    //   //     'headers': {
-    //     //     	'Access-Control-Allow-Origin': '*',
-    //     // 	}
-    //     // }
-    // )
-    //         .then(res => res.text())
-    //         .then(data => {
-    //             console.log(data)
-    //             // var xml = new XMLParser().parseFromString(data);
-    //             // console.log(xml)
-    //         })
-    //         .catch(err => console.log(err));
 
     const getXMLResponse = async () => {
       const resp = await fetch(
-        //"http://giscopade.neuquen.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities"
-        'https://gist.githubusercontent.com/Pavneet-Sing/d0f3324f2cd3244a6ac8ffc5e8550102/raw/8ebc801b3e4d4987590958978ae58d3f931193a3/XMLResponse.xml'
+        baseUrl
       )
         .then((response) => response.text())
         .then((textResponse) => {
           const parser = new XMLParser();
           let obj = parser.parse(textResponse);
-          //setCapas(obj.WMS_Capabilities.Capability.Layer.Layer);
+          setCapas(obj.WMS_Capabilities.Capability.Layer.Layer);
 
         })
         .catch((error) => {
           console.log(error);
         });
     };
+
+    // const getXMLResponse = async () => {
+    //   const resp = axios.get(baseUrl).then((response) => {
+
+    //     const parser = new XMLParser();
+    //     let obj = parser.parse(response.data);
+    //     console.log(obj)
+    //     setCapas(obj.WMS_Capabilities.Capability.Layer.Layer);
+
+    //   })
+    //     .catch((error) => {
+    //       console.log(error);
+    //     });
+    // };
 
     getXMLResponse();
   }, []);
@@ -70,7 +73,6 @@ const columns = [
    {Name: 'Copade:barrios_chos_malal', Title: 'Barrios de Chos Malal', Abstract: 'La presente capa fue creada desde COPADE con infor…iente del municipio de Chos Malal en el año 2017.'},
 ];
 
-  console.log(capas);
 
   return (
     <div className="lg:w-5/6 w-full mx-auto overflow-auto">

@@ -19,7 +19,6 @@ function App() {
           <Route path='/' element={<Home/>} />
           <Route path='/home' element={<Home/>} />
           <Route path='/layersList' element={<LayerList/>} />
-          <Route path='/contenido' element={<Contenido/>} />
           <Route path='/map_preview' element={<MapPreview/>} />
         </Routes>
       </Router>

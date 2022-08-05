@@ -50,7 +50,7 @@ const MapPreview = (props) => {
 
   return (
     <div className="h-full">
-      <Map center={fromLonLat(center)} zoom={zoom}>
+      <Map center={fromLonLat(center)} zoom={zoom} name={props.name}>
         <Layers>
           <TileLayer source={osm()} zIndex={0} />
             <TileLayer

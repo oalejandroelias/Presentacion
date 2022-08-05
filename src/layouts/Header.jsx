@@ -5,7 +5,6 @@ import ThemeToggle from '../components/ThemeToggle'
 
 const navigation = [
   { name: "Home", href: "home" },
-  { name: "Contenido", href: "contenido" },
   { name: "Listado", href: "layersList" },
   { name: "Mapa", href: "map_preview" }, /**Solo es temporal */
 ];
