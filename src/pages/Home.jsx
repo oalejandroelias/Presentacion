@@ -4,6 +4,7 @@ import Pasos from '../components/Pasos'
 import Seccion1 from '../components/Seccion1'
 import Tutorial1 from '../components/Tutorial1'
 import PasosA from '../components/PasosA'
+import Svg from '../layouts/Svg'
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
         <Tutorial1 />
         <Seccion1 />
         <Pasos />
-        <PasosA />
+        <Svg />
     </div>
   )
 }

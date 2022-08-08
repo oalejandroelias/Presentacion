@@ -5,4 +5,20 @@
     stroke-linecap: round;
     fill: transparent;
   }
+
+  #svg_animated{
+    width: 800px;
+    text-align: center;
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #svg_animated > pat{
+    stroke: white;
+    stroke-width: 5px;
+  }
   
