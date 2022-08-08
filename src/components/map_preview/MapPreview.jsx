@@ -18,31 +18,28 @@ import FeatureStyles from "../maps/Features/Styles";
 
 import mapConfig from "../maps/config.json";
 
-const geojsonObject = mapConfig.geojsonObject;
-const geojsonObject2 = mapConfig.geojsonObject2;
-const markersLonLat = [mapConfig.kansasCityLonLat, mapConfig.blueSpringsLonLat];
 // const base_url = window.location.protocol + "//" + window.location.host;
 
-function addMarkers(lonLatArray) {
-  var iconStyle = new Style({
-    image: new Icon({
-      anchorXUnits: "fraction",
-      anchorYUnits: "pixels",
-      src: mapConfig.markerImage32,
-      //size: 10,
-      //imgSize: 100
-      scale: 0.09,
-    }),
-  });
-  let features = lonLatArray.map((item) => {
-    let feature = new Feature({
-      geometry: new Point(fromLonLat(item)),
-    });
-    feature.setStyle(iconStyle);
-    return feature;
-  });
-  return features;
-}
+// function addMarkers(lonLatArray) {
+//   var iconStyle = new Style({
+//     image: new Icon({
+//       anchorXUnits: "fraction",
+//       anchorYUnits: "pixels",
+//       src: mapConfig.markerImage32,
+//       //size: 10,
+//       //imgSize: 100
+//       scale: 0.09,
+//     }),
+//   });
+//   let features = lonLatArray.map((item) => {
+//     let feature = new Feature({
+//       geometry: new Point(fromLonLat(item)),
+//     });
+//     feature.setStyle(iconStyle);
+//     return feature;
+//   });
+//   return features;
+// }
 
 const MapPreview = (props) => {
   const [center, setCenter] = useState(mapConfig.center);

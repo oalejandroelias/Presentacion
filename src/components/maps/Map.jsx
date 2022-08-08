@@ -9,6 +9,7 @@ import * as olProj from 'ol/proj';
 import  {XMLParser} from "fast-xml-parser";
 
 const Mapa = ({ children, zoom, center, name }) => {
+	console.log(children)
 	const mapRef = useRef();
 	const [map, setMap] = useState(null);
 	const baseUrl = "http://giscopade.neuquen.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import MenuMotion from './MenuMotion'
-import Test from '../layouts/Test'
 
 /* This example requires Tailwind CSS v2.0+ */
 const features = [
@@ -57,9 +56,7 @@ const features = [
               className="bg-gray-100 rounded-lg"
             />
           </div>
-          
         </div>
-        <Test />
       </div>
     )
   }

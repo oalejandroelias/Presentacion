@@ -1,14 +1,24 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import sig from "./../../public/img/sig.jpg";
 import { motion } from 'framer-motion';
-import ThemeToggle from './ThemeToggle'
 
-function Contenedor() {
+const Presentacion = () => {
   return (
-    <div className="relative overflow-hidden m-10">
-      <div className="max-w-7xl mx-auto">
+    <div className="relative">
+      <img
+        src={sig}
+        className="absolute inset-0 object-cover w-full h-full"
+        alt=""
+      />
+      <div className="relative bg-opacity-30 bg-deep-purple-accent-700">
+        <svg
+          className="absolute inset-x-0 bottom-0 text-white dark:text-slate-900"
+          viewBox="0 0 1160 163"
+        >
+          <path
+            fill="currentColor"
+            d="M-164 13L-104 39.7C-44 66 76 120 196 141C316 162 436 152 556 119.7C676 88 796 34 916 13C1036 -8 1156 2 1216 7.7L1276 13V162.5H1216C1156 162.5 1036 162.5 916 162.5C796 162.5 676 162.5 556 162.5C436 162.5 316 162.5 196 162.5C76 162.5 -44 162.5 -104 162.5H-164V13Z"
+          />
+        </svg>
         <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
           <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
@@ -71,15 +81,8 @@ function Contenedor() {
           </main>
         </div>
       </div>
-      <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="https://www.copade.gob.ar/wp-content/uploads/2021/11/SIG-01-1024x512.jpg"
-          alt=""
-        />
-      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contenedor
+export default Presentacion;

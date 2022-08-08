@@ -30,7 +30,7 @@ export default function Modal(props) {
         </Transition.Child>
 
         <div className="fixed z-10 inset-0 overflow-y-auto">
-          <div className="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+          <div className="flex items-end sm:items-center justify-center min-h-full p-1 text-center sm:p-0">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -41,22 +41,25 @@ export default function Modal(props) {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
               {/* <Dialog.Panel className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full"> */}
-              <Dialog.Panel className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:w-5/6">
-              <div className="bg:white dark:bg-slate-900 px-1 py-1 sm:px-1 sm:flex sm:flex-row-reverse">
+              <Dialog.Panel className="relative bg-white rounded-lg text-right overflow-hidden shadow-xl transform transition-all sm:my-8 sm:w-5/6">
+                <div className="bg:white dark:bg-slate-900 px-1 py-1 sm:px-1 sm:flex sm:flex-row-reverse">
                   <button
                     type="button"
-                    className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                    className="mt-1 inline-flex justify-left rounded-md px-2 py-0 bg-white text-base font-medium text-gray-900 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                     onClick={() => props.setShow_modal(!props.show_modal)}
                     ref={cancelButtonRef}
                   >
                     X
                   </button>
                 </div>
-                <div className="bg:white dark:bg-slate-900 px-4 pt-5 pb-4 md:p-2 sm:p-6 sm:pb-1">
-                <div className="h-96">
-                <MapPreview baseGeoUrl={props.baseGeoUrl} name={props.name} />
-                </div>
-                  <div className="sm:flex sm:items-start">
+                <div className="bg:white dark:bg-slate-900 px-4 pt-5 pb-4 md:p-2 sm:p-6 sm:pb-1 columns-1 sm:columns-2">
+                  <div className="h-96 basis-1 sm:basis-1/2">
+                    <MapPreview
+                      baseGeoUrl={props.baseGeoUrl}
+                      name={props.name}
+                    />
+                  </div>
+                  <div className="basis-1 sm:basis-1/2">
                     <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
                       <MapIcon
                         className="h-6 w-6 text-blue-600"

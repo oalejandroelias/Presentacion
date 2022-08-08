@@ -5,15 +5,23 @@ import Seccion1 from '../components/Seccion1'
 import Tutorial1 from '../components/Tutorial1'
 import PasosA from '../components/PasosA'
 import Svg from '../layouts/Svg'
+import Test from '../layouts/Test'
+import ModalMap from '../components/modal/ModalMap'
+import Opciones from './Opciones'
+import Galeria from './Galeria'
+import Presentacion from './Presentacion'
+import PaginasExternas from './PaginasExternas'
 
 const Home = () => {
   return (
     <div>
         <Introduccion />
-        <Tutorial1 />
-        <Seccion1 />
+        {/* <PaginasExternas /> */}
+        <Presentacion />
         <Pasos />
-        <Svg />
+        <Opciones />
+        <Galeria />
+        {/* <Svg /> */}
     </div>
   )
 }
