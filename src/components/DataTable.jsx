@@ -4,6 +4,7 @@ import DataTable, { createTheme } from "react-data-table-component";
 import FilterComponent from "./FilterComponent";
 import Modal from "./Modal";
 import { ThemeContext } from "./ThemeContext";
+import '../styles/styles.css'
 
 const Table = (props) => {
   const { theme } = useContext(ThemeContext);
@@ -20,6 +21,8 @@ const Table = (props) => {
       selector: (row) => row.Title,
       sortable: true,
       grow: 0.8,
+      style: 'font-weight:bold; font-family: Arial, Helvetica, sans-serif;'
+      //maxWidth: "200px"
     },
     {
       name: "Nombre",
@@ -27,12 +30,16 @@ const Table = (props) => {
       sortable: true,
       grow: 0.8,
       hide: "sm",
+      style: 'font-weight:bold; font-family: Arial, Helvetica, sans-serif;'
+      //maxWidth: "200px"
     },
     {
       name: "Descripción",
       selector: (row) => row.Abstract,
       sortable: true,
       grow: 0.8,
+      maxWidth: "400px",
+      style: 'font-weight:bold; font-family: Arial, Helvetica, sans-serif;'
     },
     {
       name: "Vista",
@@ -46,11 +53,11 @@ const Table = (props) => {
               setTitle(row.Title);
               setName(row.Name)
               setAbstract(row.Abstract)
-              setBaseGeoUrl("http://giscopade.neuquen.gov.ar/geoserver/wms") /**Hacer que sea dinamico para otros servidores */
+              setBaseGeoUrl(props.baseGeoUrl) /**Hacer que sea dinamico para otros servidores */
             }}
-            style={{ marginRight: "5px" }}
+            style={{ marginRight: '5px'}}
           >
-            Ver
+            <h1 style={{ color: 'blue'}}>Ver</h1>
           </button>
         </>
       ),
@@ -114,31 +121,61 @@ const Table = (props) => {
       },
       context: {
         background: "transparent",
-        text: "#FFFFFF",
+        text: "#C70039",
+
       },
+    },
+    text: {
+      primary: '#2aa198',
+      secondary: '#2aa198'
     },
   });
 
+  createTheme("light", {
+    striped: {
+      default: "transparent",
+      text: "#000000"
+    },
+    text: {
+      primary: "#000000",
+      secondary: "#2aa198"
+    },
+    background: {
+      default: "transparent"
+    },
+    // context: {
+    //   background: "#cb4b16",
+    //   text: "#FFFFFF"
+    // },
+    divider: {
+      default: "#073642"
+    },
+    action: {
+      button: "rgba(0,0,0,.54)",
+      hover: "rgba(0,0,0,.08)",
+      disabled: "rgba(0,0,0,.12)"
+    },
+    highlightOnHover: {
+      default: "#BAC7EE"
+    },
+
+  },);
+
   const customStyles = {
+
     headCells: {
-      style: {
-        paddingLeft: "8px", // override the cell padding for head cells
-        paddingRight: "8px",
-      },
+        style: {
+            font: 'bold', // override the cell padding for head cells
+            paddingRight: '8px',
+        },
     },
-    cells: {
-      style: {
-        background:
-          window.localStorage.getItem("color-theme") == "light"
-            ? "transparent"
-            : "#0f172a",
-      },
-    },
-  };
+
+};
 
   return (
     <>
       <DataTable
+        className="border-collapse"
         theme={theme}
         title=""
         columns={columns}
@@ -148,9 +185,10 @@ const Table = (props) => {
         pagination
         subHeader
         subHeaderComponent={subHeaderComponent}
-        //customStyles={customStyles}
+        highlightOnHover
+        customStyles={customStyles}
       />
-      <Modal show_modal={show_modal} setShow_modal={setShow_modal} title={title} name={name} abstract={abstract} baseGeoUrl={baseGeoUrl} />
+      <Modal show_modal={show_modal} setShow_modal={setShow_modal} title={title} name={name} abstract={abstract} baseGeoUrl={props.baseGeoUrl} />
     </>
   );
 };

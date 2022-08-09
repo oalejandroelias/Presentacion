@@ -9,7 +9,6 @@ import * as olProj from 'ol/proj';
 import  {XMLParser} from "fast-xml-parser";
 
 const Mapa = ({ children, zoom, center, name }) => {
-	console.log(children)
 	const mapRef = useRef();
 	const [map, setMap] = useState(null);
 	const baseUrl = "http://giscopade.neuquen.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
@@ -40,7 +39,6 @@ const Mapa = ({ children, zoom, center, name }) => {
 		/******* */
 		const getXMLResponse = async () => {
 		const parser = new WMSCapabilities();
-		console.log(parser)
 		await fetch(baseUrl)
 			.then((response) => response.text())
 		 .then((textResponse) => {
@@ -70,7 +68,6 @@ const Mapa = ({ children, zoom, center, name }) => {
 				olProj.get("EPSG:4326"),
 				olProj.get("EPSG:3857")
 			  );
-			  console.log(extent)
 			  map.getView().fit(extent, { duration: 1000, size: map.getSize() });
 			}
 		  })
