@@ -62,7 +62,7 @@ export default function Modal(props) {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
               {/* <Dialog.Panel className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full"> */}
-              <Dialog.Panel className="relative bg-white rounded-lg text-right overflow-hidden shadow-xl dark:shadow-indigo-500/50 transform transition-all sm:my-8 sm:w-5/6">
+              <Dialog.Panel className="relative bg-white rounded-lg text-right overflow-hidden shadow-xl dark:shadow-indigo-500/50 transform transition-all w-full sm:my-8 sm:w-5/6">
                 <div className="bg:white dark:bg-slate-900 px-1 py-1 sm:px-1 sm:flex sm:flex-row-reverse ">
                   <button
                     type="button"
@@ -96,29 +96,16 @@ export default function Modal(props) {
                         {props.title}
                       </Dialog.Title>
                       <div className="mt-5 mb-5">
-                        <p className="text-sm text-black dark:text-white ">
+                        <p className="text-sm text-black dark:text-white">
                           {props.abstract}
                         </p>
                       </div>
 
                       <div class="flex justify-center m-5">
                         <div class="mb-3 xl:w-96">
+                        <label for="country" class="block text--d font-medium text-gray-700">Descargar</label>
                           <select
-                            class="form-select appearance-none
-                                    block
-                                    w-full
-                                    px-3
-                                    py-1.5
-                                    text-base
-                                    font-normal
-                                    text-black
-                                    bg-white bg-clip-padding bg-no-repeat
-                                    border border-solid border-blue-300
-                                    rounded
-                                    transition
-                                    ease-in-out
-                                    m-0
-                                    focus:text-sky-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            class="mt-1 block w-full py-2 px-3 border text-per-theme-default input-per rounded-md shadow-sm "
                             aria-label="Default select example"
                             value={option}
                             onChange={handleChange}

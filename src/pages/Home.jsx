@@ -14,10 +14,10 @@ import PaginasExternas from './PaginasExternas'
 
 const Home = () => {
   return (
-    <div>
+    <div className="lg:w-5/6 w-full mx-auto overflow-auto mt-20">
         <Introduccion />
         {/* <PaginasExternas /> */}
-        <Presentacion />
+        
         <Pasos />
         <Opciones />
         <Galeria />

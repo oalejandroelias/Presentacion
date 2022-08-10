@@ -47,7 +47,7 @@ const Table = (props) => {
       cell: (row) => (
         <>
           <button
-            className="bg:white dark:bg-slate-900 mb-1 inline-flex px-2 rounded-lg items-center ml-4 hover:bg-gray-200 focus:outline-none  text-gray-900 dark:text-white"
+            className="bg:white dark:bg-slate-900 mb-1 inline-flex px-2 rounded-md items-center ml-4 hover:bg-gray-200 focus:outline-none  text-gray-900 dark:text-white"
             onClick={() => {
               setShow_modal(!show_modal);
               setTitle(row.Title);

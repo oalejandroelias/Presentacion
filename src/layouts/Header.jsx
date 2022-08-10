@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
 import ThemeToggle from '../components/ThemeToggle'
+import logo_copade from '../../public/img/copade.png'
 
 const navigation = [
-  { name: "Home", href: "home" },
+  { name: "Inicio", href: "home" },
   { name: "Listado", href: "layersList" },
   { name: "Mapa", href: "map_preview" }, /**Solo es temporal */
 ];
@@ -16,8 +17,8 @@ function classNames(...classes) {
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div>
-      <nav className="bg-gray-800">
+    <div className="">
+      <nav className="bg-gray-800 dark:bg-slate-900 fixed w-full z-40 top-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">

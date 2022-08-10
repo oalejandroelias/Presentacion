@@ -150,8 +150,8 @@ const LayerList = () => {
   ];
 
   return (
-    <div className="lg:w-5/6 w-full mx-auto overflow-auto">
-      <Table data={columns} baseGeoUrl={baseGeoUrl} click={clickhandler} />
+    <div className="lg:w-5/6 w-full mx-auto overflow-auto mt-20">
+      <Table data={capas} baseGeoUrl={baseGeoUrl} click={clickhandler} />
     </div>
   );
 };

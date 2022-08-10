@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const Input = styled.input.attrs(props => ({
+const Input = styled.input.attrs((props) => ({
   type: "text",
-  size: props.small ? 5 : undefined
+  size: props.small ? 5 : undefined,
 }))`
   height: 32px;
   width: 200px;
@@ -30,16 +30,43 @@ const ClearButton = styled.button`
 `;
 
 const FilterComponent = ({ filterText, onFilter, onClear }) => (
-  <>
-    <Input
-      id="search"
-      type="text"
-      placeholder="Filter table data..."
-      value={filterText}
-      onChange={onFilter}
-    />
-    <ClearButton onClick={onClear}>X</ClearButton>
-  </>
+  // <>
+  //   <Input
+  //     id="search"
+  //     type="text"
+  //     placeholder="Filter table data..."
+  //     value={filterText}
+  //     onChange={onFilter}
+  //   />
+  //   <ClearButton onClick={onClear}>X</ClearButton>
+  // </>
+
+  <div class="grid grid-cols-3 gap-6">
+    <div class="col-span-3 sm:col-span-2">
+      {/* <label
+        for="company-website"
+        class="block text-sm font-medium text-gray-700"
+      >
+        {" "}
+        Website{" "}
+      </label> */}
+      <div class="mt-1 flex rounded-md shadow-sm">
+
+        <input
+          type="text"
+          name="search"
+          id="search"
+          value={filterText}
+          onChange={onFilter}
+          class="flex-1 block w-full items-center rounded-l-md border border-r-0 border-black dark:border-white bg:white dark:bg-slate-700 text-black dark:text-white text-sm "
+          placeholder="Filtrar..."
+        />
+        <span class="inline-flex items-center px-0 rounded-r-md border border-l-1 border-black dark:border-white bg:white dark:bg-slate-700 text-black dark:text-white text-sm">
+          <ClearButton onClick={onClear}>X</ClearButton>
+        </span>
+      </div>
+    </div>
+  </div>
 );
 
 export default FilterComponent;

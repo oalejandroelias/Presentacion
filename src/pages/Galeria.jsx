@@ -39,7 +39,8 @@ const Galeria = () => {
           <div>
             <img
               className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80"
-              src={map}
+              //src={map}
+              src="https://giscopade.neuquen.gov.ar/sig_copade_beta/dist/assets/img_map.8f2da2a7.png"
               alt=""
             />
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
@@ -53,7 +54,8 @@ const Galeria = () => {
           <div>
             <img
               className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80"
-              src={map}
+              // src={map}
+              src="https://giscopade.neuquen.gov.ar/sig_copade_beta/dist/assets/img_map.8f2da2a7.png"
               alt=""
             />
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
@@ -67,7 +69,8 @@ const Galeria = () => {
           <div>
             <img
               className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80"
-              src={map}
+              // src={map}
+              src="https://giscopade.neuquen.gov.ar/sig_copade_beta/dist/assets/img_map.8f2da2a7.png"
               alt=""
             />
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
@@ -81,7 +84,8 @@ const Galeria = () => {
           <div>
             <img
               className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80"
-              src={map}
+              // src={map}
+              src="https://giscopade.neuquen.gov.ar/sig_copade_beta/dist/assets/img_map.8f2da2a7.png"
               alt=""
             />
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
@@ -109,7 +113,8 @@ const Galeria = () => {
           <div>
             <img
               className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80"
-              src={map}
+              // src={map}
+              src="https://giscopade.neuquen.gov.ar/sig_copade_beta/dist/assets/img_map.8f2da2a7.png"
               alt=""
             />
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
