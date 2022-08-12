@@ -1,4 +1,4 @@
-import sig from "./../../public/img/sig.jpg";
+import sig from "./../../public/img/sig_fondo_a.png";
 import { motion } from 'framer-motion';
 
 const Presentacion = () => {

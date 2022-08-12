@@ -11,16 +11,18 @@ import Opciones from './Opciones'
 import Galeria from './Galeria'
 import Presentacion from './Presentacion'
 import PaginasExternas from './PaginasExternas'
+import Banner from '../layouts/Banner'
 
 const Home = () => {
   return (
-    <div className="lg:w-5/6 w-full mx-auto overflow-auto mt-20">
-        <Introduccion />
-        {/* <PaginasExternas /> */}
+    <div className="w-full mx-auto overflow-auto mt-16">
+        <Banner />
         
-        <Pasos />
+        {/* <Pasos /> */}
         <Opciones />
         <Galeria />
+        <Seccion1 />
+        <Tutorial1 />
         {/* <Svg /> */}
     </div>
   )

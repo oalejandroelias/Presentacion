@@ -91,29 +91,11 @@ const Table = (props) => {
     );
   }, [filterText, resetPaginationToggle]);
 
-  // createTheme('light', {
-  //   text: {
-  //     primary: '#268bd2',
-  //     secondary: '#2aa198',
-  //   },
-  //   background: {
-  //     default: '#002b36',
-  //   },
-  //   context: {
-  //     background: '#cb4b16',
-  //     text: '#FFFFFF',
-  //   },
-  //   divider: {
-  //     default: '#073642',
-  //   },
-  //   action: {
-  //     button: 'rgba(0,0,0,.54)',
-  //     hover: 'rgba(0,0,0,.08)',
-  //     disabled: 'rgba(0,0,0,.12)',
-  //   },
-  // });
-
   createTheme("dark", {
+    striped: {
+      default: "transparent",
+      text: "#fff"
+    },
     background: {
       default: "transparent",
       background: {
@@ -126,12 +108,21 @@ const Table = (props) => {
       },
     },
     text: {
-      primary: '#2aa198',
-      secondary: '#2aa198'
+      primary: '#fff',
+      secondary: '#fff'
+    },
+    highlightOnHover: {
+      default: "#252f45"
     },
   });
 
   createTheme("light", {
+  //   headCells: {
+  //     style: {
+  //         color: 'red', // override the cell padding for head cells
+  //         paddingRight: '8px',
+  //     },
+  // },
     striped: {
       default: "transparent",
       text: "#000000"

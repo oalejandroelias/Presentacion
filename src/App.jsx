@@ -3,7 +3,6 @@ import { AnimatePresence } from 'framer-motion';
 import Home from './pages/Home';
 import LayerList from './pages/LayerList'
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
-import Contenido from './pages/Contenido';
 import Header from './layouts/Header';
 import MapPreview from './components/map_preview/MapPreview';
 

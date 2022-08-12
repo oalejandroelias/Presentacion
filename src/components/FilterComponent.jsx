@@ -58,10 +58,10 @@ const FilterComponent = ({ filterText, onFilter, onClear }) => (
           id="search"
           value={filterText}
           onChange={onFilter}
-          class="flex-1 block w-full items-center rounded-l-md border border-r-0 border-black dark:border-white bg:white dark:bg-slate-700 text-black dark:text-white text-sm "
+          class="flex-1 block w-full text-center rounded-l-md border-2 border-r-0 border-black focus:outline-none dark:border-white bg:white dark:bg-slate-700 text-black dark:text-white text-sm "
           placeholder="Filtrar..."
         />
-        <span class="inline-flex items-center px-0 rounded-r-md border border-l-1 border-black dark:border-white bg:white dark:bg-slate-700 text-black dark:text-white text-sm">
+        <span class="inline-flex items-center px-0 rounded-r-md border-2 border-l-2 border-black dark:border-white bg:white dark:bg-slate-700 text-black dark:text-white text-sm">
           <ClearButton onClick={onClear}>X</ClearButton>
         </span>
       </div>

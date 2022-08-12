@@ -13,3 +13,14 @@
 .font-per-theme-default {
     @apply text-black dark:text-white border-black;
 }
+
+/**Datatable*/
+.rdt_TableCol {
+    
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+.font-border {
+  text-shadow: 0 5px #1b1515, 0 0 5px #010113;
+}

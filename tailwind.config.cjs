@@ -12,6 +12,9 @@ module.exports = {
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
       },
       colors: {
+        copade: {
+          '900': '#0066cc',
+        },
         red: {
           '50': '#ffebee',
           '100': '#ffcdd2',

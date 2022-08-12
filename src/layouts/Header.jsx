@@ -29,7 +29,7 @@ function Nav() {
                 >
                   <img
                     className="h-8 w-8"
-                    src="https://giscopade.neuquen.gov.ar/sig_copade/img/copade_.png"
+                    src={logo_copade}
                     alt="Copade"
                     href=""
                   />
