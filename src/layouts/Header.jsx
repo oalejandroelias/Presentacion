@@ -7,8 +7,9 @@ import logo_copade from '../../public/img/copade.png'
 const navigation = [
   { name: "Inicio", href: "home" },
   { name: "Listado", href: "layersList" },
-  { name: "Mapa", href: "map_preview" }, /**Solo es temporal */
-];
+  { name: "Scroll", href: "scrollMotion" }, 
+  { name: "Parallax", href: "scrollParallax" }
+]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");

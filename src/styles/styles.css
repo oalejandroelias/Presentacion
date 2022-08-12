@@ -22,5 +22,31 @@
     stroke-width: 5px;
   }
 
+  /** Horizontal*/
+
+  .root {
+    position: relative;
+    background-color: black;
+    width: 300vw;
+  }
+  
+  .artist {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    text-align: right;
+    color: #be6657;
+    font-family: monospace;
+    z-index: 10;
+  }
+  
+  .layer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    height: 100vh;
+  }
 
   

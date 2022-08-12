@@ -22,6 +22,7 @@ const Home = () => {
         <Opciones />
         <Galeria />
         <Seccion1 />
+        {/* <ScrollParallax /> */}
         <Tutorial1 />
         {/* <Svg /> */}
     </div>
