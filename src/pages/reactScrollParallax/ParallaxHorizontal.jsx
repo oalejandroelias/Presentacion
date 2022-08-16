@@ -1,7 +1,7 @@
 import {useRef} from 'react'
 import { useParallaxController, ParallaxProvider, Parallax, useParallax, ParallaxBanner } from 'react-scroll-parallax';
-import sig from "./../../public/img/sig_fondo_a.png";
-import styles from '../styles/styles.css'
+import sig from "../../../public/img/sig_fondo_a.png";
+import styles from '../../styles/styles.css'
 
 const ParallaxHorizontal = () => {
 

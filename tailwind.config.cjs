@@ -8,6 +8,18 @@ module.exports = {
     // extend: {},
      /** Kometa UI Kit */
     extend: {
+
+      /**Dark/Light Theme */
+      backgroundColor: {
+        primary2: 'var(--color-bg-primary2)',
+        secondary: 'var(--color-bg-secondary)',
+      },
+      textColor: {
+        accent: 'var(--color-text-accent)',
+        primary2: 'var(--color-text-primary)',
+        secondary: 'var(--color-text-secondary)',
+      },
+      /**Dark/Light Theme */
       fontFamily: {
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
       },

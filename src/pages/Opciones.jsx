@@ -33,11 +33,11 @@ const Opciones = () => {
                 height="24"
               />
             </svg>
-            <span className="relative">Texto</span>
+            <span className="relative bg-primary2">Texto</span>
           </span>{" "}
           seleccione algunas opciones
         </h2>
-        <p className="text-base text-gray-700 md:text-lg">
+        <p className="text-base bg-secondary text-primary2 md:text-lg">
         La Secretaría del COPADE pone a disposición de la población su Sistema de Información Geográfica (SIG) con información actualizada y georreferenciada de infraestructura social, servicios básicos, gestión del riesgo y medio biofísico entre otros de la provincia del Neuquén. El nuevo visor web del SIG de la Secretaría del COPADE es más intuitivo, veloz y permite rápidamente confeccionar mapas de áreas de interés, con toda la información territorial disponible en el servidor de este organismo.
         </p>
       </div>

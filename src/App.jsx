@@ -6,8 +6,9 @@ import {HashRouter as Router, Routes, Route} from 'react-router-dom';
 import Header from './layouts/Header';
 import MapPreview from './components/map_preview/MapPreview';
 import ScrollMotion from './pages/ScrollMotion'
-import ScrollParallax from './pages/ScrollParallax'
-import ParallaxContainer from './pages/ParallaxContainer'
+import Parallax from './pages/Parallax'
+import ParallaxContainer from './pages/reactScrollParallax/ParallaxContainer'
+
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
           {/* <Route path='/map_preview' element={<MapPreview/>} /> */}
           <Route path='/scrollMotion' element={<ScrollMotion/>} />
           <Route path='/scrollParallax' element={<ParallaxContainer/>} />
+          <Route path='/parallax' element={<Parallax/>} />
         </Routes>
       </Router>
     {/* </AnimatePresence> */}
