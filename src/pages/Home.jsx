@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollToTop from "react-scroll-to-top";
 import Introduccion from '../components/Introduccion'
 import Pasos from '../components/Pasos'
 import Seccion1 from '../components/Seccion1'
@@ -12,19 +13,22 @@ import Galeria from './Galeria'
 import Presentacion from './Presentacion'
 import PaginasExternas from './PaginasExternas'
 import Banner from '../layouts/Banner'
+import blue_arrow from '../../public/img/blue_arrow.svg'
+import MapaContainer from './mapa/MapaContainer';
 
 const Home = () => {
   return (
-    <div className="w-full mx-auto overflow-auto mt-16">
+    <div className="w-full mx-auto overflow-auto pt-16">
         <Banner />
-        
         {/* <Pasos /> */}
         <Opciones />
         <Galeria />
         <Seccion1 />
+        <MapaContainer/>
         {/* <ScrollParallax /> */}
-        <Tutorial1 />
+        {/* <Tutorial1 /> */}
         {/* <Svg /> */}
+        <ScrollToTop className="bg-inherit shadow-none" smooth component={<img src={blue_arrow} />} />
     </div>
   )
 }

@@ -37,11 +37,40 @@ const Opciones = () => {
           </span>{" "}
           seleccione algunas opciones
         </h2>
-        <p className="text-base bg-secondary text-primary2 md:text-lg">
+        <p className="text-base md:text-lg">
         La Secretaría del COPADE pone a disposición de la población su Sistema de Información Geográfica (SIG) con información actualizada y georreferenciada de infraestructura social, servicios básicos, gestión del riesgo y medio biofísico entre otros de la provincia del Neuquén. El nuevo visor web del SIG de la Secretaría del COPADE es más intuitivo, veloz y permite rápidamente confeccionar mapas de áreas de interés, con toda la información territorial disponible en el servidor de este organismo.
         </p>
       </div>
+      
       <div className="max-w-lg space-y-3 sm:mx-auto lg:max-w-xl">
+      <a target="_blank" href="http://giscopade.neuquen.gov.ar/sig_copade/">
+        <div className="flex items-center p-2 transition-colors duration-200 border rounded shadow group hover:bg-deep-purple-accent-400 hover:border-deep-purple-accent-400">
+          <div className="mr-2">
+            <svg
+              className="w-6 h-6 transition-colors duration-200 text-deep-purple-accent-400 group-hover:text-white sm:w-8 sm:h-8"
+              stroke="currentColor"
+              viewBox="0 0 52 52"
+            >
+              <polygon
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                points="29 13 14 29 25 29 23 39 38 23 27 23"
+              />
+            </svg>
+          </div>
+          
+          <span className="text-gray-800 transition-colors duration-200 group-hover:text-white">
+       
+          SIG
+        
+           
+          </span>
+         
+        </div>
+        </a>
+        <a target="_blank" href="http://giscopade.neuquen.gov.ar/sig_copade/Ecopuntos/index.html">
         <div className="flex items-center p-2 transition-colors duration-200 border rounded shadow group hover:bg-deep-purple-accent-400 hover:border-deep-purple-accent-400">
           <div className="mr-2">
             <svg
@@ -59,9 +88,11 @@ const Opciones = () => {
             </svg>
           </div>
           <span className="text-gray-800 transition-colors duration-200 group-hover:text-white">
-            Opcion 1
+          Ecopuntos
           </span>
         </div>
+        </a>
+        <a target="_blank" href="https://www.copade.gob.ar/">
         <div className="flex items-center p-2 transition-colors duration-200 border rounded shadow group hover:bg-deep-purple-accent-400 hover:border-deep-purple-accent-400">
           <div className="mr-2">
             <svg
@@ -79,49 +110,11 @@ const Opciones = () => {
             </svg>
           </div>
           <span className="text-gray-800 transition-colors duration-200 group-hover:text-white">
-          Opcion 2
+          Copade
           </span>
         </div>
-        <div className="flex items-center p-2 transition-colors duration-200 border rounded shadow group hover:bg-deep-purple-accent-400 hover:border-deep-purple-accent-400">
-          <div className="mr-2">
-            <svg
-              className="w-6 h-6 transition-colors duration-200 text-deep-purple-accent-400 group-hover:text-white sm:w-8 sm:h-8"
-              stroke="currentColor"
-              viewBox="0 0 52 52"
-            >
-              <polygon
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-                points="29 13 14 29 25 29 23 39 38 23 27 23"
-              />
-            </svg>
-          </div>
-          <span className="text-gray-800 transition-colors duration-200 group-hover:text-white">
-          Opcion 3
-          </span>
-        </div>
-        <div className="flex items-center p-2 transition-colors duration-200 border rounded shadow group hover:bg-deep-purple-accent-400 hover:border-deep-purple-accent-400">
-          <div className="mr-2">
-            <svg
-              className="w-6 h-6 transition-colors duration-200 text-deep-purple-accent-400 group-hover:text-white sm:w-8 sm:h-8"
-              stroke="currentColor"
-              viewBox="0 0 52 52"
-            >
-              <polygon
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-                points="29 13 14 29 25 29 23 39 38 23 27 23"
-              />
-            </svg>
-          </div>
-          <span className="text-gray-800 transition-colors duration-200 group-hover:text-white">
-          Opcion 4
-          </span>
-        </div>
+        </a>
+        
       </div>
     </div>
   );

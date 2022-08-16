@@ -1,4 +1,6 @@
 import React from 'react'
+import js from '../../public/img/js_logo.png'
+import ol from '../../public/img/ol_logo.svg'
 
 const Seccion1 = () => {
   return (
@@ -11,7 +13,7 @@ const Seccion1 = () => {
           <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
         </svg> */}
             <img
-              src="./../../public/ol_logo.svg"
+              src={ol}
               alt="Walnut card tray filled with cards and card angled in dedicated groove."
               className="bg-indigo-100 rounded-lg"
             />
@@ -38,13 +40,13 @@ const Seccion1 = () => {
       </div>
       <div className="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
         <img
-            src="./../../public/js_logo.svg"
+            src={js}
             alt="Javascript"
             className="bg-indigo-100 rounded-lg"
         />
       </div>
     </div>
-    <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
+    {/* <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
       <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
       <img
             src="./../../public/jquery_logo.svg"
@@ -61,8 +63,7 @@ const Seccion1 = () => {
           </svg>
         </a>
       </div>
-    </div>
-    <button className="flex mx-auto mt-20 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+    </div> */}
   </div>
 </section>
     </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import map from "./../../public/img/img_map.png"
+import MapaContainer from "./mapa/MapaContainer";
 
 const Galeria = () => {
   return (
@@ -37,12 +38,15 @@ const Galeria = () => {
         </div>
         <div className="grid gap-8 row-gap-5 mb-8 lg:grid-cols-3 lg:row-gap-8">
           <div>
-            <img
+            {/* <img
               className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80"
               //src={map}
               src="https://giscopade.neuquen.gov.ar/sig_copade_beta/dist/assets/img_map.8f2da2a7.png"
               alt=""
-            />
+            /> */}
+            <div className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80">
+            <MapaContainer />
+            </div>
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
               Galaxies Orion
             </p>
@@ -52,12 +56,15 @@ const Galeria = () => {
             </p>
           </div>
           <div>
-            <img
+            {/* <img
               className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80"
               // src={map}
               src="https://giscopade.neuquen.gov.ar/sig_copade_beta/dist/assets/img_map.8f2da2a7.png"
               alt=""
-            />
+            /> */}
+            <div className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80">
+            <MapaContainer />
+            </div>
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
               Tunguska event
             </p>
@@ -67,12 +74,15 @@ const Galeria = () => {
             </p>
           </div>
           <div>
-            <img
+            {/* <img
               className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80"
               // src={map}
               src="https://giscopade.neuquen.gov.ar/sig_copade_beta/dist/assets/img_map.8f2da2a7.png"
               alt=""
-            />
+            /> */}
+            <div className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80">
+            <MapaContainer />
+            </div>
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
               Yolo ipsum dolor
             </p>

@@ -17,29 +17,52 @@ import {
   ZoomOut,
 } from "react-scroll-motion";
 
-import Banner from "../layouts/Banner";
-import MapaContainer from "./mapa/MapaContainer";
+import TutorialMenu from "../../layouts/TutorialMenu";
+
+import sig1 from '../../../public/img/sig_1.png'
 
 const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
 const FadeUp = batch(Fade(), Move(), Sticky());
 
-const ScrollMotion = () => {
+const Pasos = () => {
   return (
     <ScrollContainer>
       <ScrollPage>
         <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -200))}>
-          <Banner />
+          <span style={{ fontSize: "30px" }}>
+            1 -Desplegamos el menú de capas
+          </span>
         </Animator>
       </ScrollPage>
+    
       <ScrollPage>
 
-        <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -200))}>
-          <MapaContainer />
+      <div
+          style={{
+            display: "relative",
+            justifyContent: "center",
+            alignItems: "center",
+            margin: 100,
+            height: "100%",
+          
+          }}
+        >
+     
+        <Animator animation={batch(Zoom(0.5),Fade(),MoveOut(200, -200))}>
+        <img
+        className=""
+        src={sig1}
+        alt=""
+      />
+          
         </Animator>
 
+        </div>
+       
       </ScrollPage>
+      
       <ScrollPage>
-        <Animator animation={batch(MoveOut(0, -200))}>
+        <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -400))}>
           <span style={{ fontSize: "30px" }}>Bienvenido al Gis de Copade</span>
         </Animator>
       </ScrollPage>
@@ -50,7 +73,7 @@ const ScrollMotion = () => {
       </ScrollPage>
       <ScrollPage>
         <Animator animation={FadeUp}>
-          <span style={{ fontSize: "40px" }}>Joaquin hace los mapas ⛅️</span>
+          <span style={{ fontSize: "40px" }}>Juaquin hace los mapas ⛅️</span>
         </Animator>
       </ScrollPage>
       <ScrollPage>
@@ -82,4 +105,4 @@ const ScrollMotion = () => {
   );
 };
 
-export default ScrollMotion;
+export default Pasos;

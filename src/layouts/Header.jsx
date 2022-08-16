@@ -8,8 +8,10 @@ const navigation = [
   { name: "Inicio", href: "home" },
   { name: "Listado", href: "layersList" },
   { name: "Scroll", href: "scrollMotion" }, 
-  { name: "Parallax", href: "scrollParallax" },
-  { name: "Parallax2", href: "parallax" }
+  { name: "Presentación", href: "presentacion" }, 
+  // { name: "Parallax", href: "scrollParallax" },
+  // { name: "Pasos", href: "pasos" },
+  // { name: "Vista Simple", href: "vistaSimple" },
 ]
 
 function classNames(...classes) {
