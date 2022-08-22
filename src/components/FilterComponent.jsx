@@ -30,28 +30,10 @@ const ClearButton = styled.button`
 `;
 
 const FilterComponent = ({ filterText, onFilter, onClear }) => (
-  // <>
-  //   <Input
-  //     id="search"
-  //     type="text"
-  //     placeholder="Filter table data..."
-  //     value={filterText}
-  //     onChange={onFilter}
-  //   />
-  //   <ClearButton onClick={onClear}>X</ClearButton>
-  // </>
 
   <div class="grid grid-cols-3 gap-6">
     <div class="col-span-3 sm:col-span-2">
-      {/* <label
-        for="company-website"
-        class="block text-sm font-medium text-gray-700"
-      >
-        {" "}
-        Website{" "}
-      </label> */}
       <div class="mt-1 flex rounded-md shadow-sm">
-
         <input
           type="text"
           name="search"

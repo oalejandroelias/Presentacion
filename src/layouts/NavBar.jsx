@@ -18,11 +18,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function Nav() {
+function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="">
-      <nav className="bg-gray-800 dark:bg-slate-900 fixed w-full z-40 top-0">
+      <nav className="bg-white dark:bg-slate-900 fixed w-full z-40 top-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -48,8 +48,8 @@ function Nav() {
                       to={item.href}
                       className={classNames(
                         item.current
-                          ? "bg-gray-900 text-white"
-                          : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                          ? "text-gray-900 dark:text-white"
+                          : "text-gray-900 dark:text-white hover:bg-gray-700 hover:text-white",
                         "px-3 py-2 rounded-md text-sm font-medium"
                       )}
                       aria-current={item.current ? "page" : undefined}
@@ -126,7 +126,7 @@ function Nav() {
                   className={classNames(
                     item.current
                       ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                      : "text-gray-900 dark:text-white hover:bg-gray-700 hover:text-white",
                     "px-3 py-2 rounded-md text-sm font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}
@@ -142,4 +142,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default NavBar;

@@ -26,7 +26,7 @@ const Galeria = () => {
               </div>
             </a>
             <h2 className="font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl">
-              <span className="inline-block mb-2">The brown fox</span>
+              <span className="inline-block mb-2">Mapas</span>
               <div className="h-1 ml-auto duration-300 origin-left transform bg-deep-purple-accent-400 scale-x-30 group-hover:scale-x-100" />
             </h2>
           </div>
@@ -48,7 +48,7 @@ const Galeria = () => {
             <MapaContainer />
             </div>
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
-              Galaxies Orion
+              Mapa 1
             </p>
             <p className="text-gray-700">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -66,7 +66,7 @@ const Galeria = () => {
             <MapaContainer />
             </div>
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
-              Tunguska event
+              Mapa 2
             </p>
             <p className="text-gray-700">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -84,7 +84,7 @@ const Galeria = () => {
             <MapaContainer />
             </div>
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
-              Yolo ipsum dolor
+              Mapa 3
             </p>
             <p className="text-gray-700">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -142,7 +142,7 @@ const Galeria = () => {
             aria-label=""
             className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
           >
-            See more
+            Ir al SIG
             <svg
               className="inline-block w-3 ml-2"
               fill="currentColor"

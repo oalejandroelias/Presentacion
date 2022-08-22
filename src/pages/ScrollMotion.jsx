@@ -45,12 +45,12 @@ const ScrollMotion = () => {
       </ScrollPage>
       <ScrollPage>
         <Animator animation={ZoomInScrollOut}>
-          <span style={{ fontSize: "40px" }}>Yo hice el visor ✨</span>
+          <span style={{ fontSize: "40px" }}> ✨</span>
         </Animator>
       </ScrollPage>
       <ScrollPage>
         <Animator animation={FadeUp}>
-          <span style={{ fontSize: "40px" }}>Joaquin hace los mapas ⛅️</span>
+          <span style={{ fontSize: "40px" }}> ⛅️</span>
         </Animator>
       </ScrollPage>
       <ScrollPage>
@@ -75,7 +75,7 @@ const ScrollMotion = () => {
         <Animator animation={batch(Fade(), Sticky())}>
           <span style={{ fontSize: "40px" }}>Información Territorial</span>
           <br />
-          <span style={{ fontSize: "30px" }}>Gestión Juan Carrizo</span>
+          <span style={{ fontSize: "30px" }}></span>
         </Animator>
       </ScrollPage>
     </ScrollContainer>

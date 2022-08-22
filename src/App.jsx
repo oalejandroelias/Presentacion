@@ -3,7 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import Home from './pages/Home';
 import LayerList from './pages/LayerList'
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
-import Header from './layouts/Header';
+import NavBar from './layouts/NavBar';
 import ScrollMotion from './pages/ScrollMotion'
 import Parallax from './pages/Parallax'
 import Presentacion from './pages/Presentacion'
@@ -20,7 +20,7 @@ function App() {
       
     {/* <AnimatePresence> */}
       <Router>
-      <Header />
+      <NavBar />
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/home' element={<Home/>} />

@@ -1,10 +1,5 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import { motion } from 'framer-motion';
-import ThemeToggle from './ThemeToggle'
 
+import { motion } from 'framer-motion';
 function Contenedor() {
   return (
     <div className="relative overflow-hidden m-10 mt-20 bg:white dark:bg-slate-900">
