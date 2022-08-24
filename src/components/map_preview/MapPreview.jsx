@@ -14,9 +14,9 @@ import { osm, vector, image } from "../maps/Source";
 import { fromLonLat, get } from "ol/proj";
 import GeoJSON from "ol/format/GeoJSON";
 import { Controls, FullScreenControl } from "../maps/Controls";
-import FeatureStyles from "../maps/Features/Styles";
-
 import mapConfig from "../maps/config.json";
+
+/**El mapa no tiene un tamaña fijo. Su tamaño dependera del div que lo contenga */
 
 // const base_url = window.location.protocol + "//" + window.location.host;
 

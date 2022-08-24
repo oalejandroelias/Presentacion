@@ -7,7 +7,6 @@ import NavBar from './layouts/NavBar';
 import ScrollMotion from './pages/ScrollMotion'
 import Parallax from './pages/Parallax'
 import Presentacion from './pages/Presentacion'
-import MapaContainer from './pages/mapa/MapaContainer'
 import ParallaxContainer from './pages/reactScrollParallax/ParallaxContainer'
 import Pasos from './pages/tutorial/Pasos';
 import VistaSimple from './layouts/TutorialMenu'
@@ -30,7 +29,6 @@ function App() {
           <Route path='/scrollParallax' element={<ParallaxContainer/>} />
           <Route path='/pasos' element={<Pasos/>} />
           <Route path='/vistaSimple' element={<VistaSimple/>} />
-          <Route path='/presentacion' element={<MapaContainer/>} />
         </Routes>
       </Router>
     {/* </AnimatePresence> */}

@@ -14,7 +14,6 @@ import Presentacion from './Presentacion'
 import PaginasExternas from './PaginasExternas'
 import Banner from '../layouts/Banner'
 import blue_arrow from '../../public/img/blue_arrow.svg'
-import MapaContainer from './mapa/MapaContainer';
 
 const Home = () => {
   return (
@@ -24,7 +23,6 @@ const Home = () => {
         <Opciones />
         <Galeria />
         <Seccion1 />
-        <MapaContainer/>
         {/* <ScrollParallax /> */}
         {/* <Tutorial1 /> */}
         {/* <Svg /> */}

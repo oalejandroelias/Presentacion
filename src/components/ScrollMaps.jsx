@@ -1,8 +1,9 @@
 import React from "react";
-import MapPreview from "../components/map_preview/MapPreview";
 import map from "./../../public/img/img_map.png";
+import MapPreview from "./map_preview/MapPreview";
 
-const Galeria = () => {
+
+const ScrollMaps = () => {
   return (
     <div>
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -45,7 +46,7 @@ const Galeria = () => {
               alt=""
             /> */}
             <div className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80">
-              <MapPreview/>
+            <MapPreview/>
             </div>
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
               Mapa 1
@@ -81,7 +82,7 @@ const Galeria = () => {
               alt=""
             /> */}
             <div className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80">
-            <MapPreview/>
+                <MapPreview/>
             </div>
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
               Mapa 3
@@ -115,4 +116,4 @@ const Galeria = () => {
   );
 };
 
-export default Galeria;
+export default ScrollMaps;

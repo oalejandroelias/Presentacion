@@ -16,9 +16,7 @@ import {
   ZoomIn,
   ZoomOut,
 } from "react-scroll-motion";
-
 import Banner from "../layouts/Banner";
-import MapaContainer from "./mapa/MapaContainer";
 
 const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
 const FadeUp = batch(Fade(), Move(), Sticky());
@@ -31,13 +29,7 @@ const ScrollMotion = () => {
           <Banner />
         </Animator>
       </ScrollPage>
-      <ScrollPage>
 
-        <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -200))}>
-          <MapaContainer />
-        </Animator>
-
-      </ScrollPage>
       <ScrollPage>
         <Animator animation={batch(MoveOut(0, -200))}>
           <span style={{ fontSize: "30px" }}>Bienvenido al Gis de Copade</span>
