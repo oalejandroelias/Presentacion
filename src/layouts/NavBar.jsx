@@ -40,7 +40,9 @@ function NavBar() {
                 </Link>
               </div>
               <div className="hidden md:block">
+              
                 <div className="ml-10 flex items-baseline space-x-4">
+
                   {navigation.map((item) => (
                     <Link
               
@@ -49,12 +51,13 @@ function NavBar() {
                       className={classNames(
                         item.current
                           ? "text-gray-900 dark:text-white"
-                          : "text-gray-900 dark:text-white hover:bg-gray-700 hover:text-white",
+                          : "text-gray-900 dark:text-white hover:animate-pulse",
                         "px-3 py-2 rounded-md text-sm font-medium"
                       )}
                       aria-current={item.current ? "page" : undefined}
                     >
                       {item.name}
+                      
                     </Link>
                   ))}
                 </div>

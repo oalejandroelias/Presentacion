@@ -1,5 +1,5 @@
 import React from 'react'
-import background from "./../../public/img/sig_fondo_a.png";
+import background from "./../../public/img/banner.jpg";
 import { motion } from 'framer-motion';
 
 const Banner = () => {
