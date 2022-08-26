@@ -8,7 +8,7 @@ const navigation = [
   { name: "Inicio", href: "home" },
   { name: "Listado", href: "layersList" },
   { name: "Scroll", href: "scrollMotion" }, 
-  { name: "Presentación", href: "presentacion" }, 
+  { name: "Test", href: "test" }, 
   // { name: "Parallax", href: "scrollParallax" },
   // { name: "Pasos", href: "pasos" },
   // { name: "Vista Simple", href: "vistaSimple" },
