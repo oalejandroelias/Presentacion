@@ -14,19 +14,21 @@ import Presentacion from './Presentacion'
 import PaginasExternas from './PaginasExternas'
 import Banner from '../layouts/Banner'
 import blue_arrow from '../../public/img/blue_arrow.svg'
+import TreeLayers from './TreeLayers';
 
 const Home = () => {
   return (
     <div className="w-full mx-auto overflow-auto pt-16">
-        <Banner />
-        {/* <Pasos /> */}
-        <Opciones />
-        <Galeria />
-        <Seccion1 />
-        {/* <ScrollParallax /> */}
-        {/* <Tutorial1 /> */}
-        {/* <Svg /> */}
-        <ScrollToTop className="bg-inherit shadow-none" smooth component={<img src={blue_arrow} />} />
+      <Banner />
+      {/* <Pasos /> */}
+      <TreeLayers />
+      <Opciones />
+      <Galeria />
+      <Seccion1 />
+      {/* <ScrollParallax /> */}
+      {/* <Tutorial1 /> */}
+      {/* <Svg /> */}
+      <ScrollToTop className="bg-inherit shadow-none" smooth component={<img src={blue_arrow} />} />
     </div>
   )
 }
