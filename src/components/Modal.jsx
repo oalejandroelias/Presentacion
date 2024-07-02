@@ -10,13 +10,13 @@ export default function Modal(props) {
   const [option, setOption] = useState("nada");
 
   const file_type = [
-    {name: "ShapeFile" , value: props.baseGeoUrl+"?service=WFS&version=1.0.0&request=GetFeature&typeName="+props.name+"&outputformat=SHAPE-ZIP&SRSNAME=EPSG:4326"},
-    {name: "Csv", value: props.baseGeoUrl+"?service=WFS&version=1.0.0&request=GetFeature&typeName="+props.name+"&outputFormat=csv"},
-    {name: "Json", value: props.baseGeoUrl+"?service=WFS&version=1.0.0&request=GetFeature&typeName="+props.name+"&outputformat=JSON&SRSNAME=EPSG:4326"},
-    {name: "kml", value: "http://giscopade.neuquen.gov.ar/geoserver/Copade/wms/kml?layers="+props.name},
-    {name: "Jsonp", value: props.baseGeoUrl+"?service=WFS&version=1.0.0&request=GetFeature&typeName="+props.name+"&outputFormat=application/json"},
-    {name: "gml2", value: props.baseGeoUrl+"?service=WFS&version=1.0.0&request=GetFeature&typeName="+props.name+"&info_format=application/vnd.ogc.gml"},
-    {name: "gml3", value: props.baseGeoUrl+"?service=WFS&version=1.0.0&request=GetFeature&typeName="+props.name+"&outputFormat=application/vnd.ogc.gml/3.1.1"},
+    { name: "ShapeFile", value: props.baseGeoUrl + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + props.name + "&outputformat=SHAPE-ZIP&SRSNAME=EPSG:4326" },
+    { name: "Csv", value: props.baseGeoUrl + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + props.name + "&outputFormat=csv" },
+    { name: "Json", value: props.baseGeoUrl + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + props.name + "&outputformat=JSON&SRSNAME=EPSG:4326" },
+    { name: "kml", value: "http://giscopade.neuquen.gov.ar/geoserver/Copade/wms/kml?layers=" + props.name },
+    { name: "Jsonp", value: props.baseGeoUrl + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + props.name + "&outputFormat=application/json" },
+    { name: "gml2", value: props.baseGeoUrl + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + props.name + "&info_format=application/vnd.ogc.gml" },
+    { name: "gml3", value: props.baseGeoUrl + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + props.name + "&outputFormat=application/vnd.ogc.gml/3.1.1" },
   ]
 
   // console.log("AAA")
@@ -34,7 +34,7 @@ export default function Modal(props) {
     <Transition.Root show={props.show_modal} as={Fragment}>
       <Dialog
         as="div"
-        className="relative z-10"
+        className="relative z-40"
         initialFocus={cancelButtonRef}
         onClose={setOpen}
       >
@@ -90,7 +90,7 @@ export default function Modal(props) {
 
                     <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                       <Dialog.Title
-                        
+
                         className="text-2xl leading-6 font-mono font-bold text-sky-700 dark:text-red-500 hover:underline decoration-4"
                       >
                         {props.title}
@@ -103,22 +103,22 @@ export default function Modal(props) {
 
                       <div class="flex justify-center m-5">
                         <div class="mb-3 xl:w-96">
-                        <label for="country" class="block text--d font-medium text-gray-700">Descargar</label>
+                          <label for="country" class="block text--d font-medium text-gray-700">Descargar</label>
                           <select
                             class="mt-1 block w-full py-2 px-3 border-2 text-per-theme-default input-per rounded-md shadow-sm "
                             aria-label="Default select example"
                             value={option}
                             onChange={handleChange}
                           >
-                          <option selected value="nada">
-                            Seleccionar...
-                          </option>
-                          {
-                            file_type.map((opcion) =>
+                            <option selected value="nada">
+                              Seleccionar...
+                            </option>
+                            {
+                              file_type.map((opcion) =>
 
-                            <option value={opcion.value}>{opcion.name}</option>
-                          )}
-                         
+                                <option value={opcion.value}>{opcion.name}</option>
+                              )}
+
                             {/* <option value={shapeFile}>ShapeFile</option>
                             <option value={csv}>CSV</option> */}
                           </select>

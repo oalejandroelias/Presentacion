@@ -1,7 +1,7 @@
 //import React, { useState } from "react";
 import { useState } from "react";
 import { DiCss3, DiJavascript, DiNpm } from "react-icons/di";
-import { FaList, FaRegFolder, FaRegFolderOpen } from "react-icons/fa";
+import { FaList, FaRegFolder, FaRegFolderOpen, FaFolderOpen, FaFolder } from "react-icons/fa";
 import TreeView, { flattenTree } from "react-accessible-treeview";
 import { SiOpenlayers } from "react-icons/si";
 import "../styles/styles.css";
@@ -13,36 +13,45 @@ const folder = {
     children: [
         {
             name: "Regiones",
+            metadata: { "color": "#2b3e4c" },
             children: [{ name: "Regiones", metadata: { "capa": "regiones" } }],
         },
         {
             name: "Div. Política Administrativa",
+            metadata: { "color": "#2b3e4c" },
             children: [
                 {
                     name: "Gobiernos Locales",
+                    metadata: { "color": "#87b867" },
                     children: [{ name: "Gobiernos Locales", metadata: { "capa": "gob_locales" } }],
                 },
                 {
                     name: "Parajes",
+                    metadata: { "color": "#87b867" },
                     children: [{ name: "Parajes", metadata: { "capa": "parajes" } }],
                 },
                 {
                     name: "Ejidos",
+                    metadata: { "color": "#87b867" },
                     children: [{ name: "Ejidos", metadata: { "capa": "ejidos" } }],
                 },
                 {
                     name: "Departamentos",
+                    metadata: { "color": "#87b867" },
                     children: [{ name: "Departamentos", metadata: { "capa": "deptos" } }],
                 },
                 {
                     name: "Barrios",
+                    metadata: { "color": "#87b867" },
                     children: [
                         {
                             name: "Barrios Oficiales",
+                            metadata: { "color": "#f4dfb9" },
                             children: [{ name: "Parajes", metadata: { "capa": "" } }],
                         },
                         {
                             name: "Barrios Populares",
+                            metadata: { "color": "#f4dfb9" },
                             children: [
                                 { name: "barrios_populares_senillosa", metadata: { "capa": "barrios_populares_senillosa" } },
                                 { name: "barrios_populares_centenario", metadata: { "capa": "barrios_populares_centenario" } },
@@ -180,22 +189,36 @@ const folder = {
                                 },
                                 {
                                     name: "Complementarias", children: [
-                                        { name: "capa", metadata: { "capa": "capa" } },
+                                        { name: "edu_mod_comp_contex_encierro", metadata: { "capa": "edu_mod_comp_contex_encierro" } },
+                                        { name: "edu_mod_comp_artistica", metadata: { "capa": "edu_mod_comp_artistica" } },
+                                        { name: "edu_mod_comp_artistica", metadata: { "capa": "edu_mod_comp_intercult_bilin" } },
+                                        { name: "edu_mod_comp_sec_tec_agrop0", metadata: { "capa": "edu_mod_comp_sec_tec_agrop0" } },
                                     ]
                                 },
                                 {
                                     name: "Común", children: [
-                                        { name: "capa", metadata: { "capa": "capa" } },
+                                        { name: "edu_mod_com_inicial", metadata: { "capa": "edu_mod_com_inicial" } },
+                                        { name: "edu_mod_com_prim", metadata: { "capa": "edu_mod_com_prim" } },
+                                        { name: "edu_mod_com_artistica", metadata: { "capa": "edu_mod_com_artistica" } },
+                                        { name: "edu_mod_com_serv_compl0", metadata: { "capa": "edu_mod_com_serv_compl0" } },
+                                        { name: "edu_mod_com_sup_no_univ0", metadata: { "capa": "edu_mod_com_sup_no_univ0" } },
+                                        { name: "edu_mod_com_sec0", metadata: { "capa": "edu_mod_com_sec0" } },
                                     ]
                                 },
                                 {
                                     name: "Especial", children: [
-                                        { name: "capa", metadata: { "capa": "capa" } },
+                                        { name: "edu_mod_esp_inicial0", metadata: { "capa": "edu_mod_esp_inicial0" } },
+                                        { name: "edu_mod_esp_prim", metadata: { "capa": "edu_mod_esp_prim" } },
+                                        { name: "edu_mod_esp_integracion", metadata: { "capa": "edu_mod_esp_integracion" } },
+                                        { name: "edu_mod_esp_jov_y_adult", metadata: { "capa": "edu_mod_esp_jov_y_adult" } },
                                     ]
                                 },
                                 {
                                     name: "Radios Escolares", children: [
-                                        { name: "capa", metadata: { "capa": "capa" } },
+                                        { name: "edu_radio_escolar_tecnicas0", metadata: { "capa": "edu_radio_escolar_tecnicas0" } },
+                                        { name: "edu_radio_escolar_secundarios", metadata: { "capa": "edu_radio_escolar_secundarios" } },
+                                        { name: "edu_radio_escolar_inicial", metadata: { "capa": "edu_radio_escolar_inicial" } },
+                                        { name: "edu_radio_escolar_primarios", metadata: { "capa": "edu_radio_escolar_primarios" } },
                                     ]
                                 },
 
@@ -219,12 +242,114 @@ const folder = {
                 {
                     name: "Hidrocarburos",
                     children: [
-                        { name: "capa", metadata: { "capa": "capa" } },]
+                        {
+                            name: "Pozos", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Acueductos", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Bateria", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Areas y Concesiones", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Distrib. de Fluidos de Fm. Vaca Muerta", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Gasoductos", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Gasoductos", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Locaciones", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Oleoductos", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Plantas de Tratamiento", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Sismicas 2D", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Sismicas 3D", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                    ]
                 },
                 {
                     name: "Mineria",
                     children: [
-                        { name: "capa", metadata: { "capa": "capa" } },]
+                        {
+                            name: "Minas", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Cateos", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Canteras", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Concesiones de Exploración", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Demasías", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Manifestación de Descubrimiento", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Pertenencias", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+                        {
+                            name: "Servidumbres", children: [
+                                { name: "capa", metadata: { "capa": "capa" } }
+                            ]
+                        },
+
+
+                    ]
                 },]
         },
     ],
@@ -243,47 +368,50 @@ function TreeLayers() {
 
     return (
         <>
-            <div className="ide">
-                <TreeView
-                    data={data}
-                    aria-label="directory tree"
-                    togglableSelect
-                    clickAction="EXCLUSIVE_SELECT"
-                    multiSelect
-                    nodeRenderer={({
-                        element,
-                        isBranch,
-                        isExpanded,
-                        getNodeProps,
-                        level,
-                        handleSelect,
-                    }) => (
+            <div className="container px-6 py-10 mx-auto align-middle">
+                <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Directorio de  <span className="text-blue-500 ">capas</span></h1>
+                <div className="ide">
+                    <TreeView
+                        data={data}
+                        aria-label="directory tree"
+                        togglableSelect
+                        clickAction="EXCLUSIVE_SELECT"
+                        multiSelect
+                        nodeRenderer={({
+                            element,
+                            isBranch,
+                            isExpanded,
+                            getNodeProps,
+                            level,
+                            handleSelect,
+                        }) => (
 
-                        < div {...getNodeProps()} className="inline" style={{ paddingLeft: 20 * (level - 1) }}>
-                            {isBranch ? (
-                                <><FolderIcon isOpen={isExpanded} ></FolderIcon>{element.name}</>
-                            ) : (
-                                <><FileIcon filename={element.name} /><a href={element.metadata?.capa}>{element.name}</a>
-                                    <>
-                                        <button
-                                            className="bg:white dark:bg-slate-900 mb-1 inline-flex px-2 rounded-md items-center ml-4 hover:bg-gray-200 focus:outline-none  text-gray-900 dark:text-white"
-                                            onClick={() => {
-                                                setShow_modal(!show_modal);
-                                                setTitle(element.metadata?.capa);
-                                                setName(element.metadata?.capa)
-                                                setAbstract("")
-                                                setBaseGeoUrl(baseGeoUrl) /**Hacer que sea dinamico para otros servidores */
-                                            }}
-                                            style={{ marginRight: '5px' }}
-                                        >
-                                            <h1 style={{ color: 'blue' }}>Ver</h1>
-                                        </button>
-                                    </></>
-                            )}
-                            {/* <a href={element.metadata?.capa}>{element.name}X</a> */}
-                        </div>
-                    )}
-                />
+                            < div {...getNodeProps()} className="inline text-xl" style={{ paddingLeft: 20 * (level - 1) }}>
+                                {isBranch ? (
+                                    <><FolderIcon style={{ color: element.metadata?.color }} isOpen={isExpanded} color={element.metadata?.color} ></FolderIcon>{element.name}</>
+                                ) : (
+                                    <><FileIcon filename={element.name} /><a href={element.metadata?.capa}>{element.name}</a>
+                                        <>
+                                            <button
+                                                className="bg:white dark:bg-slate-900 mb-1 inline-flex px-2 rounded-md items-center ml-4 hover:bg-gray-200 focus:outline-none  text-gray-900 dark:text-white"
+                                                onClick={() => {
+                                                    setShow_modal(!show_modal);
+                                                    setTitle(element.metadata?.capa);
+                                                    setName(element.metadata?.capa)
+                                                    setAbstract("")
+                                                    setBaseGeoUrl(baseGeoUrl) /**Hacer que sea dinamico para otros servidores */
+                                                }}
+                                                style={{ marginRight: '5px' }}
+                                            >
+                                                <h1 style={{ color: 'blue' }}>Ver</h1>
+                                            </button>
+                                        </></>
+                                )}
+                                {/* <a href={element.metadata?.capa}>{element.name}X</a> */}
+                            </div>
+                        )}
+                    />
+                </div>
             </div>
 
             <Modal show_modal={show_modal} setShow_modal={setShow_modal} title={title} name={name} abstract={abstract} baseGeoUrl={baseGeoUrl} />
@@ -291,11 +419,11 @@ function TreeLayers() {
     );
 }
 
-const FolderIcon = ({ isOpen }) =>
+const FolderIcon = ({ isOpen, color }) =>
     isOpen ? (
-        <FaRegFolderOpen color="green" className="icon inline" />
+        <FaFolderOpen color={color ? color : "black"} className="icon inline" />
     ) : (
-        <FaRegFolder color="green" className="icon inline" />
+        <FaFolder color={color ? color : "black"} className="icon inline" />
     );
 
 const FileIcon = ({ filename }) => {
