@@ -22,7 +22,7 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="">
-      <nav className="azulnqn fixed w-full z-40 top-0 shadow py-4 border-2 border-nqn-amarillo ">
+      <nav className="azulnqn fixed w-full z-40 top-0 shadow py-4 border-b border-nqn-amarillo ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
