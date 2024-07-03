@@ -1,7 +1,8 @@
 //import React, { useState } from "react";
 import { useState } from "react";
 import { DiCss3, DiJavascript, DiNpm } from "react-icons/di";
-import { FaList, FaRegFolder, FaRegFolderOpen, FaFolderOpen, FaFolder } from "react-icons/fa";
+import { FaList, FaRegFolder, FaRegFolderOpen, FaFolderOpen, FaFolder, FaEye } from "react-icons/fa";
+
 import TreeView, { flattenTree } from "react-accessible-treeview";
 import { SiOpenlayers } from "react-icons/si";
 import "../styles/styles.css";
@@ -80,11 +81,14 @@ const folder = {
         },
         {
             name: "Conectividad, transporte y Mov. Urbana",
+            metadata: { "color": "#2b3e4c" },
             children: [{
                 name: "Red Vial",
+                metadata: { "color": "#87b867" },
                 children: [
                     {
                         name: "Rutas",
+                        metadata: { "color": "#f4dfb9" },
                         children: [
 
                             { name: "rutas_nacionales", metadata: { "capa": "rutas_nacionales" } },
@@ -95,6 +99,7 @@ const folder = {
                     },
                     {
                         name: "Inventario Vial",
+                        metadata: { "color": "#f4dfb9" },
                         children: [
                             { name: "alambrados", metadata: { "capa": "alambrados" } },
                             { name: "controles_de_acceso", metadata: { "capa": "controles_de_acceso" } },
@@ -106,6 +111,7 @@ const folder = {
                     },
                     {
                         name: "Tránsito",
+                        metadata: { "color": "#f4dfb9" },
                         children: [
                             { name: "conteos_vehiculares", metadata: { "capa": "conteos_vehiculares" } },
                             { name: "transito_medio_diario_anual", metadata: { "capa": "transito_medio_diario_anual" } },
@@ -115,6 +121,7 @@ const folder = {
             },
             {
                 name: "Red Ferroviaria",
+                metadata: { "color": "#87b867" },
                 children: [
                     { name: "estaciones_y_paradas_ferroviarias", metadata: { "capa": "estaciones_y_paradas_ferroviarias" } },
                     { name: "lineas_de_transporte_ferroviario", metadata: { "capa": "lineas_de_transporte_ferroviario" } },
@@ -122,6 +129,7 @@ const folder = {
             },
             {
                 name: "Red Digital",
+                metadata: { "color": "#87b867" },
                 children: [
                     { name: "mastil_torre", metadata: { "capa": "mastil_torre" } },
                     { name: "red_ac_alta_capacidad_inalambrica_point", metadata: { "capa": "red_ac_alta_capacidad_inalambrica_point" } },
@@ -137,18 +145,19 @@ const folder = {
                     { name: "red_vsat_very_small_aperture_terminals", metadata: { "capa": "red_vsat_very_small_aperture_terminals" } },
                 ]
             },
-
-
             ],
         },
         {
             name: "Bienestar Social",
+            metadata: { "color": "#2b3e4c" },
             children: [
                 {
                     name: "Cuidado de la Salud",
+                    metadata: { "color": "#87b867" },
                     children: [
                         {
                             name: "Establecimientos de Salud",
+                            metadata: { "color": "#f4dfb9" },
                             children: [
                                 { name: "centros_de_salud_rural", metadata: { "capa": "centros_de_salud_rural" } },
                                 { name: "centro_de_salud_intercultural", metadata: { "capa": "centro_de_salud_intercultural" } },
@@ -166,20 +175,27 @@ const folder = {
                 },
                 {
                     name: "Educación",
+                    metadata: { "color": "#87b867" },
                     children: [
                         {
-                            name: "Distritos Educativos", children: [
+                            name: "Distritos Educativos",
+                            metadata: { "color": "#f4dfb9" },
+                            children: [
                                 { name: "distritos_educativos", metadata: { "capa": "distritos_educativos" } },
                                 { name: "edu_sedes_deleg_distritos", metadata: { "capa": "edu_sedes_deleg_distritos" } },
                             ]
                         },
                         {
-                            name: "Establecimientos Educativos", children: [
+                            name: "Establecimientos Educativos",
+                            metadata: { "color": "#f4dfb9" },
+                            children: [
                                 { name: "establecimientos_educativos", metadata: { "capa": "establecimientos_educativos" } },
                             ]
                         },
                         {
-                            name: "Modalidades", children: [
+                            name: "Modalidades",
+                            metadata: { "color": "#f4dfb9" },
+                            children: [
                                 {
                                     name: "Adultos", children: [
                                         { name: "edu_mod_adul_prim", metadata: { "capa": "edu_mod_adul_prim" } },
@@ -225,7 +241,9 @@ const folder = {
                             ]
                         },
                         {
-                            name: "Radios Escolares", children: [
+                            name: "Radios Escolares",
+                            metadata: { "color": "#f4dfb9" },
+                            children: [
                                 { name: "edu_radio_escolar_inicial", metadata: { "capa": "edu_radio_escolar_inicial" } },
                                 { name: "edu_radio_escolar_primarios", metadata: { "capa": "edu_radio_escolar_primarios" } },
                                 { name: "edu_radio_escolar_secundarios", metadata: { "capa": "edu_radio_escolar_secundarios" } },
@@ -238,9 +256,11 @@ const folder = {
         },
         {
             name: "Actividades Económicas e Inversiones",
+            metadata: { "color": "#2b3e4c" },
             children: [
                 {
                     name: "Hidrocarburos",
+                    metadata: { "color": "#87b867" },
                     children: [
                         {
                             name: "Pozos", children: [
@@ -306,6 +326,7 @@ const folder = {
                 },
                 {
                     name: "Mineria",
+                    metadata: { "color": "#87b867" },
                     children: [
                         {
                             name: "Minas", children: [
@@ -357,6 +378,7 @@ const folder = {
 
 const data = flattenTree(folder);
 
+
 const base_url = window.location.protocol + "//" + window.location.host;
 const baseGeoUrl = base_url + "/geoserver/wms?request=getCapabilities";
 function TreeLayers() {
@@ -366,17 +388,109 @@ function TreeLayers() {
     const [title, setTitle] = useState('')
     const [abstract, setAbstract] = useState('')
 
+    /********************************** */
+    const [treeData, setTreeData] = useState(data);
+
+    const filter = (value) => {
+        const filtered = [];
+
+        const includeChildren = (id) => {
+            data.forEach((item) => {
+                if (item.parent === id) {
+                    if (!filtered.find((x) => x.id === item.id)) {
+                        filtered.push(item);
+                    }
+                    if (item.children.length) {
+                        includeChildren(item.id);
+                    }
+                }
+            });
+        };
+
+        data.forEach((item) => {
+            if (item.id === "ROOT") {
+                return;
+            }
+            /**Si encuentro coincidencia */
+            if (item.name.toUpperCase().includes(value.toUpperCase())) {
+                if (!filtered.find((x) => x.id === item.id)) {
+                    filtered.push(item);
+                    filtered.unshift(
+                        Object.assign({
+                            ...data[0],
+                            children: data[0].children.filter((id) =>
+                                filtered.find((fitem) => fitem.parent === id)
+                            ),
+                        })
+                    );
+                }
+
+                if (item.children.length) {
+                    includeChildren(item.id);
+                }
+
+                // filtered.unshift(
+                //     Object.assign({
+                //         ...data[0],
+                //         children: data[0].children.filter((id) =>
+                //             filtered.find((fitem) => fitem.id === id)
+                //         ),
+                //     })
+                // );
+            }
+        });
+        filtered.unshift(
+            Object.assign({
+                ...data[0],
+                children: data[0].children.filter((id) =>
+                    filtered.find((fitem) => fitem.parent === id)
+                ),
+            })
+        );
+
+        //filtered.unshift(data[0])
+
+        setTreeData(filtered);
+    };
+
+    const filterNodesByText = () => {
+        const valueToFilter = document.querySelector("#txtToFilter").value.trim();
+        if (!!valueToFilter) {
+            filter(valueToFilter);
+        } else {
+            setTreeData(data);
+        }
+    };
+
+    const onKeyDown = (e) => {
+        if (e.key === "Enter") {
+            filterNodesByText();
+        }
+    };
+
+    const getSelected = async (sel) => {
+        let a = sel;
+    }
+    /********************************** */
+
     return (
         <>
             <div className="container px-6 py-10 mx-auto align-middle">
                 <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Directorio de  <span className="text-blue-500 ">capas</span></h1>
                 <div className="ide">
+                    <div>
+                        <label htmlFor="txtToFilter">Text to filter: </label>
+                        <input id="txtToFilter" type="text" onKeyDown={onKeyDown} />
+                        <button onClick={() => filterNodesByText()}>Apply</button>
+                    </div>
                     <TreeView
-                        data={data}
+                        //propagateSelectUpwards
+                        data={treeData}
                         aria-label="directory tree"
                         togglableSelect
                         clickAction="EXCLUSIVE_SELECT"
-                        multiSelect
+                        onSelect={getSelected}
+                        //multiSelect
                         nodeRenderer={({
                             element,
                             isBranch,
@@ -386,26 +500,25 @@ function TreeLayers() {
                             handleSelect,
                         }) => (
 
-                            < div {...getNodeProps()} className="inline text-xl" style={{ paddingLeft: 20 * (level - 1) }}>
+                            < div {...getNodeProps()} className="inline text-2xl" style={{ paddingLeft: 20 * (level - 1) }}>
                                 {isBranch ? (
                                     <><FolderIcon style={{ color: element.metadata?.color }} isOpen={isExpanded} color={element.metadata?.color} ></FolderIcon>{element.name}</>
                                 ) : (
-                                    <><FileIcon filename={element.name} /><a href={element.metadata?.capa}>{element.name}</a>
-                                        <>
-                                            <button
-                                                className="bg:white dark:bg-slate-900 mb-1 inline-flex px-2 rounded-md items-center ml-4 hover:bg-gray-200 focus:outline-none  text-gray-900 dark:text-white"
-                                                onClick={() => {
-                                                    setShow_modal(!show_modal);
-                                                    setTitle(element.metadata?.capa);
-                                                    setName(element.metadata?.capa)
-                                                    setAbstract("")
-                                                    setBaseGeoUrl(baseGeoUrl) /**Hacer que sea dinamico para otros servidores */
-                                                }}
-                                                style={{ marginRight: '5px' }}
-                                            >
-                                                <h1 style={{ color: 'blue' }}>Ver</h1>
-                                            </button>
-                                        </></>
+                                    <><FileIcon filename={element.name} />
+                                        {/* <a href={element.metadata?.capa}> */}
+                                        {element.name}
+                                        {/* </a> */}
+
+
+                                        <FaEye className="text-nqn-azul inline mb-1 rounded-md items-center ml-4 hover:bg-gray-200 focus:outline-none" onClick={() => {
+                                            setShow_modal(!show_modal);
+                                            setTitle(element.metadata?.capa);
+                                            setName(element.metadata?.capa)
+                                            setAbstract("")
+                                            setBaseGeoUrl(baseGeoUrl) /**Hacer que sea dinamico para otros servidores */
+                                        }} />
+
+                                    </>
                                 )}
                                 {/* <a href={element.metadata?.capa}>{element.name}X</a> */}
                             </div>
