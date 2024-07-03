@@ -5,10 +5,10 @@ import ThemeToggle from '../components/ThemeToggle'
 import logo_copade from '../../public/img/copade.png'
 
 const navigation = [
-  { name: "Inicio", href: "home" },
-  { name: "Listado", href: "layersList" },
-  { name: "Scroll", href: "scrollMotion" }, 
-  { name: "Test", href: "test" }, 
+  { name: "INICIO", href: "home" },
+  { name: "LISTADO", href: "layersList" },
+  { name: "SCROLL", href: "scrollMotion" }, 
+  { name: "TEST", href: "test" }, 
   // { name: "Parallax", href: "scrollParallax" },
   // { name: "Pasos", href: "pasos" },
   // { name: "Vista Simple", href: "vistaSimple" },
@@ -22,8 +22,8 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="">
-      <nav className="bg-white dark:bg-slate-900 fixed w-full z-40 top-0">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="azulnqn fixed w-full z-40 top-0 shadow py-4 border-2 border-nqn-amarillo ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
@@ -41,7 +41,7 @@ function NavBar() {
               </div>
               <div className="hidden md:block">
               
-                <div className="ml-10 flex items-baseline space-x-4">
+                <div className="ml-10 flex items-baseline space-x-4 amarillonqn">
 
                   {navigation.map((item) => (
                     <Link
@@ -50,9 +50,9 @@ function NavBar() {
                       to={item.href}
                       className={classNames(
                         item.current
-                          ? "text-gray-900 dark:text-white"
-                          : "text-gray-900 dark:text-white hover:animate-pulse",
-                        "px-3 py-2 rounded-md text-sm font-medium"
+                          ? "amarillonqn dark:amarillonqn"
+                          : "amarillonqn dark:amarillonqn hover:animate-pulse",
+                        "px-3 py-2 rounded-md text-base font-medium font-bold"
                       )}
                       aria-current={item.current ? "page" : undefined}
                     >

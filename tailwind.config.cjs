@@ -27,6 +27,9 @@ module.exports = {
         copade: {
           '900': '#0066cc',
         },
+        nqn:{
+          'amarillo': '#f4dfb9',
+        },
         red: {
           '50': '#ffebee',
           '100': '#ffcdd2',
