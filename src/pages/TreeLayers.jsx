@@ -407,6 +407,25 @@ function TreeLayers() {
             });
         };
 
+        /************************* */
+        const includeParent = (id) => {
+            data.forEach((item) => {
+                if (item.parent === id) {
+                    if (!filtered.find((x) => x.id === item.id)) {
+                        filtered.push(item);
+
+                        if(data[id].parent){
+                            includeParent(data[id].parent)
+                        }
+                    }
+
+                   
+
+                }
+            });
+        };
+         /************************* */
+
         data.forEach((item) => {
             if (item.id === "ROOT") {
                 return;
@@ -415,14 +434,16 @@ function TreeLayers() {
             if (item.name.toUpperCase().includes(value.toUpperCase())) {
                 if (!filtered.find((x) => x.id === item.id)) {
                     filtered.push(item);
-                    filtered.unshift(
-                        Object.assign({
-                            ...data[0],
-                            children: data[0].children.filter((id) =>
-                                filtered.find((fitem) => fitem.parent === id)
-                            ),
-                        })
-                    );
+                    // filtered.unshift(
+                    //     Object.assign({
+                    //         ...data[0],
+                    //         children: data[0].children.filter((id) =>
+                    //             filtered.find((fitem) => fitem.parent === id)
+                    //         ),
+                    //     })
+                    // );
+
+                    includeParent(item.parent)
                 }
 
                 if (item.children.length) {
