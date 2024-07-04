@@ -407,16 +407,23 @@ function TreeLayers() {
             });
         };
 
-        const includeParent = (id, idparent) => {
+        const includeParent = async (id, idparent) => {
             data.forEach((item) => {
                 if (item.id === idparent) {
                     if (!filtered.find((x) => x.id === item.id)) {
+
+                        if (id == 80) {
+                            let a = 1;
+                        }
                         // Crear una copia del objeto para no modificar el original
                         const newItem = { ...item, children: [id] };
                         filtered.push(newItem);
-                        const parentItem = data.find(d => d.id === idparent);
-                        if (parentItem && parentItem.parent) {
-                            includeParent(id, parentItem.parent);
+                        // const parentItem = data.find(d => d.id === idparent);
+                        // if (parentItem && parentItem.parent) {
+                        //     includeParent(id, parentItem.parent);
+                        // }
+                        if (newItem && typeof newItem.parent != "undefined") {
+                            includeParent(newItem.id, newItem.parent);
                         }
                     }
                 }
@@ -429,6 +436,7 @@ function TreeLayers() {
             }
             if (item.name.toUpperCase().includes(value.toUpperCase())) {
                 if (!filtered.find((x) => x.id === item.id)) {
+
                     filtered.push(item);
                     includeParent(item.id, item.parent);
                 }
@@ -444,7 +452,7 @@ function TreeLayers() {
                 filtered.find((fitem) => fitem.parent === id)
             ),
         };
-        filtered.unshift(rootItem);
+        //filtered.unshift(rootItem);
 
         setTreeData(filtered);
     };
@@ -568,9 +576,9 @@ function TreeLayers() {
                         //propagateSelectUpwards
                         data={treeData}
                         aria-label="directory tree"
-                        togglableSelect
-                        clickAction="EXCLUSIVE_SELECT"
-                        onSelect={getSelected}
+                        //togglableSelect
+                        //clickAction="EXCLUSIVE_SELECT"
+                        //onSelect={getSelected}
                         //multiSelect
                         nodeRenderer={({
                             element,
