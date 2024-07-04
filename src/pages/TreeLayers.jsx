@@ -408,13 +408,15 @@ function TreeLayers() {
         };
 
         /************************* */
-        const includeParent = (id) => {
+        const includeParent = (id, idparent) => {
             data.forEach((item) => {
-                if (item.parent === id) {
+                if (item.id === idparent) {
                     if (!filtered.find((x) => x.id === item.id)) {
+                        /**Solo dejo el id del hijo */
+                        item.children=[id]
                         filtered.push(item);
 
-                        if(data[id].parent){
+                        if(data[idparent].parent){
                             includeParent(data[id].parent)
                         }
                     }
@@ -443,7 +445,7 @@ function TreeLayers() {
                     //     })
                     // );
 
-                    includeParent(item.parent)
+                    includeParent(item.id, item.parent)
                 }
 
                 if (item.children.length) {
