@@ -399,82 +399,140 @@ function TreeLayers() {
                 if (item.parent === id) {
                     if (!filtered.find((x) => x.id === item.id)) {
                         filtered.push(item);
-                    }
-                    if (item.children.length) {
-                        includeChildren(item.id);
+                        if (Array.isArray(item.children) && item.children.length) {
+                            includeChildren(item.id);
+                        }
                     }
                 }
             });
         };
 
-        /************************* */
         const includeParent = (id, idparent) => {
             data.forEach((item) => {
                 if (item.id === idparent) {
                     if (!filtered.find((x) => x.id === item.id)) {
-                        /**Solo dejo el id del hijo */
-                        item.children=[id]
-                        filtered.push(item);
-
-                        if(data[idparent].parent){
-                            includeParent(data[id].parent)
+                        // Crear una copia del objeto para no modificar el original
+                        const newItem = { ...item, children: [id] };
+                        filtered.push(newItem);
+                        const parentItem = data.find(d => d.id === idparent);
+                        if (parentItem && parentItem.parent) {
+                            includeParent(id, parentItem.parent);
                         }
                     }
-
-                   
-
                 }
             });
         };
-         /************************* */
 
         data.forEach((item) => {
             if (item.id === "ROOT") {
                 return;
             }
-            /**Si encuentro coincidencia */
             if (item.name.toUpperCase().includes(value.toUpperCase())) {
                 if (!filtered.find((x) => x.id === item.id)) {
                     filtered.push(item);
-                    // filtered.unshift(
-                    //     Object.assign({
-                    //         ...data[0],
-                    //         children: data[0].children.filter((id) =>
-                    //             filtered.find((fitem) => fitem.parent === id)
-                    //         ),
-                    //     })
-                    // );
-
-                    includeParent(item.id, item.parent)
+                    includeParent(item.id, item.parent);
                 }
-
-                if (item.children.length) {
+                if (Array.isArray(item.children) && item.children.length) {
                     includeChildren(item.id);
                 }
-
-                // filtered.unshift(
-                //     Object.assign({
-                //         ...data[0],
-                //         children: data[0].children.filter((id) =>
-                //             filtered.find((fitem) => fitem.id === id)
-                //         ),
-                //     })
-                // );
             }
         });
-        filtered.unshift(
-            Object.assign({
-                ...data[0],
-                children: data[0].children.filter((id) =>
-                    filtered.find((fitem) => fitem.parent === id)
-                ),
-            })
-        );
 
-        //filtered.unshift(data[0])
+        const rootItem = {
+            ...data[0],
+            children: data[0].children.filter((id) =>
+                filtered.find((fitem) => fitem.parent === id)
+            ),
+        };
+        filtered.unshift(rootItem);
 
         setTreeData(filtered);
     };
+
+    // const filter = (value) => {
+    //     const filtered = [];
+
+    //     const includeChildren = (id) => {
+    //         data.forEach((item) => {
+    //             if (item.parent === id) {
+    //                 if (!filtered.find((x) => x.id === item.id)) {
+    //                     filtered.push(item);
+    //                 }
+    //                 if (item.children.length) {
+    //                     includeChildren(item.id);
+    //                 }
+    //             }
+    //         });
+    //     };
+
+    //     /************************* */
+    //     const includeParent = (id, idparent) => {
+    //         data.forEach((item) => {
+    //             if (item.id === idparent) {
+    //                 if (!filtered.find((x) => x.id === item.id)) {
+    //                     /**Solo dejo el id del hijo */
+    //                     item.children = [id]
+    //                     filtered.push(item);
+
+    //                     if (data[idparent].parent) {
+    //                         includeParent(id, data[id].parent)
+    //                     }
+    //                 }
+
+
+
+    //             }
+    //         });
+    //     };
+    //     /************************* */
+
+    //     data.forEach((item) => {
+    //         if (item.id === "ROOT") {
+    //             return;
+    //         }
+    //         /**Si encuentro coincidencia */
+    //         if (item.name.toUpperCase().includes(value.toUpperCase())) {
+    //             if (!filtered.find((x) => x.id === item.id)) {
+    //                 filtered.push(item);
+    //                 // filtered.unshift(
+    //                 //     Object.assign({
+    //                 //         ...data[0],
+    //                 //         children: data[0].children.filter((id) =>
+    //                 //             filtered.find((fitem) => fitem.parent === id)
+    //                 //         ),
+    //                 //     })
+    //                 // );
+
+    //                 includeParent(item.id, item.parent)
+    //             }
+
+    //             if (item.children.length) {
+    //                 includeChildren(item.id);
+    //             }
+
+    //             // filtered.unshift(
+    //             //     Object.assign({
+    //             //         ...data[0],
+    //             //         children: data[0].children.filter((id) =>
+    //             //             filtered.find((fitem) => fitem.id === id)
+    //             //         ),
+    //             //     })
+    //             // );
+    //         }
+    //     });
+    //     filtered.unshift(
+    //         Object.assign({
+    //             ...data[0],
+    //             children: data[0].children.filter((id) =>
+    //                 filtered.find((fitem) => fitem.parent === id)
+    //             ),
+    //         })
+    //     );
+
+    //     //filtered.unshift(data[0])
+
+    //     setTreeData(filtered);
+    // };
 
     const filterNodesByText = () => {
         const valueToFilter = document.querySelector("#txtToFilter").value.trim();
