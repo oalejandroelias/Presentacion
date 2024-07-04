@@ -3,6 +3,7 @@ import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationIcon, MapIcon } from "@heroicons/react/outline";
 import MapPreview from "../components/map_preview/MapPreview";
+import { RiCloseLine } from "react-icons/ri";
 
 export default function Modal(props) {
   const [open, setOpen] = useState(props.show_modal);
@@ -63,16 +64,44 @@ export default function Modal(props) {
             >
               {/* <Dialog.Panel className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full"> */}
               <Dialog.Panel className="relative bg-white rounded-lg text-right overflow-hidden shadow-xl dark:shadow-indigo-500/50 transform transition-all w-full sm:my-8 sm:w-5/6">
-                <div className="bg:white dark:bg-slate-900 px-1 py-1 sm:px-1 sm:flex sm:flex-row-reverse mt-100">
+
+                {/* <div className=" inline-flex  bg:white dark:bg-slate-900 px-1 py-1 sm:px-1 sm:flex sm:flex-row-reverse mt-100">
+                  <h2 className="mt-1 inline-flex justify-center rounded-md px-5 py-5 bg-white text-base font-medium text-gray-900 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">{props.name}</h2>
+
                   <button
                     type="button"
-                    className="mt-1 inline-flex justify-left rounded-md px-2 py-0 bg-white text-base font-medium text-gray-900 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                    className="mt-1 inline-flex justify-left rounded-md px-5 py-5 bg-white text-base font-medium text-gray-900 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                     onClick={() => props.setShow_modal(!props.show_modal)}
                     ref={cancelButtonRef}
                   >
                     X
                   </button>
+                </div> */}
+
+                {/************************************ */}
+                <div className="flex items-center p-2 border-b border-solid border-blueGray-200 rounded-t">
+                  <h3 className="text-3xl font-semibold">
+                    {/* {props.name} */}
+                  </h3>
+                  <button
+                    className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                    onClick={() => setShowModal(false)}
+                  >
+                    {/* <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                      <RiCloseLine />
+                    </span> */}
+                  </button>
+                  <button
+                    type="button"
+                    className="mt-1 inline-flex justify-left rounded-md px-5 py-2 bg-white text-base font-medium text-gray-900 sm:mt-0 sm:ml-3 sm:w-auto sm:text-base"
+                    onClick={() => props.setShow_modal(!props.show_modal)}
+                    ref={cancelButtonRef}
+                  >
+                    <RiCloseLine />
+                  </button>
                 </div>
+                {/************************************ */}
+
                 <div className="bg:white dark:bg-slate-900 px-4 pt-5 pb-4 md:p-2 sm:p-6 sm:pb-1 columns-1 sm:columns-2">
                   <div className="h-96 basis-1 sm:basis-1/2 border-pink-900">
                     <MapPreview className="border-sky-900"
@@ -124,10 +153,32 @@ export default function Modal(props) {
                           </select>
                         </div>
                       </div>
+
                     </div>
+
                   </div>
+
                 </div>
-                <div className="bg:white dark:bg-slate-900 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse"></div>
+                {/* <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b pb-0">
+                  <button
+                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    type="button"
+                    onClick={() => props.setShow_modal(!props.show_modal)}
+                    ref={cancelButtonRef}
+                  >
+                    Close
+                  </button>
+                  <button
+                    className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    type="button"
+                    onClick={() => props.setShow_modal(!props.show_modal)}
+                    ref={cancelButtonRef}
+                  >
+                    Save Changes
+                  </button>
+                </div> */}
+
+
               </Dialog.Panel>
             </Transition.Child>
           </div>

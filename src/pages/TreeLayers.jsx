@@ -377,10 +377,9 @@ const folder = {
 };
 
 const data = flattenTree(folder);
-
-
 const base_url = window.location.protocol + "//" + window.location.host;
 const baseGeoUrl = base_url + "/geoserver/wms?request=getCapabilities";
+
 function TreeLayers() {
 
     const [show_modal, setShow_modal] = useState(false);
@@ -446,101 +445,20 @@ function TreeLayers() {
             }
         });
 
-        const rootItem = {
-            ...data[0],
-            children: data[0].children.filter((id) =>
-                filtered.find((fitem) => fitem.parent === id)
-            ),
-        };
-        //filtered.unshift(rootItem);
+        if (!filtered.find((fitem) => fitem.id === 0)) {
+            filtered.unshift(
+                Object.assign({
+                    ...data[0],
+                    children: data[0].children.filter((id) =>
+                        filtered.find((fitem) => fitem.id === id)
+                    ),
+                })
+            );
+        }
+
 
         setTreeData(filtered);
     };
-
-    // const filter = (value) => {
-    //     const filtered = [];
-
-    //     const includeChildren = (id) => {
-    //         data.forEach((item) => {
-    //             if (item.parent === id) {
-    //                 if (!filtered.find((x) => x.id === item.id)) {
-    //                     filtered.push(item);
-    //                 }
-    //                 if (item.children.length) {
-    //                     includeChildren(item.id);
-    //                 }
-    //             }
-    //         });
-    //     };
-
-    //     /************************* */
-    //     const includeParent = (id, idparent) => {
-    //         data.forEach((item) => {
-    //             if (item.id === idparent) {
-    //                 if (!filtered.find((x) => x.id === item.id)) {
-    //                     /**Solo dejo el id del hijo */
-    //                     item.children = [id]
-    //                     filtered.push(item);
-
-    //                     if (data[idparent].parent) {
-    //                         includeParent(id, data[id].parent)
-    //                     }
-    //                 }
-
-
-
-    //             }
-    //         });
-    //     };
-    //     /************************* */
-
-    //     data.forEach((item) => {
-    //         if (item.id === "ROOT") {
-    //             return;
-    //         }
-    //         /**Si encuentro coincidencia */
-    //         if (item.name.toUpperCase().includes(value.toUpperCase())) {
-    //             if (!filtered.find((x) => x.id === item.id)) {
-    //                 filtered.push(item);
-    //                 // filtered.unshift(
-    //                 //     Object.assign({
-    //                 //         ...data[0],
-    //                 //         children: data[0].children.filter((id) =>
-    //                 //             filtered.find((fitem) => fitem.parent === id)
-    //                 //         ),
-    //                 //     })
-    //                 // );
-
-    //                 includeParent(item.id, item.parent)
-    //             }
-
-    //             if (item.children.length) {
-    //                 includeChildren(item.id);
-    //             }
-
-    //             // filtered.unshift(
-    //             //     Object.assign({
-    //             //         ...data[0],
-    //             //         children: data[0].children.filter((id) =>
-    //             //             filtered.find((fitem) => fitem.id === id)
-    //             //         ),
-    //             //     })
-    //             // );
-    //         }
-    //     });
-    //     filtered.unshift(
-    //         Object.assign({
-    //             ...data[0],
-    //             children: data[0].children.filter((id) =>
-    //                 filtered.find((fitem) => fitem.parent === id)
-    //             ),
-    //         })
-    //     );
-
-    //     //filtered.unshift(data[0])
-
-    //     setTreeData(filtered);
-    // };
 
     const filterNodesByText = () => {
         const valueToFilter = document.querySelector("#txtToFilter").value.trim();
@@ -557,9 +475,9 @@ function TreeLayers() {
         }
     };
 
-    const getSelected = async (sel) => {
-        let a = sel;
-    }
+    // const getSelected = async (sel) => {
+    //     let a = sel;
+    // }
     /********************************** */
 
     return (
@@ -567,10 +485,14 @@ function TreeLayers() {
             <div className="container px-6 py-10 mx-auto align-middle">
                 <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Directorio de  <span className="text-blue-500 ">capas</span></h1>
                 <div className="ide">
-                    <div>
-                        <label htmlFor="txtToFilter">Text to filter: </label>
-                        <input id="txtToFilter" type="text" onKeyDown={onKeyDown} />
-                        <button onClick={() => filterNodesByText()}>Apply</button>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                            <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+
+                        <input onChange={filterNodesByText} type="text" id="txtToFilter" onKeyDown={onKeyDown} className="w-100 py-3 pl-10 pr-4 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" placeholder="Buscar" />
                     </div>
                     <TreeView
                         //propagateSelectUpwards

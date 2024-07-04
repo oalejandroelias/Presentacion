@@ -21,6 +21,18 @@ const proyectos = [
     description: "App para movil de la guia Cultivar en la ciudad",
     url: "https://play.google.com/store/apps/details?id=com.calendario.components&hl=es",
   },
+  {
+    image: mapa_regionalizacion,
+    title: "Cultivar en la Ciudad",
+    description: "App para movil de la guia Cultivar en la ciudad",
+    url: "https://play.google.com/store/apps/details?id=com.calendario.components&hl=es",
+  },
+  {
+    image: mapa_regionalizacion,
+    title: "Cultivar en la Ciudad",
+    description: "App para movil de la guia Cultivar en la ciudad",
+    url: "https://play.google.com/store/apps/details?id=com.calendario.components&hl=es",
+  },
 ];
 
 const Tarjetas = () => {

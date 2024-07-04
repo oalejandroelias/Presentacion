@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Table from "../components/DataTable";
 import axios from "axios";
 import TreeLayers from "./TreeLayers";
-import TreeLayersA from "./TreeLayersA";
+
 
 const LayerList = () => {
   const clickhandler = (name) => console.log("delete", name);
@@ -165,10 +165,10 @@ const LayerList = () => {
 
       <div className="lg:w-5/6 w-full mx-auto overflow-auto mt-20">
         {/* <TreeLayers /> */}
-
+        <TreeLayers />
         {/* <Table data={columns} baseGeoUrl={baseGeoUrl} click={clickhandler} /> */}
         <Table data={capas} baseGeoUrl={baseGeoUrl} click={clickhandler} />
-        <TreeLayers />
+
       </div>
     </>
   );
