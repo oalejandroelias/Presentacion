@@ -28,8 +28,8 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/layersList' element={<LayerList />} />
           <Route path='/mapa_tematico' element={<Tarjetas />} />
-          <Route path='/scrollMotion' element={<ScrollMotion />} />
-          <Route path='/scrollParallax' element={<ParallaxContainer />} />
+          {/* <Route path='/scrollMotion' element={<ScrollMotion />} />
+          <Route path='/scrollParallax' element={<ParallaxContainer />} /> */}
           <Route path='/pasos' element={<Pasos />} />
           <Route path='/vistaSimple' element={<VistaSimple />} />
           <Route path='/presentaciones' element={<Presentaciones />} />

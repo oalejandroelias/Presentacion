@@ -7,11 +7,11 @@ import { ThemeProvider } from './components/ThemeContext';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-     <ThemeProvider>
-     <ParallaxProvider>
-        <App />
-      </ParallaxProvider>
-      </ThemeProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <ThemeProvider>
+    <ParallaxProvider>
+      <App />
+    </ParallaxProvider>
+  </ThemeProvider>
+  // </React.StrictMode>
 )

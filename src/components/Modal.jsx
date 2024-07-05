@@ -4,6 +4,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationIcon, MapIcon } from "@heroicons/react/outline";
 import MapPreview from "../components/map_preview/MapPreview";
 import { RiCloseLine } from "react-icons/ri";
+import Presentaciones from "../pages/Presentacion/Presentaciones";
 
 export default function Modal(props) {
   const [open, setOpen] = useState(props.show_modal);
@@ -108,6 +109,7 @@ export default function Modal(props) {
                       baseGeoUrl={props.baseGeoUrl}
                       name={props.name}
                     />
+                    {/* <Presentaciones position={"relative"} /> */}
                   </div>
                   <div className="basis-1 sm:basis-1/2">
                     {/* <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">

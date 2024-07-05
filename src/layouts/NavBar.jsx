@@ -7,9 +7,9 @@ import logo_copade from '../../public/img/copade.png'
 const navigation = [
   { name: "INICIO", href: "home" },
   { name: "LISTADO", href: "layersList" },
-  { name: "SCROLL", href: "scrollMotion" }, 
-  { name: "TEST", href: "test" }, 
-  { name: "PRESENTACION", href: "presentacion" }, 
+  { name: "SCROLL", href: "scrollMotion" },
+  { name: "TEST", href: "test" },
+  { name: "PRESENTACION", href: "presentaciones" },
   // { name: "Parallax", href: "scrollParallax" },
   // { name: "Pasos", href: "pasos" },
   // { name: "Vista Simple", href: "vistaSimple" },
@@ -41,12 +41,12 @@ function NavBar() {
                 </Link>
               </div>
               <div className="hidden md:block">
-              
+
                 <div className="ml-10 flex items-baseline space-x-4 amarillonqn">
 
                   {navigation.map((item) => (
                     <Link
-              
+
                       key={item.name}
                       to={item.href}
                       className={classNames(
@@ -58,13 +58,13 @@ function NavBar() {
                       aria-current={item.current ? "page" : undefined}
                     >
                       {item.name}
-                      
+
                     </Link>
                   ))}
                 </div>
               </div>
             </div>
-            <ThemeToggle/>
+            <ThemeToggle />
             <div className="-mr-2 flex md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}

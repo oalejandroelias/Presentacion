@@ -1,29 +1,57 @@
-// src/components/Presentacion.js
-import React, { useEffect } from 'react';
-import Reveal from 'reveal.js';
-import 'reveal.js/dist/reveal.css';
-import 'reveal.js/dist/theme/white.css'; // Puedes cambiar el tema aquí
+// App.js
+import { useEffect, useRef } from "react";
+import Reveal from "reveal.js";
+import "reveal.js/dist/reveal.css";
+import "reveal.js/dist/theme/black.css";
 
-const Presentaciones = () => {
+function App(props) {
+  const deckDivRef = useRef(null); // referencia al contenedor del deck
+  const deckRef = useRef(null); // referencia a la instancia de Reveal.js
+
+  const position = props?.position ? props.position : "absolute";
+
   useEffect(() => {
-    Reveal.initialize();
+    // Previene la inicialización doble en modo estricto
+    if (deckRef.current) return;
+
+    deckRef.current = new Reveal(deckDivRef.current, {
+      transition: "slide",
+      // otras opciones de configuración
+    });
+
+    deckRef.current.initialize().then(() => {
+      // buen lugar para configurar manejadores de eventos y plugins
+    });
+
+    return () => {
+      try {
+        if (deckRef.current) {
+          deckRef.current.destroy();
+          deckRef.current = null;
+        }
+      } catch (e) {
+        console.warn("La llamada a Reveal.js destroy falló.");
+      }
+    };
   }, []);
 
   return (
-    <div className="reveal w-full h-full">
+    // Tu presentación se dimensiona según el ancho y alto del
+    // elemento padre. Asegúrate de que el padre no tenga altura 0.
+    <div className={`reveal ${position}`} ref={deckDivRef}>
       <div className="slides">
+        <section>Slide 1</section>
+        <section>Slide 2</section>
         <section>
-          <h1>Slide 1</h1>
-          <p>This is the first slide.</p>
+          <p class="fragment">Fade in</p>
+          <p class="fragment fade-out">Fade out</p>
+          <p class="fragment highlight-red">Highlight red</p>
+          <p class="fragment fade-in-then-out">Fade in, then out</p>
+          <p class="fragment fade-up">Slide up while fading in</p>
         </section>
-        <section>
-          <h1>Slide 2</h1>
-          <p>This is the second slide.</p>
-        </section>
-        {/* Agrega más secciones para más diapositivas */}
       </div>
     </div>
   );
-};
+}
 
-export default Presentaciones;
+export default App;
