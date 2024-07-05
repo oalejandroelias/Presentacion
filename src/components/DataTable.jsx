@@ -55,9 +55,9 @@ const Table = (props) => {
               setAbstract(row.Abstract)
               setBaseGeoUrl(props.baseGeoUrl) /**Hacer que sea dinamico para otros servidores */
             }}
-            style={{ marginRight: '5px'}}
+            style={{ marginRight: '5px' }}
           >
-            <h1 style={{ color: 'blue'}}>Ver</h1>
+            <h1 style={{ color: 'blue' }}>Ver</h1>
           </button>
         </>
       ),
@@ -117,12 +117,12 @@ const Table = (props) => {
   });
 
   createTheme("light", {
-  //   headCells: {
-  //     style: {
-  //         color: 'red', // override the cell padding for head cells
-  //         paddingRight: '8px',
-  //     },
-  // },
+    //   headCells: {
+    //     style: {
+    //         color: 'red', // override the cell padding for head cells
+    //         paddingRight: '8px',
+    //     },
+    // },
     striped: {
       default: "transparent",
       text: "#000000"
@@ -155,13 +155,13 @@ const Table = (props) => {
   const customStyles = {
 
     headCells: {
-        style: {
-            font: 'bold', // override the cell padding for head cells
-            paddingRight: '8px',
-        },
+      style: {
+        font: 'bold', // override the cell padding for head cells
+        paddingRight: '8px',
+      },
     },
 
-};
+  };
 
   return (
     <>
@@ -179,7 +179,7 @@ const Table = (props) => {
         highlightOnHover
         customStyles={customStyles}
       />
-      <Modal show_modal={show_modal} setShow_modal={setShow_modal} title={title} name={name} abstract={abstract} baseGeoUrl={props.baseGeoUrl} />
+      <Modal show_modal={show_modal} setShow_modal={setShow_modal} title={title} name={name} abstract={abstract} baseGeoUrl={props.baseGeoUrl} owsGeoUrl={props.owsGeoUrl} />
     </>
   );
 };

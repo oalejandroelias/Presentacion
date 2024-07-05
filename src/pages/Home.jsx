@@ -21,16 +21,16 @@ import Tarjetas from './Tarjetas/Tarjetas';
 const Home = () => {
   return (
     <div className="w-full mx-auto overflow-auto pt-16">
-      
+
       <Banner />
       {/* <Pasos /> */}
 
       <Opciones />
 
-      <Galeria />
+      {/* <Galeria /> */}
       <Seccion1 />
-      <Tarjetas />
-      <Example />
+      {/* <Tarjetas /> */}
+      {/* <Example /> */}
       {/* <ScrollParallax /> */}
       {/* <Svg /> */}
       {/* <Tutorial1 /> */}

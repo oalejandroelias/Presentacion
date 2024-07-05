@@ -7,8 +7,9 @@ import logo_copade from '../../public/img/copade.png'
 const navigation = [
   { name: "INICIO", href: "home" },
   { name: "LISTADO", href: "layersList" },
-  { name: "SCROLL", href: "scrollMotion" },
-  { name: "TEST", href: "test" },
+  { name: "MAPAS", href: "mapa_tematico" },
+  // { name: "SCROLL", href: "scrollMotion" },
+  // { name: "TEST", href: "test" },
   { name: "PRESENTACION", href: "presentaciones" },
   // { name: "Parallax", href: "scrollParallax" },
   // { name: "Pasos", href: "pasos" },

@@ -14,6 +14,7 @@ const LayerList = () => {
 
   //const [baseGeoUrl, setbaseGeoUrl] = useState("http://giscopade.neuquen.gov.ar/geoserver/wms?request=getCapabilities")
   const [baseGeoUrl, setbaseGeoUrl] = useState(base_url + "/geoserver/wms?request=getCapabilities")
+  const [owsGeoUrl, setOwsGeoUrl] = useState(base_url + "/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=")
 
   //const baseGeoUrl = "http://sigepen.neuquen.gov.ar:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
   //const baseGeoUrl = "http://aicsig.neuquen.gov.ar:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
@@ -167,7 +168,7 @@ const LayerList = () => {
         {/* <TreeLayers /> */}
         <TreeLayers />
         {/* <Table data={columns} baseGeoUrl={baseGeoUrl} click={clickhandler} /> */}
-        <Table data={capas} baseGeoUrl={baseGeoUrl} click={clickhandler} />
+        <Table data={capas} baseGeoUrl={baseGeoUrl} owsGeoUrl={owsGeoUrl} click={clickhandler} />
 
       </div>
     </>

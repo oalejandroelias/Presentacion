@@ -11,14 +11,18 @@ export default function Modal(props) {
   const cancelButtonRef = useRef(null);
   const [option, setOption] = useState("nada");
 
+
+  var base_url = window.location.protocol + "//" + window.location.host;
+  const [owsGeoUrl, setOwsGeoUrl] = useState(base_url + "/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=")
+
   const file_type = [
-    { name: "ShapeFile", value: props.baseGeoUrl + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + props.name + "&outputformat=SHAPE-ZIP&SRSNAME=EPSG:4326" },
-    { name: "Csv", value: props.baseGeoUrl + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + props.name + "&outputFormat=csv" },
-    { name: "Json", value: props.baseGeoUrl + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + props.name + "&outputformat=JSON&SRSNAME=EPSG:4326" },
+    { name: "ShapeFile", value: owsGeoUrl + props.name + "&outputformat=SHAPE-ZIP&SRSNAME=EPSG:4326" },
+    { name: "Csv", value: owsGeoUrl + props.name + "&outputFormat=csv" },
+    { name: "Json", value: owsGeoUrl + props.name + "&outputformat=JSON&SRSNAME=EPSG:4326" },
     { name: "kml", value: "http://giscopade.neuquen.gov.ar/geoserver/Copade/wms/kml?layers=" + props.name },
-    { name: "Jsonp", value: props.baseGeoUrl + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + props.name + "&outputFormat=application/json" },
-    { name: "gml2", value: props.baseGeoUrl + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + props.name + "&info_format=application/vnd.ogc.gml" },
-    { name: "gml3", value: props.baseGeoUrl + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + props.name + "&outputFormat=application/vnd.ogc.gml/3.1.1" },
+    { name: "Jsonp", value: owsGeoUrl + props.name + "&outputFormat=application/json" },
+    { name: "gml2", value: owsGeoUrl + props.name + "&info_format=application/vnd.ogc.gml" },
+    { name: "gml3", value: owsGeoUrl + props.name + "&outputFormat=application/vnd.ogc.gml/3.1.1" },
   ]
 
   // console.log("AAA")
@@ -28,7 +32,8 @@ export default function Modal(props) {
     console.log(e.target.value);
     setOption(e.target.value);
     if (e.target.value != "nada") {
-      window.location.href = e.target.value;
+      // window.location.href = e.target.value;
+      window.open(e.target.value, '_blank')
     }
   };
 
