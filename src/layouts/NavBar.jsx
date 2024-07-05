@@ -9,6 +9,7 @@ const navigation = [
   { name: "LISTADO", href: "layersList" },
   { name: "SCROLL", href: "scrollMotion" }, 
   { name: "TEST", href: "test" }, 
+  { name: "PRESENTACION", href: "presentacion" }, 
   // { name: "Parallax", href: "scrollParallax" },
   // { name: "Pasos", href: "pasos" },
   // { name: "Vista Simple", href: "vistaSimple" },

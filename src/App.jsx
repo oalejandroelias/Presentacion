@@ -12,6 +12,7 @@ import Pasos from './pages/tutorial/Pasos';
 import MapsScroll from './pages/MapsScroll';
 import VistaSimple from './layouts/TutorialMenu'
 import Tarjetas from './pages/Tarjetas/Tarjetas';
+import Presentaciones from './pages/Presentacion/Presentaciones';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path='/scrollParallax' element={<ParallaxContainer />} />
           <Route path='/pasos' element={<Pasos />} />
           <Route path='/vistaSimple' element={<VistaSimple />} />
+          <Route path='/presentaciones' element={<Presentaciones />} />
           <Route path='/test' element={<MapsScroll />} />
         </Routes>
       </Router>

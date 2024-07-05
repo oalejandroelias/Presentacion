@@ -10,7 +10,6 @@ import Test from '../layouts/Test'
 import ModalMap from '../components/modal/ModalMap'
 import Opciones from './Opciones'
 import Galeria from './Galeria'
-import Presentacion from './Presentacion'
 import PaginasExternas from './PaginasExternas'
 import Banner from '../layouts/Banner'
 import blue_arrow from '../../public/img/blue_arrow.svg'
@@ -22,10 +21,12 @@ import Tarjetas from './Tarjetas/Tarjetas';
 const Home = () => {
   return (
     <div className="w-full mx-auto overflow-auto pt-16">
+      
       <Banner />
       {/* <Pasos /> */}
 
       <Opciones />
+
       <Galeria />
       <Seccion1 />
       <Tarjetas />
