@@ -1,5 +1,5 @@
 //import React, { useState } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { DiCss3, DiJavascript, DiNpm } from "react-icons/di";
 import { FaList, FaRegFolder, FaRegFolderOpen, FaFolderOpen, FaFolder, FaEye } from "react-icons/fa";
 
@@ -386,12 +386,29 @@ function TreeLayers() {
     const [name, setName] = useState('')
     const [title, setTitle] = useState('')
     const [abstract, setAbstract] = useState('')
+    const [treeData, setTreeData] = useState(data);
 
     /********************************** */
-    const [treeData, setTreeData] = useState(data);
+    const [expandedIds, setExpandedIds] = useState();
+
+    useEffect(() => {
+        //setTreeData(filtered);
+
+        // setExpandedIds(
+        //     treeData.map((val)=> {
+        //         return val.id;
+        //     })
+        // )
+        // Puedes realizar cualquier otra acción que necesites aquí
+    }, [treeData]);
+
+
 
     const filter = (value) => {
         const filtered = [];
+
+        // setExpandedIds([]);
+        // setTreeData(data)
 
         const includeChildren = (id) => {
             data.forEach((item) => {
@@ -456,8 +473,15 @@ function TreeLayers() {
             );
         }
 
+        setExpandedIds(
+            filtered.map((val)=> {
+                return val.id;
+            })
+        )
 
-        setTreeData(filtered);
+        //Lo modifico desde useEffect
+        //setExpandedIds(newExpandedIds);
+        //setTreeData(filtered);
     };
 
     const filterNodesByText = () => {
@@ -465,7 +489,8 @@ function TreeLayers() {
         if (!!valueToFilter) {
             filter(valueToFilter);
         } else {
-            setTreeData(data);
+            setExpandedIds([])
+            //setTreeData(data);
         }
     };
 
@@ -502,6 +527,8 @@ function TreeLayers() {
                         //clickAction="EXCLUSIVE_SELECT"
                         //onSelect={getSelected}
                         //multiSelect
+                        expandedIds={expandedIds}
+                        //defaultExpandedIds={[1]}
                         nodeRenderer={({
                             element,
                             isBranch,
@@ -513,21 +540,27 @@ function TreeLayers() {
 
                             < div {...getNodeProps()} className="inline text-2xl" style={{ paddingLeft: 20 * (level - 1) }}>
                                 {isBranch ? (
-                                    <><FolderIcon style={{ color: element.metadata?.color }} isOpen={isExpanded} color={element.metadata?.color} ></FolderIcon>{element.name}</>
+                                    <><FolderIcon style={{ color: element.metadata?.color }} isOpen={isExpanded} color={element.metadata?.color} ></FolderIcon><strong className="text-black dark:text-white">{element.name}</strong></>
                                 ) : (
-                                    <><FileIcon filename={element.name} />
-                                        {/* <a href={element.metadata?.capa}> */}
-                                        {element.name}
-                                        {/* </a> */}
-
-
-                                        <FaEye className="text-nqn-azul inline mb-1 rounded-md items-center ml-4 hover:bg-gray-200 focus:outline-none" onClick={() => {
+                                    <>
+                                    {/* <FileIcon filename={element.name} /> */}
+                                        <a 
+                                        className="text-blue-700 dark:text-blue-500 hover:underline"
+                                        onClick={() => {
                                             setShow_modal(!show_modal);
                                             setTitle(element.metadata?.capa);
                                             setName(element.metadata?.capa)
                                             setAbstract("")
                                             setBaseGeoUrl(baseGeoUrl) /**Hacer que sea dinamico para otros servidores */
-                                        }} />
+                                        }} 
+                                        >{element.name}</a>
+                                        {/* <FaEye className="text-nqn-azul inline mb-1 rounded-md items-center ml-4 hover:bg-gray-200 focus:outline-none" onClick={() => {
+                                            setShow_modal(!show_modal);
+                                            setTitle(element.metadata?.capa);
+                                            setName(element.metadata?.capa)
+                                            setAbstract("")
+                                            setBaseGeoUrl(baseGeoUrl)
+                                        }} /> */}
 
                                     </>
                                 )}

@@ -36,9 +36,9 @@ const Tarjeta = (props) => {
 
                     <div className="flex items-center justify-between mt-4">
                         <div>
-                            <a href="#" className="text-lg font-medium text-gray-700 dark:text-gray-300 hover:underline hover:text-gray-500">
+                            {/* <a href="#" className="text-lg font-medium text-gray-700 dark:text-gray-300 hover:underline hover:text-gray-500">
                                 John snow
-                            </a>
+                            </a> */}
 
                             <p className="text-sm text-gray-500 dark:text-gray-400">Febrero 1, 2022</p>
                         </div>
