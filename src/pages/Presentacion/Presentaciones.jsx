@@ -50,17 +50,17 @@ function App(props) {
         <section data-background-gradient="linear-gradient(to bottom, #2b3e4c, #000000)">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/ergPHvIRQ1U?si=A6mIYDS6500b5Ugr" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-          {/* <p class="fragment fade-out">Fade out</p>
-          <p class="fragment highlight-red">Highlight red</p>
-          <p class="fragment fade-in-then-out">Fade in, then out</p>
-          <p class="fragment fade-up">Slide up while fading in</p> */}
+          {/* <p className="fragment fade-out">Fade out</p>
+          <p className="fragment highlight-red">Highlight red</p>
+          <p className="fragment fade-in-then-out">Fade in, then out</p>
+          <p className="fragment fade-up">Slide up while fading in</p> */}
         </section>
         <section data-background-gradient="linear-gradient(to bottom, #2b3e4c, #000000)">
           <p className="text-sm" data-fragment-index="1"> A través del Decreto Provincial 366/2024 se establecen las siete regiones en las que se integra el territorio provincial. Las regiones son Sur, Norte, Centro Oeste, Vaca Muerta, Limay Medio, Comarca Petrolera y Confluencia. La definición de estas regiones se vinculó centralmente a las dinámicas poblacionales vigentes o potenciales, las identidades culturales y territoriales, las actividades económicas consolidadas o emergentes y los corredores estratégicos definidos o a potenciar.</p>
           <p className="text-sm fragment" data-fragment-index="2">Además, se establece las figura de los delegados regionales con un rol fundamental, que consiste promover instancias de coordinación para la planificación del desarrollo regional con los gobiernos locales y los actores territoriales y su articulación con las políticas públicas regionales.</p>
         </section>
         <section data-background-gradient="linear-gradient(to bottom, #2b3e4c, #000000)">
-          <div class="r-stack" height="600px">
+          <div className="r-stack" height="600px">
             <img
               src="https://www.copade.gob.ar/wp-content/uploads/2024/05/mapa-regionalizacion-scaled.jpg"
 

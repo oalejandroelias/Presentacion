@@ -5,8 +5,9 @@ import { FaList, FaRegFolder, FaRegFolderOpen, FaFolderOpen, FaFolder, FaEye } f
 
 import TreeView, { flattenTree } from "react-accessible-treeview";
 import { SiOpenlayers } from "react-icons/si";
-import "../styles/styles.css";
-import Modal from "../components/Modal";
+import "../../styles/styles.css";
+import Modal from "../../components/Modal";
+import Geoservicios from "./Geoservicios";
 
 const folder = {
 
@@ -474,7 +475,7 @@ function TreeLayers() {
         }
 
         setExpandedIds(
-            filtered.map((val)=> {
+            filtered.map((val) => {
                 return val.id;
             })
         )
@@ -508,17 +509,23 @@ function TreeLayers() {
     return (
         <>
             <div className="container px-6 py-10 mx-auto align-middle">
-                <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Directorio de  <span className="text-blue-500 ">capas</span></h1>
+
+
+
                 <div className="ide">
-                    <div class="relative">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                            <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
-                                <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <h2 className="text-1xl font-semibold text-left lg:text-2xl text-nqn-verde dark:text-white mb-5">
+                        Directorio de capas
+                    </h2>
+                    <div className="relative">
+                        <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+                            <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
                             </svg>
                         </span>
 
                         <input onChange={filterNodesByText} type="text" id="txtToFilter" onKeyDown={onKeyDown} className="w-100 py-3 pl-10 pr-4 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" placeholder="Buscar" />
                     </div>
+
                     <TreeView
                         //propagateSelectUpwards
                         data={treeData}
@@ -543,16 +550,16 @@ function TreeLayers() {
                                     <><FolderIcon style={{ color: element.metadata?.color }} isOpen={isExpanded} color={element.metadata?.color} ></FolderIcon><strong className="text-black dark:text-white">{element.name}</strong></>
                                 ) : (
                                     <>
-                                    {/* <FileIcon filename={element.name} /> */}
-                                        <a 
-                                        className="text-blue-700 dark:text-blue-500 hover:underline"
-                                        onClick={() => {
-                                            setShow_modal(!show_modal);
-                                            setTitle(element.metadata?.capa);
-                                            setName(element.metadata?.capa)
-                                            setAbstract("")
-                                            setBaseGeoUrl(baseGeoUrl) /**Hacer que sea dinamico para otros servidores */
-                                        }} 
+                                        {/* <FileIcon filename={element.name} /> */}
+                                        <a
+                                            className="text-blue-700 dark:text-blue-500 hover:underline"
+                                            onClick={() => {
+                                                setShow_modal(!show_modal);
+                                                setTitle(element.metadata?.capa);
+                                                setName(element.metadata?.capa)
+                                                setAbstract("")
+                                                setBaseGeoUrl(baseGeoUrl) /**Hacer que sea dinamico para otros servidores */
+                                            }}
                                         >{element.name}</a>
                                         {/* <FaEye className="text-nqn-azul inline mb-1 rounded-md items-center ml-4 hover:bg-gray-200 focus:outline-none" onClick={() => {
                                             setShow_modal(!show_modal);

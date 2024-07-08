@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
 import ThemeToggle from '../components/ThemeToggle'
-import logo_copade from '../../public/img/copade.png'
+import logo_copade from '../../public/img/logo_copade_a.png'
 
 const navigation = [
   { name: "INICIO", href: "home" },
-  { name: "LISTADO", href: "layersList" },
+  { name: "SERVICIOS", href: "servicios" },
   { name: "MAPAS", href: "mapa_tematico" },
   // { name: "SCROLL", href: "scrollMotion" },
   // { name: "TEST", href: "test" },
   { name: "PRESENTACION", href: "presentaciones" },
+  { name: "CONTACTO", href: "contacto" },
   // { name: "Parallax", href: "scrollParallax" },
   // { name: "Pasos", href: "pasos" },
   // { name: "Vista Simple", href: "vistaSimple" },
@@ -24,7 +25,7 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="">
-      <nav className="azulnqn fixed w-full z-40 top-0 shadow py-4 border-b border-nqn-amarillo ">
+      <nav className="azulnqn fixed w-full z-40 top-0 shadow py-1 border-b border-nqn-amarillo ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -52,8 +53,8 @@ function NavBar() {
                       to={item.href}
                       className={classNames(
                         item.current
-                          ? "amarillonqn dark:amarillonqn"
-                          : "amarillonqn dark:amarillonqn hover:animate-pulse",
+                          ? "text-nqn-verde dark:amarillonqn"
+                          : "text-nqn-amarillo dark:amarillonqn hover:animate-pulse hover:text-nqn-verde",
                         "px-3 py-2 rounded-md text-base font-medium font-bold"
                       )}
                       aria-current={item.current ? "page" : undefined}

@@ -21,10 +21,10 @@ const Opciones = () => {
         <div className="container px-6 py-16 mx-auto">
           <div className="items-center lg:flex">
             <div className="w-full lg:w-1/2">
-              <div className="lg:max-w-lg">
-                <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">SIG <br /> <span className="text-blue-500 ">COPADE</span></h1>
+              <div className="">
+                {/* <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">SIG <br /> <span className="text-blue-500 ">COPADE</span></h1> */}
 
-                <p className="mt-3 text-gray-600 dark:text-gray-400">La Subsecretaría del COPADE pone a disposición su Sistema de Información Geográfica (SIG) con información actualizada y georreferenciada de la Provincia del Neuquén. Es posible encontrar información vinculada a regionalización, infraestructura social, servicios básicos, medio biofísico, gestión del riesgo, entre otros.
+                <p className="text-xl mt-3 text-dark dark:text-white">La Subsecretaría del COPADE pone a disposición su Sistema de Información Geográfica (SIG) con información actualizada y georreferenciada de la Provincia del Neuquén. Es posible encontrar información vinculada a regionalización, infraestructura social, servicios básicos, medio biofísico, gestión del riesgo, entre otros.
                   El nuevo visor web del SIG es más intuitivo, veloz y permite rápidamente confeccionar mapas de áreas de interés, con toda la información territorial disponible en el servidor de este organismo.</p>
 
               </div>

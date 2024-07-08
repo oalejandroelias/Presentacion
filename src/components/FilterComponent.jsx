@@ -31,19 +31,19 @@ const ClearButton = styled.button`
 
 const FilterComponent = ({ filterText, onFilter, onClear }) => (
 
-  <div class="grid grid-cols-3 gap-6">
-    <div class="col-span-3 sm:col-span-2">
-      <div class="mt-1 flex rounded-md shadow-sm">
+  <div className="grid grid-cols-3 gap-6">
+    <div className="col-span-3 sm:col-span-2">
+      <div className="mt-1 flex rounded-md shadow-sm">
         <input
           type="text"
           name="search"
           id="search"
           value={filterText}
           onChange={onFilter}
-          class="flex-1 block w-full text-center rounded-l-md border border-r-0 border-black focus:outline-none dark:border-white bg:white dark:bg-slate-700 text-black dark:text-white text-sm "
+          className="flex-1 block w-full text-center rounded-l-md border border-r-0 border-black focus:outline-none dark:border-white bg:white dark:bg-slate-700 text-black dark:text-white text-sm "
           placeholder="Filtrar..."
         />
-        <span class="inline-flex items-center px-0 rounded-r-md border border-l-2 border-black dark:border-white bg:white dark:bg-slate-700 text-black dark:text-white text-sm">
+        <span className="inline-flex items-center px-0 rounded-r-md border border-l-2 border-black dark:border-white bg:white dark:bg-slate-700 text-black dark:text-white text-sm">
           <ClearButton onClick={onClear}>X</ClearButton>
         </span>
       </div>

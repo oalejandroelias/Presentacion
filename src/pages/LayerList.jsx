@@ -3,7 +3,7 @@ import { XMLParser } from "fast-xml-parser";
 import styled from "styled-components";
 import Table from "../components/DataTable";
 import axios from "axios";
-import TreeLayers from "./TreeLayers";
+import TreeLayers from "./Servicios/TreeLayers";
 
 
 const LayerList = () => {

@@ -13,7 +13,11 @@ import MapsScroll from './pages/MapsScroll';
 import VistaSimple from './layouts/TutorialMenu'
 import Tarjetas from './pages/Tarjetas/Tarjetas';
 import Presentaciones from './pages/Presentacion/Presentaciones';
-
+import Contacto from './pages/Contacto';
+import Servicios from './pages/Servicios/Servicios';
+import ScrollToTop from 'react-scroll-to-top';
+import blue_arrow from '../public/img/blue_arrow.svg'
+import Footer from './layouts/Footer';
 
 function App() {
 
@@ -26,17 +30,21 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
-          <Route path='/layersList' element={<LayerList />} />
+
+          <Route path='/servicios' element={<Servicios />} />
           <Route path='/mapa_tematico' element={<Tarjetas />} />
           <Route path='/scrollMotion' element={<ScrollMotion />} />
           <Route path='/scrollParallax' element={<ParallaxContainer />} />
           <Route path='/pasos' element={<Pasos />} />
           <Route path='/vistaSimple' element={<VistaSimple />} />
           <Route path='/presentaciones' element={<Presentaciones />} />
+          <Route path='/contacto' element={<Contacto />} />
           <Route path='/test' element={<MapsScroll />} />
         </Routes>
+        <Footer />
       </Router>
       {/* </AnimatePresence> */}
+      <ScrollToTop className="bg-inherit shadow-none" smooth component={<img src={blue_arrow} />} />
     </div>
   )
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import ScrollToTop from "react-scroll-to-top";
 import Introduccion from '../components/Introduccion'
 import Pasos from '../components/Pasos'
 import Seccion1 from '../components/Seccion1'
@@ -12,8 +11,6 @@ import Opciones from './Opciones'
 import Galeria from './Galeria'
 import PaginasExternas from './PaginasExternas'
 import Banner from '../layouts/Banner'
-import blue_arrow from '../../public/img/blue_arrow.svg'
-import TreeLayers from './TreeLayers';
 import Example from './Example';
 import Proyectos from './Publicaciones/Proyectos';
 import Tarjetas from './Tarjetas/Tarjetas';
@@ -36,7 +33,7 @@ const Home = () => {
       {/* <Tutorial1 /> */}
       {/* <Proyectos /> */}
 
-      <ScrollToTop className="bg-inherit shadow-none" smooth component={<img src={blue_arrow} />} />
+
     </div>
   )
 }

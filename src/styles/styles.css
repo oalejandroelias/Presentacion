@@ -1,8 +1,8 @@
   circle,
   rect,
   line {
-    stroke-width: 10px;
-    stroke-linecap: round;
+    strokeWidth: 10px;
+    strokeLinecap: round;
     fill: transparent;
   }
 
@@ -19,7 +19,7 @@
 
   #svg_animated>pat {
     stroke: white;
-    stroke-width: 5px;
+    strokeWidth: 5px;
   }
 
   /** Horizontal*/

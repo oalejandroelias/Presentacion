@@ -5,18 +5,18 @@ import { motion } from 'framer-motion';
 const Banner = () => {
   return (
     <div className="relative">
-    <img
-      src={background}
-      className="absolute inset-0 object-cover w-full h-full"
-      alt=""
-    />
-    <div className="relative bg-gray-900 bg-opacity-20">
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <img
+        src={background}
+        className="absolute inset-0 object-cover w-full h-full"
+        alt=""
+      />
+      <div className="relative bg-gray-900 bg-opacity-20">
+        <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
 
           <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-12/12">
 
-          <div className="sm:text-center lg:text-left">
-              <motion.h1 
+            <div className="sm:text-center lg:text-left">
+              <motion.h1
                 initial={{ opacity: 0, }}
                 animate={{ opacity: 1, /*rotate: [0,360],*/ }}
                 transition={{
@@ -26,17 +26,17 @@ const Banner = () => {
                 }}
                 // whileHover={{
                 //   scale: [1, 1.4, 1.2],
-                 
+
                 //   transition: {
                 //     duration: .2,
                 //   }
                 // }}
-              className="text-4xl font-extrabold font-border text-copade-900 drop-shadow-xl shadow-white dark:text-white sm:text-5xl md:text-6xl">
-                <span 
-                   
-                className="block xl:inline">Gis Copade</span>{' '}
+                className="text-4xl font-extrabold font-border text-copade-900 drop-shadow-xl shadow-white dark:text-white sm:text-5xl md:text-6xl">
+                <span
+
+                  className="block xl:inline">Gis Copade</span>{' '}
               </motion.h1>
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, }}
                 animate={{ opacity: 1, /*rotate: [0, 360],*/ }}
                 transition={{
@@ -44,12 +44,12 @@ const Banner = () => {
                   duration: 1,
                   delay: 1,
                 }}
-              className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-5xl">
+                className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-5xl">
                 <span className="block font-border text-violet-700 xl:inline">Planificación Territorial</span>
               </motion.h2>
               <div className="escribiendo ">
                 <p className="mt-3 text-base font-border text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 texto">
-                Sistema de Información Geográfica
+                  Sistema de Información Geográfica
                 </p>
               </div>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
@@ -64,7 +64,7 @@ const Banner = () => {
                 </div> */}
               </div>
             </div>
-            
+
             {/* <a
               href="http://giscopade.neuquen.gov.ar/sig_copade"
               aria-label="SIG Copade"
@@ -83,8 +83,8 @@ const Banner = () => {
 
         </div>
 
+      </div>
     </div>
-  </div>
   )
 }
 

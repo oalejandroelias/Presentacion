@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 .input-per {
-    @apply text-black dark:text-white border-black dark:border-white dark:bg-slate-700 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
+  @apply text-black dark:text-white border-black dark:border-white dark:bg-slate-700 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
 }
 
 .text-per-theme-default {
-    @apply text-black dark:text-white;
+  @apply text-black dark:text-white;
 }
 
 .font-per-theme-default {
-    @apply text-black dark:text-white border-black;
+  @apply text-black dark:text-white border-black;
 }
 
 /**Datatable*/
 .rdt_TableCol {
-    
-    font-weight: bolder;
-    font-size: 14px;
+
+  font-weight: bolder;
+  font-size: 14px;
 }
 
 .font-border {
@@ -26,17 +26,17 @@
 }
 
 .dark {
-    --color-bg-primary: #aa0202;
-    --color-bg-secondary: #283141;
-    --color-text-primary: #f7fafc;
-    --color-text-secondary: #e2e8f0;
-    --color-text-accent: #81e6d9;
-  }
-  
-  .light {
-    --color-bg-primary: #ffffff;
-    --color-bg-secondary: #edf2f7;
-    --color-text-primary: #2d3748;
-    --color-text-secondary: #4a5568;
-    --color-text-accent: #2b6cb0;
-  }
+  --color-bg-primary: #aa0202;
+  --color-bg-secondary: #283141;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e2e8f0;
+  --color-text-accent: #81e6d9;
+}
+
+.light {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #edf2f7;
+  --color-text-primary: #000000;
+  --color-text-secondary: #4a5568;
+  --color-text-accent: #2b6cb0;
+}

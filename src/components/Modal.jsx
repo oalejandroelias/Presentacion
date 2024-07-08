@@ -44,6 +44,7 @@ export default function Modal(props) {
         className="relative z-40"
         initialFocus={cancelButtonRef}
         onClose={setOpen}
+        key={props.name}
       >
         <Transition.Child
           as={Fragment}
@@ -137,11 +138,11 @@ export default function Modal(props) {
                         </p>
                       </div>
 
-                      <div class="flex justify-center m-5">
-                        <div class="mb-3 xl:w-96">
-                          <label for="country" class="block text--d font-medium text-gray-700">Descargar</label>
+                      <div className="flex justify-center m-5">
+                        <div className="mb-3 xl:w-96">
+                          <label for="country" className="block text--d font-medium text-gray-700">Descargar</label>
                           <select
-                            class="mt-1 block w-full py-2 px-3 border-2 text-per-theme-default input-per rounded-md shadow-sm "
+                            className="mt-1 block w-full py-2 px-3 border-2 text-per-theme-default input-per rounded-md shadow-sm "
                             aria-label="Default select example"
                             value={option}
                             onChange={handleChange}
