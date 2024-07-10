@@ -2,12 +2,15 @@
 import mapa_regionalizacion from "../../../public/img/mapa-regionalizacion.jpg";
 import Tarjeta from "./Tarjeta";
 
+
+const base_url = window.location.protocol + "//" + window.location.host;
+
 const proyectos = [
   {
     image: mapa_regionalizacion,
     title: "SIG Copade",
     description: "Sistema de Información Geográfico",
-    url: "http://giscopade.neuquen.gov.ar/sig_copade",
+    url: base_url + "/public/img/mapa-regionalizacion.jpg",
   },
   {
     image: mapa_regionalizacion,
@@ -55,12 +58,13 @@ const Tarjetas = () => {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-5">
             {proyectos.map((proyecto, index) => (
               <Tarjeta
-                // key={proyecto.title}
+                key={index}
                 // title={proyecto.title}
                 image={proyecto.image}
                 description={proyecto.description}
                 //url={proyecto.url}
                 index={index}
+                url={proyecto.url}
               />
             ))}
           </div>

@@ -30,7 +30,7 @@ const Tarjeta = (props) => {
                         PLAN PROVINCIAL DE REGIONALIZACIÓN
                     </h1>
 
-                    <p className="mt-2 text-gray-500 dark:text-gray-400">
+                    <p className="mt-2 text-per-theme-default">
                         {props.description}
                     </p>
 
@@ -40,10 +40,10 @@ const Tarjeta = (props) => {
                                 John snow
                             </a> */}
 
-                            <p className="text-sm text-gray-500 dark:text-gray-400">Febrero 1, 2022</p>
+                            <p className="text-sm text-per-theme-default">Febrero 1, 2022</p>
                         </div>
 
-                        <a href="#" className="inline-block text-blue-500 underline hover:text-blue-400">Ver</a>
+                        <a href={props.url} target="_blank" className="inline-block text-blue-500 underline hover:text-blue-400">Ver</a>
                     </div>
 
                 </div>

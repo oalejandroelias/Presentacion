@@ -578,7 +578,7 @@ function TreeLayers() {
                 </div>
             </div>
 
-            <Modal show_modal={show_modal} setShow_modal={setShow_modal} title={title} name={name} abstract={abstract} baseGeoUrl={baseGeoUrl} />
+            <Modal key={title} show_modal={show_modal} setShow_modal={setShow_modal} title={title} name={name} abstract={abstract} baseGeoUrl={baseGeoUrl} />
         </ >
     );
 }
