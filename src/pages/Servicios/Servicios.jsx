@@ -1,6 +1,7 @@
 import React from 'react'
 import Geoservicios from './Geoservicios'
 import TreeLayers from './TreeLayers'
+import Regiones from '../Regiones'
 
 const Servicios = () => {
     return (
@@ -15,6 +16,7 @@ const Servicios = () => {
             </h2>
             <Geoservicios />
             <TreeLayers />
+            <Regiones />
         </div>
     )
 }

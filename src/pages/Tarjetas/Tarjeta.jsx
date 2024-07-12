@@ -21,9 +21,12 @@ const Tarjeta = (props) => {
 
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-5"> */}
             <div>
-                <img className="border-2 border-black object-cover object-center w-full h-64 rounded-lg lg:h-80" src={props.image} alt="" />
+                <img className="border-2 border-black object-cover object-center w-full h-64 rounded-lg lg:h-80 fill-blue-500 transition-transform transform hover:scale-105" src={props.image} alt="" />
 
                 <div className="mt-8">
+                    <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
+                        <span class="relative text-white">SIG</span>
+                    </span>
                     <span className="text-blue-500 uppercase">Regionalización</span>
 
                     <h1 className="mt-4 text-xl font-semibold text-gray-800 dark:text-white">
