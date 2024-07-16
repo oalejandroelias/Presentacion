@@ -14,16 +14,20 @@ import Banner from '../layouts/Banner'
 import Example from './Example';
 import Proyectos from './Publicaciones/Proyectos';
 import Tarjetas from './Tarjetas/Tarjetas';
+import TimeCarousel from '../components/carousel/TimeCarousel'
 
 const Home = () => {
   return (
     <div className="w-full mx-auto overflow-auto pt-16">
 
+      <div className="container px-6 py-10 mx-auto">
+        <div className="">
+          <TimeCarousel />
+        </div>
+      </div>
       <Banner />
       {/* <Pasos /> */}
-
       <Opciones />
-
       {/* <Galeria /> */}
       <Seccion1 />
       {/* <Tarjetas /> */}

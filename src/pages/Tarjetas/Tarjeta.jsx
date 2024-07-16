@@ -24,8 +24,8 @@ const Tarjeta = (props) => {
                 <img className="border-2 border-black object-cover object-center w-full h-64 rounded-lg lg:h-80 fill-blue-500 transition-transform transform hover:scale-105" src={props.image} alt="" />
 
                 <div className="mt-8">
-                    <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
-                        <span class="relative text-white">SIG</span>
+                    <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
+                        <span className="relative text-white">SIG</span>
                     </span>
                     <span className="text-blue-500 uppercase">Regionalización</span>
 

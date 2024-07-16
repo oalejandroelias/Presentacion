@@ -145,22 +145,22 @@ const Regiones = (props) => {
                 }
             />
 
+            <div className="">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={610}
+                    height={768}
+                    stroke="#000"
+                    strokeLinecap="square"
+                    strokeMiterlimit={10}
+                    colorInterpolation="auto"
+                    fontFamily="'Dialog'"
+                    fontSize={12}
+                // {...props}
 
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={610}
-                height={768}
-                stroke="#000"
-                strokeLinecap="square"
-                strokeMiterlimit={10}
-                colorInterpolation="auto"
-                fontFamily="'Dialog'"
-                fontSize={12}
-            // {...props}
-
-            >
-                <style>
-                    {`
+                >
+                    <style>
+                        {`
              
         .fill-blue-500 {
           fill: #3b82f6;
@@ -181,38 +181,39 @@ const Regiones = (props) => {
 
       
       `}
-                </style>
-                <defs>
-                    <clipPath id="a" clipPathUnits="userSpaceOnUse">
-                        <path d="M0 0h610v768H0V0Z" />
-                    </clipPath>
-                </defs>
+                    </style>
+                    <defs>
+                        <clipPath id="a" clipPathUnits="userSpaceOnUse">
+                            <path d="M0 0h610v768H0V0Z" />
+                        </clipPath>
+                    </defs>
 
-                <g
-                    strokeLinecap="butt"
-                    strokeLinejoin="bevel"
-                    strokeMiterlimit={1}
-                    strokeWidth={0}
-                    textRendering="optimizeLegibility"
-                >
-                    {regiones.map((val, index) => {
-                        return (
-                            <path
-                                key={index}
-                                className="transition-transform transform hover:scale-105 my-anchor-element"
-                                onMouseEnter={() => cambiarRegion(index)}
-                                fill={val.fill}
-                                strokeMiterlimit={1}
-                                strokeWidth={0}
-                                d={val.d}
-                                clipPath={val.clipPath}
-                            />
-                        )
-                    })}
+                    <g
+                        strokeLinecap="butt"
+                        strokeLinejoin="bevel"
+                        strokeMiterlimit={1}
+                        strokeWidth={0}
+                        textRendering="optimizeLegibility"
+                    >
+                        {regiones.map((val, index) => {
+                            return (
+                                <path
+                                    key={index}
+                                    className="transition-transform transform hover:scale-105 my-anchor-element"
+                                    onMouseEnter={() => cambiarRegion(index)}
+                                    fill={val.fill}
+                                    strokeMiterlimit={1}
+                                    strokeWidth={0}
+                                    d={val.d}
+                                    clipPath={val.clipPath}
+                                />
+                            )
+                        })}
 
 
-                </g>
-            </svg>
+                    </g>
+                </svg>
+            </div>
         </>
     )
 }

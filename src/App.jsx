@@ -18,6 +18,7 @@ import Servicios from './pages/Servicios/Servicios';
 import ScrollToTop from 'react-scroll-to-top';
 import blue_arrow from '../public/img/blue_arrow.svg'
 import Footer from './layouts/Footer';
+import Mapas from './pages/mapas/Mapas';
 
 function App() {
 
@@ -32,7 +33,7 @@ function App() {
           <Route path='/home' element={<Home />} />
 
           <Route path='/servicios' element={<Servicios />} />
-          <Route path='/mapa_tematico' element={<Tarjetas />} />
+          <Route path='/mapa_tematico' element={<Mapas />} />
           <Route path='/scrollMotion' element={<ScrollMotion />} />
           <Route path='/scrollParallax' element={<ParallaxContainer />} />
           <Route path='/pasos' element={<Pasos />} />
