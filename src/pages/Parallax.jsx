@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./../styles/parallax.scss"
 const Parallax = () => {
 
-    const [offsetY, setOffsetY] = useState(0);
+  const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset);
 
   useEffect(() => {

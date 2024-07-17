@@ -3,11 +3,12 @@ import Tarjetas from '../Tarjetas/Tarjetas'
 import Carousel from '../../components/carousel/Carousel'
 import Regiones from '../Regiones'
 import TimeCarousel from '../../components/carousel/TimeCarousel'
+import BasicBar from '../../components/charts/BasicBar'
 
 const Mapas = () => {
     return (
         <>
-            <section className="bg-white dark:bg-gray-900 mt-20">
+            <section className="mt-20">
                 <div className="container px-6 py-10 mx-auto">
 
                     <Tarjetas />
@@ -15,7 +16,7 @@ const Mapas = () => {
                     <div className=''>
 
                         <Carousel />
-                        <TimeCarousel />
+
                     </div>
 
                     {/* <div className='container flex justify-center '>
@@ -23,6 +24,8 @@ const Mapas = () => {
                     </div> */}
 
                 </div>
+
+                <BasicBar />
             </section>
 
         </>

@@ -11,7 +11,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
-//import './styles.css';
+import './styles.css';
 
 // import required modules
 import { EffectCoverflow, Pagination } from 'swiper/modules';
@@ -20,8 +20,9 @@ const Carousel = () => {
     return (
         <>
             <section className="">
-                <div className="w-2/4 px-0 py-24 mx-auto">
+                <div className="w-full lg:w-2/4 px-0 py-24 mx-auto">
                     <Swiper
+                        className="swipermaps"
                         effect={'coverflow'}
                         grabCursor={true}
                         centeredSlides={true}
@@ -35,7 +36,7 @@ const Carousel = () => {
                         }}
                         pagination={true}
                         modules={[EffectCoverflow, Pagination]}
-                        className="mySwiper"
+
                     >
                         <SwiperSlide>
                             <img src={a} />

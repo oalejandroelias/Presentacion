@@ -508,7 +508,7 @@ function TreeLayers() {
 
     return (
         <>
-            <div className="container px-6 py-10 mx-auto align-middle">
+            <div className="container px-6 mx-auto align-middle">
                 <div className="ide">
                     <h2 className="text-1xl font-semibold text-left lg:text-2xl text-nqn-verde dark:text-white mb-5">
                         Directorio de capas

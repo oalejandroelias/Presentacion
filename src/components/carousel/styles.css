@@ -17,7 +17,37 @@ body {
     padding: 0;
 } */
 
-/* .swiper {
+/* Para pantallas pequeñas (teléfonos) */
+@media (max-width: 600px) {
+    .swipermaps {
+        height: 500px;
+        margin-top: 74px;
+    }
+}
+
+/* Para pantallas medianas (tabletas) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .swipermaps {
+        height: 500px;
+        margin-top: 10px;
+    }
+}
+
+/* Para pantallas grandes (escritorios) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .swipermaps {
+        height: 500px;
+    }
+}
+
+/* Para pantallas extra grandes */
+@media (min-width: 1441px) {
+    .swipermaps {
+        height: 600px;
+    }
+}
+
+.swipermaps {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -33,4 +63,4 @@ body {
 .swiper-slide img {
     display: block;
     width: 100%;
-} */
+}

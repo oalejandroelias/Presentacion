@@ -15,24 +15,23 @@ import Example from './Example';
 import Proyectos from './Publicaciones/Proyectos';
 import Tarjetas from './Tarjetas/Tarjetas';
 import TimeCarousel from '../components/carousel/TimeCarousel'
+import Parallax from './Parallax'
 
 const Home = () => {
   return (
-    <div className="w-full mx-auto overflow-auto pt-16">
+    <div className="w-full mx-auto overflow-auto pt-0 md:pt-16">
 
-      <div className="container px-6 py-10 mx-auto">
-        <div className="">
-          <TimeCarousel />
-        </div>
+      <div className="">
+        <TimeCarousel />
       </div>
-      <Banner />
+      {/* <Banner /> */}
       {/* <Pasos /> */}
       <Opciones />
       {/* <Galeria /> */}
       <Seccion1 />
       {/* <Tarjetas /> */}
       {/* <Example /> */}
-      {/* <ScrollParallax /> */}
+      {/* <Parallax /> */}
       {/* <Svg /> */}
       {/* <Tutorial1 /> */}
       {/* <Proyectos /> */}

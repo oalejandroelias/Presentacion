@@ -148,8 +148,8 @@ const Regiones = (props) => {
             <div className="">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width={610}
-                    height={768}
+                    width={270}
+                    height={447}
                     stroke="#000"
                     strokeLinecap="square"
                     strokeMiterlimit={10}

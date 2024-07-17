@@ -133,17 +133,18 @@ function NavBar() {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <div className="md:hidden" id="mobile-menu">
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <div className="md:hidden " id="mobile-menu">
+              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 0 md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center translate-x-0">
                 {navigation.map((item) => (
                   <Link
+                    onClick={() => setIsOpen(!isOpen)}
                     key={item.name}
                     to={item.href}
                     className={classNames(
                       item.current
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-900 dark:text-white hover:bg-gray-700 hover:text-white",
-                      "px-3 py-2 rounded-md text-sm font-medium"
+                        ? "text-nqn-verde dark:amarillonqn"
+                        : "text-nqn-amarillo dark:amarillonqn hover:animate-pulse hover:text-nqn-verde",
+                      "px-3 py-2 rounded-md text-sm font-medium block"
                     )}
                     aria-current={item.current ? "page" : undefined}
                   >

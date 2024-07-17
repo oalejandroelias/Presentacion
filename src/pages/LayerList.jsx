@@ -75,7 +75,7 @@ const LayerList = () => {
 
 
         {/* <Table data={columns} baseGeoUrl={baseGeoUrl} click={clickhandler} /> */}
-        <Table data={columns} baseGeoUrl={baseGeoUrl} owsGeoUrl={owsGeoUrl} click={clickhandler} />
+        <Table data={capas} baseGeoUrl={baseGeoUrl} owsGeoUrl={owsGeoUrl} click={clickhandler} />
 
       </div>
     </>
