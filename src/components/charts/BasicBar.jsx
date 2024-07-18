@@ -3,18 +3,7 @@ import ReactApexChart from "react-apexcharts";
 import { COLORS } from "../../constants/chart.constant";
 
 const BasicBar = (props) => {
-  // const data = [
 
-  //   {
-  //     name: "High - 2013",
-  //     data: [28, 29, 33, 36, 32, 32, 33]
-  //   },
-  //   {
-  //     name: "Low - 2013",
-  //     data: [12, 11, 14, 18, 17, 13, 13]
-  //   }
-
-  // ];
   const [data, setData] = useState({
 
     series: [{
@@ -36,7 +25,7 @@ const BasicBar = (props) => {
         curve: 'straight'
       },
       title: {
-        text: 'Product Trends by Month',
+        text: 'Gráfico 1',
         align: 'left'
       },
       grid: {

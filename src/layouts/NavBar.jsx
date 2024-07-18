@@ -9,13 +9,10 @@ const navigation = [
   { name: "INICIO", href: "home" },
   { name: "SERVICIOS", href: "servicios" },
   { name: "MAPAS", href: "mapa_tematico" },
-  // { name: "SCROLL", href: "scrollMotion" },
-  // { name: "TEST", href: "test" },
+  { name: "GRÁFICOS", href: "graficos" },
   { name: "PRESENTACION", href: "presentaciones" },
   { name: "CONTACTO", href: "contacto" },
-  // { name: "Parallax", href: "scrollParallax" },
-  // { name: "Pasos", href: "pasos" },
-  // { name: "Vista Simple", href: "vistaSimple" },
+
 ]
 
 function classNames(...classes) {
