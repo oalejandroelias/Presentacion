@@ -1,5 +1,5 @@
 import React from "react";
-import map from "./../../public/img/img_map.png";
+import map from "./../../img/img_map.png";
 import MapPreview from "./map_preview/MapPreview";
 
 
@@ -46,7 +46,7 @@ const ScrollMaps = () => {
               alt=""
             /> */}
             <div className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80">
-            <MapPreview/>
+              <MapPreview />
             </div>
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
               Mapa 1
@@ -64,7 +64,7 @@ const ScrollMaps = () => {
               alt=""
             /> */}
             <div className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80">
-            <MapPreview/>
+              <MapPreview />
             </div>
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
               Mapa 2
@@ -82,7 +82,7 @@ const ScrollMaps = () => {
               alt=""
             /> */}
             <div className="object-cover w-full h-56 mb-6 rounded shadow-lg md:h-64 xl:h-80">
-                <MapPreview/>
+              <MapPreview />
             </div>
             <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
               Mapa 3

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
 import ThemeToggle from '../components/ThemeToggle'
-import logo_copade from '../../public/img/logo_copade_a.png'
+import logo_copade from '../../src/img/logo_copade_a.png'
 
 const navigation = [
   { name: "INICIO", href: "home" },

@@ -1,6 +1,6 @@
 import React from "react";
 import MapPreview from "../components/map_preview/MapPreview";
-import map from "./../../public/img/img_map.png";
+import map from "../../src/img/img_map.png";
 
 const Galeria = () => {
   return (

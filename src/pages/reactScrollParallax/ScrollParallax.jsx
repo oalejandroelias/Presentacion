@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParallaxController, ParallaxProvider, Parallax, useParallax, ParallaxBanner } from 'react-scroll-parallax';
-import sig from "./../../../public/img/sig_fondo_a.png";
+import sig from "./../../../img/sig_fondo_a.png";
 
 const Istyles = {
   background: '#fff',
@@ -14,6 +14,6 @@ const Istyles = {
 const ScrollParallax = () => {
   const parallaxController = useParallaxController();
   return <img src={sig} onLoad={() => parallaxController.update()} />;
-  };
+};
 
 export default ScrollParallax

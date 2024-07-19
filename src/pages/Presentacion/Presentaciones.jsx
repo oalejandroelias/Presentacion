@@ -3,16 +3,16 @@ import { useEffect, useRef } from "react";
 import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
 import "reveal.js/dist/theme/black.css";
-import MapPreview from "../../components/map_preview/MapPreview";
-import mapa_regionalizacion from "../../../public/img/mapa-regionalizacion.jpg";
+// import MapPreview from "../../components/map_preview/MapPreview";
+// import mapa_regionalizacion from "../../img/mapa-regionalizacion.jpg";
 
-import js from '../../../public/img/js_logo.png'
-import ol from '../../../public/img/ol_logo.svg'
+import js from '../../../src/img/js_logo.png'
+import ol from '../../../src/img/ol_logo.svg'
+import BasicBar from "../../components/charts/BasicBar";
 
 function App(props) {
   const deckDivRef = useRef(null); // referencia al contenedor del deck
   const deckRef = useRef(null); // referencia a la instancia de Reveal.js
-
   const position = props?.position ? props.position : "absolute";
 
   useEffect(() => {
@@ -147,14 +147,11 @@ function App(props) {
             />
           </div>
         </section >
-        {/* <section data-background-gradient="linear-gradient(to bottom, #2b3e4c, #000000)">
+        <section >
 
-          <MapPreview className="border-sky-900"
-            baseGeoUrl={props.baseGeoUrl}
-            name={props.name}
-          />
+          <BasicBar />
 
-        </section> */}
+        </section>
       </div>
     </div>
   );

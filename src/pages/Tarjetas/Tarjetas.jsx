@@ -1,5 +1,5 @@
 
-import mapa_regionalizacion from "../../../public/img/mapa-regionalizacion.jpg";
+import mapa_regionalizacion from "../../../src/img/mapa-regionalizacion.jpg";
 import Tarjeta from "./Tarjeta";
 
 
@@ -10,7 +10,7 @@ const proyectos = [
     image: mapa_regionalizacion,
     title: "SIG Copade",
     description: "Sistema de Información Geográfico",
-    url: base_url + "/public/img/mapa-regionalizacion.jpg",
+    url: base_url + "/img/mapa-regionalizacion.jpg",
   },
   {
     image: mapa_regionalizacion,

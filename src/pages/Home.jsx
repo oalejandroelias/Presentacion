@@ -18,6 +18,8 @@ import TimeCarousel from '../components/carousel/TimeCarousel'
 import Parallax from './Parallax'
 
 const Home = () => {
+
+  console.log(import.meta.env.VITE_API_URL)
   return (
     <div className="w-full mx-auto overflow-auto pt-0 md:pt-16">
 

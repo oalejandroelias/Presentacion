@@ -1,21 +1,21 @@
-import img_t_1 from "./../../public/img/zoom_1.png"
-import t_menu_1 from "./../../public/img/t_menu_1a.png"
-import t_menu_2 from "./../../public/img/t_menu_2a.png"
-import t_menu_3 from "./../../public/img/t_menu_3a.png"
+import img_t_1 from "../../src/img/zoom_1.png"
+import t_menu_1 from "../../src/img/t_menu_1a.png"
+import t_menu_2 from "../../src/img/t_menu_2a.png"
+import t_menu_3 from "../../src/img/t_menu_3a.png"
 
 const Pasos = () => {
   return (
-<section className="text-gray-600 body-font">
-  <div className="container px-5 py-24 mx-auto">
-    <div className="flex flex-wrap -m-4">
-      <div className="p-4 md:w-1/3">
-        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-          <img className="w-full object-cover object-center" src={t_menu_1} alt="blog" />
-          <div className="p-6">
-            <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"></h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 dark:text-white mb-3">Seleccionar Capa</h1>
-            <p className="leading-relaxed mb-3">En el menú lateral, buscar y marcar la capa que queremos motrar.</p>
-            {/* <div className="flex items-center flex-wrap ">
+    <section className="text-gray-600 body-font">
+      <div className="container px-5 py-24 mx-auto">
+        <div className="flex flex-wrap -m-4">
+          <div className="p-4 md:w-1/3">
+            <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+              <img className="w-full object-cover object-center" src={t_menu_1} alt="blog" />
+              <div className="p-6">
+                <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"></h2>
+                <h1 className="title-font text-lg font-medium text-gray-900 dark:text-white mb-3">Seleccionar Capa</h1>
+                <p className="leading-relaxed mb-3">En el menú lateral, buscar y marcar la capa que queremos motrar.</p>
+                {/* <div className="flex items-center flex-wrap ">
               <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                 <svg className="w-4 h-4 mr-1" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -28,36 +28,36 @@ const Pasos = () => {
                 </svg>6
               </span>
             </div> */}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div className="p-4 md:w-1/3">
-        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-          <img className="w-full object-cover object-center" src={t_menu_2} alt="blog" />
-          <div className="p-6">
-            <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"></h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 dark:text-white mb-3">Doble click a la Capa</h1>
-            <p className="leading-relaxed mb-3">Hacemos dobleclick sobre el nombre de la capa.</p>
-            <div className="flex items-center flex-wrap">
+          <div className="p-4 md:w-1/3">
+            <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+              <img className="w-full object-cover object-center" src={t_menu_2} alt="blog" />
+              <div className="p-6">
+                <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"></h2>
+                <h1 className="title-font text-lg font-medium text-gray-900 dark:text-white mb-3">Doble click a la Capa</h1>
+                <p className="leading-relaxed mb-3">Hacemos dobleclick sobre el nombre de la capa.</p>
+                <div className="flex items-center flex-wrap">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="p-4 md:w-1/3">
+            <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+              <img className="w-full object-cover object-center" src={t_menu_3} alt="blog" />
+              <div className="p-6">
+                <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"></h2>
+                <h1 className="title-font text-lg font-medium text-gray-900 dark:text-white first-line:mb-3">Ver Capa</h1>
+                <p className="leading-relaxed mb-3">Vemos como el mapa hace zoom sobre la capa en su totalidad.</p>
+                <div className="flex items-center flex-wrap ">
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="p-4 md:w-1/3">
-        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-          <img className="w-full object-cover object-center" src={t_menu_3} alt="blog" />
-          <div className="p-6">
-            <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"></h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 dark:text-white first-line:mb-3">Ver Capa</h1>
-            <p className="leading-relaxed mb-3">Vemos como el mapa hace zoom sobre la capa en su totalidad.</p>
-            <div className="flex items-center flex-wrap ">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
   )
 }
 

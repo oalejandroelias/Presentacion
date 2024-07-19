@@ -1,5 +1,5 @@
 import React from "react";
-import mapa_home from "../../public/img/mapa_home.png"
+import mapa_home from "../../src/img/mapa_home.png"
 import Regiones from "./Regiones";
 import RegionesA from "./RegionesA";
 

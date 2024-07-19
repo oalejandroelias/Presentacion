@@ -1,7 +1,7 @@
 import Proyecto from "./Proyecto";
-import pagCopade from "../../../public/img/img_map.png";
-import pagGis from "../../../public/img/img_map.png";
-import appCultivar from "../../../public/img/img_map.png";
+import pagCopade from "../../../src/img/img_map.png";
+import pagGis from "../../../src/img/img_map.png";
+import appCultivar from "../../../src/img/img_map.png";
 
 const proyectos = [
   {

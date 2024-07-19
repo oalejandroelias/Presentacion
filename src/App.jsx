@@ -16,7 +16,7 @@ import Presentaciones from './pages/Presentacion/Presentaciones';
 import Contacto from './pages/Contacto';
 import Servicios from './pages/Servicios/Servicios';
 import ScrollToTop from 'react-scroll-to-top';
-import blue_arrow from '../public/img/blue_arrow.svg'
+import blue_arrow from '../src/img/blue_arrow.svg'
 import Footer from './layouts/Footer';
 import Mapas from './pages/mapas/Mapas';
 import Graficos from './pages/graficos/Graficos';

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import logo_ale from "../../public/img/logo_ale.jpg";
-import perfil_ale from "../../public/img/perfil_ale.png";
-import mapa_regionalizacion from "../../public/img/mapa-regionalizacion.jpg";
+import logo_ale from "../../src/img/logo_copade_a.png";
+import perfil_ale from "../../src/img/logo_copade_a.png";
+
 
 const Example = () => {
     return (

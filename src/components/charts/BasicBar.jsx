@@ -28,6 +28,10 @@ const BasicBar = (props) => {
         text: 'Gráfico 1',
         align: 'left'
       },
+      chart: {
+        background: '#fff'
+      },
+
       grid: {
         row: {
           colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
