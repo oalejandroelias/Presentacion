@@ -27,7 +27,7 @@ const Home = () => {
         <TimeCarousel />
       </div>
       {/* <Banner /> */}
-      {/* <Pasos /> */}
+      <Pasos />
       <Opciones />
       {/* <Galeria /> */}
       <Seccion1 />

@@ -1,5 +1,5 @@
 import React from 'react'
-import sig1 from '../../dist/img/sig_1.png'
+import sig1 from '../../src/img/mapas/1.jpeg'
 
 const TutorialMenu = () => {
   return (

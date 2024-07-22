@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from "react-router-dom";
-import logo_copade_a from '../../dist/img/logo_copade_a.png'
+import logo_copade_a from '../../src/img/logo_copade_a.png'
 
 const Footer = () => {
 

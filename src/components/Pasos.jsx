@@ -1,7 +1,7 @@
-import img_t_1 from "../../src/img/zoom_1.png"
-import t_menu_1 from "../../src/img/t_menu_1a.png"
-import t_menu_2 from "../../src/img/t_menu_2a.png"
-import t_menu_3 from "../../src/img/t_menu_3a.png"
+
+import t_menu_1 from "../../src/img/mapas/1.jpeg"
+import t_menu_2 from "../../src/img/mapas/1.jpeg"
+import t_menu_3 from "../../src/img/mapas/1.jpeg"
 
 const Pasos = () => {
   return (

@@ -5,8 +5,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 4001 development",
-    "build": "vite build --base=./ production",
+    "dev": "vite --port 4001",
+    "build": "vite build --base=./",
     "preview": "vite preview"
   },
   "dependencies": {

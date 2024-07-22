@@ -4,10 +4,10 @@ import Home from './pages/Home';
 import LayerList from './pages/LayerList'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './layouts/NavBar';
-import ScrollMotion from './pages/ScrollMotion'
-import Parallax from './pages/Parallax'
+//import ScrollMotion from './pages/ScrollMotion'
+//import Parallax from './pages/Parallax'
 import Presentacion from './pages/Presentacion'
-import ParallaxContainer from './pages/reactScrollParallax/ParallaxContainer'
+//import ParallaxContainer from './pages/reactScrollParallax/ParallaxContainer'
 import Pasos from './pages/tutorial/Pasos';
 import MapsScroll from './pages/MapsScroll';
 import VistaSimple from './layouts/TutorialMenu'
@@ -38,8 +38,8 @@ function App() {
           <Route path='/presentaciones' element={<Presentaciones />} />
           <Route path='/contacto' element={<Contacto />} />
           <Route path='/graficos' element={<Graficos />} />
-          <Route path='/scrollMotion' element={<ScrollMotion />} />
-          <Route path='/scrollParallax' element={<ParallaxContainer />} />
+          {/* <Route path='/scrollMotion' element={<ScrollMotion />} />
+          <Route path='/scrollParallax' element={<ParallaxContainer />} /> */}
           <Route path='/pasos' element={<Pasos />} />
           <Route path='/vistaSimple' element={<VistaSimple />} />
           <Route path='/test' element={<MapsScroll />} />

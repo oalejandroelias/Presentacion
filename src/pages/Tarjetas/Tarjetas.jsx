@@ -1,40 +1,43 @@
 
-import mapa_regionalizacion from "../../../src/img/mapa-regionalizacion.jpg";
+import mapa_regionalizacion from "../../../public/img/mapas/mapa-regionalizacion.jpg";
 import Tarjeta from "./Tarjeta";
 
 
-const base_url = window.location.protocol + "//" + window.location.host;
+//const base_url = window.location.protocol + "//" + window.location.host;
+const base_url = import.meta.env.VITE_API_URL;
+const proyect_url = import.meta.env.VITE_PROYECT_URL;
+const nada = ""
 
 const proyectos = [
   {
     image: mapa_regionalizacion,
     title: "SIG Copade",
     description: "Sistema de Información Geográfico",
-    url: base_url + "/img/mapa-regionalizacion.jpg",
+    url: proyect_url + "/img/mapas/mapa-regionalizacion.jpg",
   },
   {
     image: mapa_regionalizacion,
     title: "Página Copade",
     description: "Página hecha en Wordpress",
-    url: "https://www.copade.gob.ar/",
+    url: proyect_url + "/img/mapas/mapa-regionalizacion.jpg",
   },
   {
     image: mapa_regionalizacion,
     title: "Cultivar en la Ciudad",
     description: "App para movil de la guia Cultivar en la ciudad",
-    url: "https://play.google.com/store/apps/details?id=com.calendario.components&hl=es",
+    url: proyect_url + "/img/mapas/mapa-regionalizacion.jpg"
   },
   {
     image: mapa_regionalizacion,
     title: "Cultivar en la Ciudad",
     description: "App para movil de la guia Cultivar en la ciudad",
-    url: "https://play.google.com/store/apps/details?id=com.calendario.components&hl=es",
+    url: proyect_url + "/img/mapas/mapa-regionalizacion.jpg"
   },
   {
     image: mapa_regionalizacion,
     title: "Cultivar en la Ciudad",
     description: "App para movil de la guia Cultivar en la ciudad",
-    url: "https://play.google.com/store/apps/details?id=com.calendario.components&hl=es",
+    url: proyect_url + "/img/mapas/mapa-regionalizacion.jpg"
   },
 ];
 

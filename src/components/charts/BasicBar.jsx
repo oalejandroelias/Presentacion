@@ -14,6 +14,7 @@ const BasicBar = (props) => {
       chart: {
         height: 350,
         type: 'line',
+        background: '#fff',
         zoom: {
           enabled: false
         }
@@ -28,9 +29,7 @@ const BasicBar = (props) => {
         text: 'Gráfico 1',
         align: 'left'
       },
-      chart: {
-        background: '#fff'
-      },
+
 
       grid: {
         row: {

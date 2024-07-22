@@ -1,4 +1,4 @@
-import img_contacto from "../../dist/img/banner.jpg";
+import img_contacto from "../../src/img/banner.jpg";
 import emailjs from '@emailjs/browser';
 import React, { useRef } from 'react';
 

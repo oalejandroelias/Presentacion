@@ -163,15 +163,16 @@ const Regiones = (props) => {
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     // xmlSpace="preserve"
-                    width={270}
-                    height={447}
+                    width={470}
+                    height={547}
                     stroke="#000"
                     strokeLinecap="square"
                     strokeMiterlimit={10}
                     colorInterpolation="auto"
                     fontFamily="'Dialog'"
                     fontSize={12}
-                    viewBox="0 0 2.53 4.19"
+                    viewBox="-0.5 -0.5 3.53 5.19"
+
                 //viewBox="0 0 4 6"
                 >
                     <style>

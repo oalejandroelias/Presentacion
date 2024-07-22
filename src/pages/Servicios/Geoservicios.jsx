@@ -24,7 +24,8 @@ const folder = {
 };
 
 const data = flattenTree(folder);
-const base_url = window.location.protocol + "//" + window.location.host;
+//const base_url = window.location.protocol + "//" + window.location.host;
+const base_url = import.meta.env.VITE_API_URL;
 const baseGeoUrl = base_url + "/geoserver/wms?request=getCapabilities";
 
 function Geoservicios() {

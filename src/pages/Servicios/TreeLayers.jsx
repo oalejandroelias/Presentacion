@@ -378,7 +378,8 @@ const folder = {
 };
 
 const data = flattenTree(folder);
-const base_url = window.location.protocol + "//" + window.location.host;
+//const base_url = window.location.protocol + "//" + window.location.host;
+const base_url = import.meta.env.VITE_API_URL
 const baseGeoUrl = base_url + "/geoserver/wms?request=getCapabilities";
 
 function TreeLayers() {
@@ -555,7 +556,7 @@ function TreeLayers() {
                                                 setTitle(element.metadata?.capa);
                                                 setName(element.metadata?.capa)
                                                 setAbstract("")
-                                                setBaseGeoUrl(baseGeoUrl) /**Hacer que sea dinamico para otros servidores */
+                                                //setBaseGeoUrl(baseGeoUrl) /**Hacer que sea dinamico para otros servidores */
                                             }}
                                         >{element.name}</a>
                                         {/* <FaEye className="text-nqn-azul inline mb-1 rounded-md items-center ml-4 hover:bg-gray-200 focus:outline-none" onClick={() => {

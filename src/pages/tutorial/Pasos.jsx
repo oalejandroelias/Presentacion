@@ -19,7 +19,7 @@ import {
 
 import TutorialMenu from "../../layouts/TutorialMenu";
 
-import sig1 from '../../../src/img/sig_1.png'
+import sig1 from '../../../src/img/mapas/1.jpeg'
 
 const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
 const FadeUp = batch(Fade(), Move(), Sticky());

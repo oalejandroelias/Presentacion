@@ -9,7 +9,7 @@ const Graficos = () => {
         <>
             <section className="mt-20">
                 <div className="container px-6 py-10 mx-auto">
-                    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                         <BasicBar />
                         <ColumnStacked />
                         <Patterned />

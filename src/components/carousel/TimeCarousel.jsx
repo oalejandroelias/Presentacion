@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import sig from '../../img/sig_fondo.png'
 import img2 from '../../img/banner.jpg'
+import img3 from '../../img/visor.png'
 
 // Import Swiper styles
 // import 'swiper/css';
@@ -37,11 +38,11 @@ const TimeCarousel = () => {
                 <div className="">
                     <Swiper
                         slidesPerView={1}
-                        cssMode={true}
+                        //cssMode={true}
                         spaceBetween={30}
                         centeredSlides={true}
                         autoplay={{
-                            delay: 3000,
+                            delay: 2000,
                             //disableOnInteraction: true,
                             pauseOnMouseEnter: true,
                         }}
@@ -66,17 +67,11 @@ const TimeCarousel = () => {
                             </div>
 
                         </SwiperSlide>
-                        <SwiperSlide><img src={sig} /></SwiperSlide>
-                        <SwiperSlide><img src={img2} /></SwiperSlide>
-                        <SwiperSlide><img src={sig} /></SwiperSlide>
 
-                        <div className="autoplay-progress flex " slot="container-end">
-                            {/* <svg viewBox="0 0 48 48" ref={progressCircle}>
-                                <circle cx="24" cy="24" r="20"></circle>
-                            </svg> */}
-                            {/* <span ref={progressContent}></span> */}
-                            <h1 className='text-white'>Hola</h1>
-                        </div>
+                        <SwiperSlide><img src={img2} /></SwiperSlide>
+                        <SwiperSlide><img src={img3} /></SwiperSlide>
+
+
                     </Swiper>
                 </div>
             </section>
