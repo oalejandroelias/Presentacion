@@ -16,8 +16,8 @@ const Servicios = () => {
                 <h2 className="px-6 text-1xl font-semibold text-left lg:text-2xl text-black dark:text-white mb-5">
                     COPADE pone a disposición sus geoservicios
                 </h2>
-                <Geoservicios />
-                <TreeLayers />
+                {/* <Geoservicios />
+                <TreeLayers /> */}
                 {/* <Regiones /> */}
 
             </div>

@@ -8,7 +8,7 @@ const LayerList = () => {
   const clickhandler = (name) => console.log("delete", name);
   const [capas, setCapas] = useState([]);
 
-  var base_url = window.location.protocol + "//" + window.location.host;
+  var base_url = import.meta.env.VITE_API_URL;
 
   //const [baseGeoUrl, setbaseGeoUrl] = useState("http://giscopade.neuquen.gov.ar/geoserver/wms?request=getCapabilities")
   const [baseGeoUrl, setbaseGeoUrl] = useState(base_url + "/geoserver/wms?request=getCapabilities")

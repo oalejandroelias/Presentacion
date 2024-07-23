@@ -6,12 +6,13 @@ import Map from "ol/Map";
 import WMSCapabilities from 'ol/format/WMSCapabilities'
 import View from "ol/View";
 import * as olProj from 'ol/proj';
-import  {XMLParser} from "fast-xml-parser";
+import { XMLParser } from "fast-xml-parser";
 
 const Mapa = ({ children, zoom, center, name }) => {
 	const mapRef = useRef();
 	const [map, setMap] = useState(null);
-	const baseUrl = "http://giscopade.neuquen.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+	const baseUrl = import.meta.env.VITE_API_URL + "/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+	//var base_url = import.meta.env.VITE_API_URL;
 	const [layers, setLayers] = useState([])
 
 	// on component mount
@@ -27,7 +28,7 @@ const Mapa = ({ children, zoom, center, name }) => {
 		mapObject.setTarget(mapRef.current);
 		setMap(mapObject);
 
-		
+
 
 		return () => mapObject.setTarget(undefined);
 	}, []);
@@ -38,48 +39,49 @@ const Mapa = ({ children, zoom, center, name }) => {
 
 		/******* */
 		const getXMLResponse = async () => {
-		const parser = new WMSCapabilities();
-		await fetch(baseUrl)
-			.then((response) => response.text())
-		 .then((textResponse) => {
-			
-            var result = parser.read(textResponse);
-		
-			var Layers = result.Capability.Layer.Layer;
-			var extent;
+			const parser = new WMSCapabilities();
+			await fetch(baseUrl)
+				.then((response) => response.text())
+				.then((textResponse) => {
 
-			Layers.map((layer) => {
-			//var layerobj = Layers[i];
-			// var capa = layer.Name.split(":");
-			// var name_aux = capa[1];
-			
-			var name_aux = layer.Name;
+					var result = parser.read(textResponse);
 
-	  
-			if (name_aux === undefined) {
-				name_aux = capa;
-			}
-	  
-			if (name_aux == "Copade:" + name || name_aux == name) {
-			  extent = layer.BoundingBox[0].extent;
-			  //Tranformo la projeccion
-			  extent = olProj.transformExtent(
-				extent,
-				olProj.get("EPSG:4326"),
-				olProj.get("EPSG:3857")
-			  );
-			  map.getView().fit(extent, { duration: 1000, size: map.getSize() });
-			}
-		  })
+					var Layers = result.Capability.Layer.Layer;
+					var extent;
 
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-	}
+					Layers.map((layer) => {
+						//var layerobj = Layers[i];
+						// var capa = layer.Name.split(":");
+						// var name_aux = capa[1];
 
-	getXMLResponse();
-		
+						var name_aux = layer.Name;
+
+
+						if (name_aux === undefined) {
+							name_aux = capa;
+						}
+
+						//if (name_aux == "Copade:" + name || name_aux == name) {
+						if (name_aux == name) {
+							extent = layer.BoundingBox[0].extent;
+							//Tranformo la projeccion
+							extent = olProj.transformExtent(
+								extent,
+								olProj.get("EPSG:4326"),
+								olProj.get("EPSG:3857")
+							);
+							map.getView().fit(extent, { duration: 1000, size: map.getSize() });
+						}
+					})
+
+				})
+				.catch((error) => {
+					console.log(error);
+				});
+		}
+
+		getXMLResponse();
+
 		/******* */
 
 	}, [map]);
