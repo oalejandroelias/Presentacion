@@ -1,6 +1,6 @@
 import './App.css'
 import { AnimatePresence } from 'framer-motion';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import LayerList from './pages/LayerList'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './layouts/NavBar';

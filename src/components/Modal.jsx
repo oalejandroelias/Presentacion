@@ -12,7 +12,7 @@ export default function Modal(props) {
   const [option, setOption] = useState("nada");
 
 
-  var base_url = window.location.protocol + "//" + window.location.host;
+  const base_url = import.meta.env.VITE_API_URL;
   const [owsGeoUrl, setOwsGeoUrl] = useState(base_url + "/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=")
 
   const file_type = [

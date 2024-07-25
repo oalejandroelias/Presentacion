@@ -1,7 +1,7 @@
 import React from 'react'
 
 import logo_ale from "../../src/img/logo_copade_a.png";
-import perfil_ale from "../../src/img/logo_copade_a.png";
+import perfil_ale from "../../src/img/gis_mobile.png";
 
 
 const Example = () => {
@@ -292,13 +292,13 @@ const Example = () => {
 
                             <div className="mt-2 md:mx-6">
                                 <div>
-                                    <p className="text-xl font-medium tracking-tight text-white">Alejandro Elias</p>
-                                    <p className="text-blue-200 ">Marketing Manager at Stech</p>
+                                    <p className="text-xl font-medium tracking-tight text-white">Diseño responsive</p>
+                                    {/* <p className="text-blue-200 ">Marketing Manager at Stech</p> */}
                                 </div>
 
-                                <p className="mt-4 text-lg leading-relaxed text-white md:text-xl"> “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda”.</p>
+                                <p className="mt-4 text-lg leading-relaxed text-white md:text-xl"> El visor esta diseñado para adaptarse a diferentes pantallas.</p>
 
-                                <div className="flex items-center justify-between mt-6 md:justify-start">
+                                {/* <div className="flex items-center justify-between mt-6 md:justify-start">
                                     <button title="left arrow" className="p-2 text-white transition-colors duration-300 border rounded-full rtl:-scale-x-100 hover:bg-blue-400">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -310,7 +310,7 @@ const Example = () => {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                                         </svg>
                                     </button>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </main>

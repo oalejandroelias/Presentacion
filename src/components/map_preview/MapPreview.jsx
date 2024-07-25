@@ -50,13 +50,13 @@ const MapPreview = (props) => {
       <Map center={fromLonLat(center)} zoom={zoom} name={props.name}>
         <Layers>
           <TileLayer source={osm()} zIndex={0} />
-            <TileLayer
-              source={WMSTile(props.baseGeoUrl, {
-                LAYERS: props.name,
-                Tiled: true,
-              })}
-              zIndex={0}
-            />
+          <TileLayer
+            source={WMSTile(props.baseGeoUrl, {
+              LAYERS: props.name,
+              Tiled: true,
+            })}
+            zIndex={0}
+          />
         </Layers>
         <Controls>
           <FullScreenControl />

@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import sig from '../../img/sig_fondo.png'
-import img2 from '../../img/banner.jpg'
-import img3 from '../../img/visor.png'
+import sig_1 from '../../img/sig_1.jpeg'
+import sig_2 from '../../img/sig_2.png'
+import sig_3 from '../../img/sig_3.png'
 
 // Import Swiper styles
 // import 'swiper/css';
@@ -27,8 +27,8 @@ const TimeCarousel = () => {
     const pagination = {
         clickable: true,
         renderBullet: function (index, className) {
-            //return '<span class="' + className + '">' + (index + 1) + '</span>';
-            //return '<span class="' + className + '">' + (index + 1) + '</span>';
+            //return '<span className="' + className + '">' + (index + 1) + '</span>';
+            //return '<span className="' + className + '">' + (index + 1) + '</span>';
         },
     };
 
@@ -56,11 +56,11 @@ const TimeCarousel = () => {
                     >
                         <SwiperSlide>
                             <div className="relative text-center">
-                                <img src={sig} className='' />
+                                <img src={sig_1} className='' />
                                 <div className="w-full absolute top-0 text-center mt-20 ">
 
                                     <h2 className="text-4xl font-bold text-white text-center ">
-                                        TailwindCSS + React
+                                        Geoserver
                                     </h2>
 
                                 </div>
@@ -68,8 +68,8 @@ const TimeCarousel = () => {
 
                         </SwiperSlide>
 
-                        <SwiperSlide><img src={img2} /></SwiperSlide>
-                        <SwiperSlide><img src={img3} /></SwiperSlide>
+                        <SwiperSlide><img src={sig_2} /></SwiperSlide>
+                        <SwiperSlide><img src={sig_3} /></SwiperSlide>
 
 
                     </Swiper>
