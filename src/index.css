@@ -6,7 +6,7 @@
   @apply text-black dark:text-white border-black dark:border-white dark:bg-slate-700 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
 }
 
-.text-per-theme-default {
+.text-default {
   @apply text-black dark:text-white;
 }
 
@@ -40,3 +40,19 @@
   --color-text-secondary: #4a5568;
   --color-text-accent: #2b6cb0;
 }
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/src/assets/fonts/Manrope-Regular.woff2') format('woff2'),
+    url('/src/assets/fonts/Manrope-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* @font-face {
+  font-family: 'Manrope-bold';
+  src: url('/src/assets/fonts/Marope-Bold.woff2') format('woff2'),
+    url('/src/assets/fonts/Marope-Bold.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+} */

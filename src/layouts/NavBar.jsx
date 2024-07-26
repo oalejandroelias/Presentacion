@@ -30,7 +30,7 @@ function NavBar() {
   else {
 
     return (
-      <div className="">
+      <div className="font-manrope font-bold">
         {/* <nav className="azulnqn fixed w-full z-40 top-0 shadow py-1 border-b border-nqn-amarillo "> */}
         <nav className="azulnqn fixed w-full z-40 top-0 shadow py-1 ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
@@ -62,7 +62,7 @@ function NavBar() {
                           item.current
                             ? "text-nqn-verde dark:amarillonqn"
                             : "text-nqn-amarillo dark:amarillonqn hover:animate-pulse hover:text-nqn-verde",
-                          "px-3 py-2 rounded-md text-base font-medium font-bold"
+                          "px-3 py-2 rounded-md"
                         )}
                         aria-current={item.current ? "page" : undefined}
                         {...(item.href === "presentaciones" ? { target: "_blank" } : {})}
@@ -142,7 +142,7 @@ function NavBar() {
                       item.current
                         ? "text-nqn-verde dark:amarillonqn"
                         : "text-nqn-amarillo dark:amarillonqn hover:animate-pulse hover:text-nqn-verde",
-                      "px-3 py-2 rounded-md text-sm font-medium block"
+                      "px-3 py-2 rounded-md text-sm block"
                     )}
                     aria-current={item.current ? "page" : undefined}
                   >

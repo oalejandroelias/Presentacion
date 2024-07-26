@@ -21,19 +21,20 @@ const Tarjeta = (props) => {
 
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-5"> */}
             <div>
-                <img className="border-2 border-black object-cover object-center w-full h-64 rounded-lg lg:h-80 fill-blue-500 transition-transform transform hover:scale-105" src={props.image} alt="" />
-
+                <a href={props.url} target="_blank">
+                    <img className="border-2 border-black object-cover object-center w-full h-64 rounded-lg lg:h-80 fill-blue-500 transition-transform transform hover:scale-105" src={props.image} alt="" />
+                </a>
                 <div className="mt-8">
                     <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
                         <span className="relative text-white">SIG</span>
                     </span>
-                    <span className="text-blue-500 uppercase">Regionalización</span>
+                    <span className="ml-2 text-blue-500 uppercase">Regionalización</span>
 
                     <h1 className="mt-4 text-xl font-semibold text-gray-800 dark:text-white">
                         PLAN PROVINCIAL DE REGIONALIZACIÓN
                     </h1>
 
-                    <p className="mt-2 text-per-theme-default">
+                    <p className="mt-2 text-default">
                         {props.description}
                     </p>
 
@@ -43,10 +44,10 @@ const Tarjeta = (props) => {
                                 John snow
                             </a> */}
 
-                            <p className="text-sm text-per-theme-default">Febrero 1, 2022</p>
+                            <p className="text-sm text-default">Febrero 1, 2022</p>
                         </div>
 
-                        <a href={props.url} target="_blank" className="inline-block text-blue-500 underline hover:text-blue-400">Ver</a>
+                        {/* <a href={props.url} target="_blank" className="inline-block text-blue-500 underline hover:text-blue-400">Ver</a> */}
                     </div>
 
                 </div>

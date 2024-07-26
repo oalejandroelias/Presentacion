@@ -14,9 +14,9 @@ const Footer = () => {
 
         return (
             <footer className="bg-nqn-azul dark:bg-gray-900">
-                <div className="container px-6 py-12 mx-auto">
+                <div className="container px-6 py-12 mx-auto font-manrope">
                     {/* <div className="md:flex md:-mx-3 md:items-center md:justify-between">
-                        <h1 className="text-xl font-semibold tracking-tight text-white md:mx-3 xl:text-2xl dark:text-white"></h1>
+                        <h1 className="text-xl manropebold tracking-tight text-white md:mx-3 xl:text-2xl dark:text-white"></h1>
 
                         <div className="mt-6 md:mx-3 shrink-0 md:mt-0 md:w-auto">
                             <a href="#" className="inline-flex items-center justify-center w-full px-4 py-2 text-sm text-white duration-300 bg-gray-800 rounded-lg gap-x-3 hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
@@ -40,7 +40,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div>
-                            <p className="font-semibold text-white dark:text-white">ACerca de</p>
+                            <p className=" text-white dark:text-white">Acerca de</p>
 
                             <div className="flex flex-col items-start mt-5 space-y-2">
                                 <a href="#" className="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">www.copade.gob.ar</a>
@@ -50,7 +50,7 @@ const Footer = () => {
                         </div>
 
                         <div>
-                            <p className="font-semibold text-white dark:text-white">Enlaces Relacionados</p>
+                            <p className=" text-white dark:text-white">Enlaces Relacionados</p>
 
                             <div className="flex flex-col items-start mt-5 space-y-2">
                                 <a href="http://w2.neuquen.gov.ar/index.php" className="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Gobierno de la Provincia del Neuquén</a>
@@ -62,7 +62,7 @@ const Footer = () => {
 
 
                         <div>
-                            <p className="font-semibold text-white dark:text-white">Contactos</p>
+                            <p className=" text-white dark:text-white">Contactos</p>
 
                             <div className="flex flex-col items-start mt-5 space-y-2">
                                 <a href="#" className="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">infocopade@neuquen.gov.ar</a>

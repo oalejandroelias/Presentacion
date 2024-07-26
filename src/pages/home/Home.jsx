@@ -5,7 +5,6 @@ import Seccion1 from '../../components/Seccion1'
 import Tutorial1 from '../../components/Tutorial1'
 import PasosA from '../../components/PasosA'
 import Svg from '../../layouts/Svg'
-import Test from '../../layouts/Test'
 import ModalMap from '../../components/modal/ModalMap'
 import Opciones from '../Opciones'
 import Galeria from '../Galeria'
@@ -21,6 +20,7 @@ import Diseño from './Diseño'
 import DiseñoA from './DiseñoA'
 import DiseñoB from './DiseñoB'
 import DiseñoBa from './DiseñoBa'
+import LinkGis from './LinkGis'
 
 const Home = () => {
 
@@ -36,11 +36,12 @@ const Home = () => {
       {/* <DiseñoA /> */}
       <DiseñoB />
       <DiseñoBa />
+      <LinkGis />
       {/* <Banner /> */}
       {/* <PasosA /> */}
       {/* <Opciones /> */}
       {/* <Galeria /> */}
-      <Seccion1 />
+      {/* <Seccion1 /> */}
       {/* <Tarjetas /> */}
       {/* <Example /> */}
       {/* <Parallax /> */}

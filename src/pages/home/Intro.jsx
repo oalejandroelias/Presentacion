@@ -4,7 +4,7 @@ import visor from '../../img/visor.png'
 const Intro = () => {
     return (
         <>
-            <div className="bg-white dark:bg-gray-900">
+            <div className="bg-white dark:bg-gray-900 font-manrope">
 
 
                 <div className="container px-6 py-16 mx-auto text-left">

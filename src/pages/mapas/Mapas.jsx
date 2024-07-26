@@ -9,8 +9,10 @@ const Mapas = () => {
     return (
         <>
             <section className="mt-20">
-                <div className="container px-6 py-10 mx-auto">
-                    <Tarjetas />
+                <div className="container px-6 py-10 mx-auto font-manrope">
+                    <div className=''>
+                        <Tarjetas />
+                    </div>
                     <div className=''>
                         <Carousel />
                     </div>

@@ -3,7 +3,7 @@ import visor from '../../img/visor.png'
 const DiseñoA = () => {
     return (
         <>
-            <section className="bg-white dark:bg-gray-900">
+            <section className="bg-white dark:bg-gray-900 font-marope">
                 <div className="relative flex">
                     <div className="min-h-screen lg:w-1/3"></div>
                     <div className="hidden w-3/4 min-h-screen bg-gray-100 dark:bg-gray-800 lg:block"></div>

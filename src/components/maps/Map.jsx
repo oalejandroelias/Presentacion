@@ -12,6 +12,8 @@ const Mapa = ({ children, zoom, center, name }) => {
 	const mapRef = useRef();
 	const [map, setMap] = useState(null);
 	const baseUrl = import.meta.env.VITE_API_URL + "/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+	//const baseUrl = "http://giscopade.neuquen.gov.ar/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+
 	//var base_url = import.meta.env.VITE_API_URL;
 	const [layers, setLayers] = useState([])
 
@@ -61,8 +63,8 @@ const Mapa = ({ children, zoom, center, name }) => {
 							name_aux = capa;
 						}
 
-						//if (name_aux == "Copade:" + name || name_aux == name) {
-						if (name_aux == name) {
+						if (name_aux == "Copade:" + name || name_aux == name) {
+							//if (name_aux == name) {
 							extent = layer.BoundingBox[0].extent;
 							//Tranformo la projeccion
 							extent = olProj.transformExtent(

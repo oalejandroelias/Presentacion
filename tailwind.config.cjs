@@ -21,6 +21,8 @@ module.exports = {
       },
       /**Dark/Light Theme */
       fontFamily: {
+        manrope: ['Manrope', 'sans-serif'],
+
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
       },
       colors: {

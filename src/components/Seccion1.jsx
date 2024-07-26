@@ -1,5 +1,5 @@
 import React from 'react'
-import js from '../img/js_logo.png'
+import js from '../img/ol_logo.svg'
 import ol from '../img/ol_logo.svg'
 
 const Seccion1 = () => {

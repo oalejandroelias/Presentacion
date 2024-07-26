@@ -6,7 +6,6 @@ import Tarjeta from "./Tarjeta";
 //const base_url = window.location.protocol + "//" + window.location.host;
 const base_url = import.meta.env.VITE_API_URL;
 const proyect_url = import.meta.env.VITE_PROYECT_URL;
-const nada = ""
 
 const proyectos = [
   {
@@ -18,25 +17,25 @@ const proyectos = [
   {
     image: mapa_regionalizacion,
     title: "Página Copade",
-    description: "Página hecha en Wordpress",
+    description: "Sistema de Información Geográfico",
     url: proyect_url + "/img/mapas/mapa-regionalizacion.jpg",
   },
   {
     image: mapa_regionalizacion,
     title: "Cultivar en la Ciudad",
-    description: "App para movil de la guia Cultivar en la ciudad",
+    description: "Sistema de Información Geográfico",
     url: proyect_url + "/img/mapas/mapa-regionalizacion.jpg"
   },
   {
     image: mapa_regionalizacion,
     title: "Cultivar en la Ciudad",
-    description: "App para movil de la guia Cultivar en la ciudad",
+    description: "Sistema de Información Geográfico",
     url: proyect_url + "/img/mapas/mapa-regionalizacion.jpg"
   },
   {
     image: mapa_regionalizacion,
     title: "Cultivar en la Ciudad",
-    description: "App para movil de la guia Cultivar en la ciudad",
+    description: "Sistema de Información Geográfico",
     url: proyect_url + "/img/mapas/mapa-regionalizacion.jpg"
   },
 ];
@@ -45,7 +44,7 @@ const Tarjetas = () => {
   return (
     <>
       <section className="">
-        <div className="container px-6 py-10 mx-auto">
+        <div className="container px-6 py-10 mx-auto font-manrope">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">Mapas Temáticos </h1>
 

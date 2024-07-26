@@ -6,7 +6,7 @@ import "reveal.js/dist/theme/black.css";
 // import MapPreview from "../../components/map_preview/MapPreview";
 // import mapa_regionalizacion from "../../img/mapa-regionalizacion.jpg";
 
-import js from '../../../src/img/js_logo.png'
+import js from '../../../src/img/ol_logo.svg'
 import ol from '../../../src/img/ol_logo.svg'
 import BasicBar from "../../components/charts/BasicBar";
 
@@ -48,7 +48,7 @@ function App(props) {
     // elemento padre. Asegúrate de que el padre no tenga altura 0.
     <div className={`reveal ${position}`} ref={deckDivRef}>
 
-      <div className="slides">
+      <div className="slides font-manrope">
 
 
         <section className="snap-y snap-mandatory overflow-y-scroll h-5/6 flex-grow z-0 mt-10 mb-20">
@@ -114,7 +114,7 @@ function App(props) {
         </section>
 
         <section data-background-gradient="linear-gradient(to bottom, #2b3e4c, #000000)" data-auto-animate>
-          <h1>PLAN PROVINCIAL DE REGIONALIZACIÓN</h1>
+          <h1 className="font-manrope">PLAN PROVINCIAL DE REGIONALIZACIÓN</h1>
 
         </section>
         <section data-background-gradient="linear-gradient(to bottom, #2b3e4c, #000000)" data-auto-animate >

@@ -142,7 +142,7 @@ export default function Modal(props) {
                         <div className="mb-3 xl:w-96">
                           <label for="country" className="block text--d font-medium text-gray-700">Descargar</label>
                           <select
-                            className="mt-1 block w-full py-2 px-3 border-2 text-per-theme-default input-per rounded-md shadow-sm "
+                            className="mt-1 block w-full py-2 px-3 border-2 text-default input-per rounded-md shadow-sm "
                             aria-label="Default select example"
                             value={option}
                             onChange={handleChange}

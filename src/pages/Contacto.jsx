@@ -22,7 +22,7 @@ const Contacto = () => {
 
 
   return (
-    <div className="container mx-auto overflow-auto mt-16 z-10">
+    <div className="container mx-auto overflow-auto mt-16 z-10 font-manrope">
       <section className="text-gray-600 body-font relative">
         <div className="px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="lg:w-2/3 rounded-lg overflow-hidden sm:mr-10  lg:flex items-end justify-start relative">
@@ -43,7 +43,7 @@ const Contacto = () => {
                 htmlFor="name"
                 className="leading-7 text-sm text-black dark:text-white"
               >
-                nombre
+                Nombre
               </label>
               <input
                 type="text"
