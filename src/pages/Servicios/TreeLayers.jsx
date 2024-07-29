@@ -369,8 +369,6 @@ const folder = {
                                 { name: "capa", metadata: { "capa": "capa" } }
                             ]
                         },
-
-
                     ]
                 },]
         },
@@ -502,6 +500,17 @@ function TreeLayers() {
         }
     };
 
+    const showLayer = async (capa) => {
+        setShow_modal(!show_modal);
+        setTitle(capa);
+        setName(capa)
+        setAbstract("")
+
+        //https://giscopade.neuquen.gov.ar/geoserver/Copade/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=Copade:regiones
+
+
+    }
+
     // const getSelected = async (sel) => {
     //     let a = sel;
     // }
@@ -552,10 +561,11 @@ function TreeLayers() {
                                         <a
                                             className="text-blue-700 dark:text-blue-500 hover:underline"
                                             onClick={() => {
-                                                setShow_modal(!show_modal);
-                                                setTitle(element.metadata?.capa);
-                                                setName(element.metadata?.capa)
-                                                setAbstract("")
+                                                // setShow_modal(!show_modal);
+                                                // setTitle(element.metadata?.capa);
+                                                // setName(element.metadata?.capa)
+                                                // setAbstract("")
+                                                showLayer(element.metadata?.capa)
                                                 //setBaseGeoUrl(baseGeoUrl) /**Hacer que sea dinamico para otros servidores */
                                             }}
                                         >{element.name}</a>

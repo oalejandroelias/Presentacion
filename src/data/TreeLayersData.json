@@ -1,0 +1,19 @@
+{
+    "name": "",
+    "children": [
+        {
+            "name": "Regiones",
+            "metadata": {
+                "color": "#2b3e4c"
+            },
+            "children": [
+                {
+                    "name": "Regiones",
+                    "metadata": {
+                        "capa": "regiones"
+                    }
+                }
+            ]
+        }
+    ]
+}

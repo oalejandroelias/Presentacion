@@ -1,25 +1,73 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useRef, useState, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationIcon, MapIcon } from "@heroicons/react/outline";
 import MapPreview from "../components/map_preview/MapPreview";
 import { RiCloseLine } from "react-icons/ri";
 import Presentaciones from "../pages/Presentacion/Presentaciones";
+import axios from "axios";
+import { XMLParser } from "fast-xml-parser";
 
 export default function Modal(props) {
   const [open, setOpen] = useState(props.show_modal);
   const cancelButtonRef = useRef(null);
   const [option, setOption] = useState("nada");
-
+  const [arrayAtributos, setArrayAtributos] = useState()
 
   const base_url = import.meta.env.VITE_API_URL;
-  const [owsGeoUrl, setOwsGeoUrl] = useState(base_url + "/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=")
+  const [owsGeoUrl, setOwsGeoUrl] = useState(base_url + "/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=");
+  const urlAux = base_url + "/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=" + props.name;
+
+  useEffect(() => {
+    const getXMLResponse = async () => {
+      const resp = axios.get(urlAux, {
+        headers: {
+          'Content-Type': 'application/xml'
+        }
+      }).then((response) => {
+
+        const parser = new XMLParser();
+        let obj = parser.parse(response.data);
+        console.log("Entra")
+        console.log(obj)
+        // console.log(obj.WMS_Capabilities.Capability.Layer.Layer)
+        // setCapas(obj.WMS_Capabilities.Capability.Layer.Layer);
+
+        // setItems(obj.WMS_Capabilities.Capability.Layer.Layer);
+        let campos = obj['wfs:FeatureCollection']['gml:featureMember'];
+
+        campos.map((value, index) => {
+
+          // console.log("index " + index)
+          // console.log("value " + value)
+          // console.log("Registro " + value["copade:" + props.name])
+
+          let a = Object.entries(value["copade:" + props.name])
+
+          setArrayAtributos([a])
+
+
+        })
+
+        console.log("arrayAtributos")
+        console.log(arrayAtributos)
+        console.log("arrayAtributos")
+
+      })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    getXMLResponse();
+  }, []);
+
 
   const file_type = [
     { name: "ShapeFile", value: owsGeoUrl + props.name + "&outputformat=SHAPE-ZIP&SRSNAME=EPSG:4326" },
     { name: "Csv", value: owsGeoUrl + props.name + "&outputFormat=csv" },
     { name: "Json", value: owsGeoUrl + props.name + "&outputformat=JSON&SRSNAME=EPSG:4326" },
-    { name: "kml", value: "http://giscopade.neuquen.gov.ar/geoserver/Copade/wms/kml?layers=" + props.name },
+    { name: "kml", value: base_url + "/geoserver/wms/kml?layers=" + props.name },
     { name: "Jsonp", value: owsGeoUrl + props.name + "&outputFormat=application/json" },
     { name: "gml2", value: owsGeoUrl + props.name + "&info_format=application/vnd.ogc.gml" },
     { name: "gml3", value: owsGeoUrl + props.name + "&outputFormat=application/vnd.ogc.gml/3.1.1" },

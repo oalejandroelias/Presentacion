@@ -3,8 +3,11 @@ import { XMLParser } from "fast-xml-parser";
 import styled from "styled-components";
 import Table from "../components/DataTable";
 import axios from "axios";
+import useStore from '../store/useStore'
 
 const LayerList = () => {
+
+  const { items, addItem, removeItem, updateItem, setItems } = useStore();
   const clickhandler = (name) => console.log("delete", name);
   const [capas, setCapas] = useState([]);
 
@@ -48,6 +51,8 @@ const LayerList = () => {
         console.log(obj.WMS_Capabilities.Capability.Layer.Layer)
         setCapas(obj.WMS_Capabilities.Capability.Layer.Layer);
 
+        setItems(obj.WMS_Capabilities.Capability.Layer.Layer);
+
       })
         .catch((error) => {
           console.log(error);
@@ -56,6 +61,11 @@ const LayerList = () => {
 
     getXMLResponse();
   }, []);
+
+  // Imprimir el valor de items en la consola cuando el componente se renderiza
+  useEffect(() => {
+    console.log('Current items:', items);
+  }, [items]); // Dependencia en items para ejecutar cuando cambie
 
   const columns = [
     { Name: "Copade:356_2021_recort", Title: "356_2021_recort", Abstract: "" },
