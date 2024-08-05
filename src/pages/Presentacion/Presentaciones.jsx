@@ -9,6 +9,7 @@ import "reveal.js/dist/theme/black.css";
 import js from '../../../src/img/ol_logo.svg'
 import ol from '../../../src/img/ol_logo.svg'
 import BasicBar from "../../components/charts/BasicBar";
+import Regiones from "../RegionesA";
 
 function App(props) {
   const deckDivRef = useRef(null); // referencia al contenedor del deck
@@ -150,6 +151,11 @@ function App(props) {
         <section >
 
           <BasicBar />
+
+        </section>
+        <section >
+
+          <Regiones />
 
         </section>
       </div>

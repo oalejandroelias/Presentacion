@@ -21,6 +21,8 @@ import DiseñoA from './DiseñoA'
 import DiseñoB from './DiseñoB'
 import DiseñoBa from './DiseñoBa'
 import LinkGis from './LinkGis'
+import Regiones from '../RegionesA'
+import demo from '../../img/gifs/prueba.gif'
 
 const Home = () => {
 
@@ -34,9 +36,13 @@ const Home = () => {
       {/* <Intro /> */}
       {/* <Diseño /> */}
       {/* <DiseñoA /> */}
+      <LinkGis />
       <DiseñoB />
       <DiseñoBa />
-      <LinkGis />
+      {/* <Regiones /> */}
+
+      <img src={demo} alt="loading..." />
+
       {/* <Banner /> */}
       {/* <PasosA /> */}
       {/* <Opciones /> */}

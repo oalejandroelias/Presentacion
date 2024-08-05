@@ -20,11 +20,12 @@ import blue_arrow from '../src/img/blue_arrow.svg'
 import Footer from './layouts/Footer';
 import Mapas from './pages/mapas/Mapas';
 import Graficos from './pages/graficos/Graficos';
+import ProxyPrueba from './pages/pruebas/proxy_prueba';
 
 function App() {
 
   return (
-    <div className="bg:white dark:bg-slate-900 mb-1">
+    <div className="bg-white dark:bg-slate-900 mb-1">
 
       {/* <AnimatePresence> */}
       <Router>
@@ -43,6 +44,7 @@ function App() {
           <Route path='/pasos' element={<Pasos />} />
           <Route path='/vistaSimple' element={<VistaSimple />} />
           <Route path='/test' element={<MapsScroll />} />
+          <Route path='/proxy' element={<ProxyPrueba />} />
         </Routes>
         <Footer />
       </Router>

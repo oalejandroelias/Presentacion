@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useRef, useState, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationIcon, MapIcon } from "@heroicons/react/outline";
@@ -7,12 +6,14 @@ import { RiCloseLine } from "react-icons/ri";
 import Presentaciones from "../pages/Presentacion/Presentaciones";
 import axios from "axios";
 import { XMLParser } from "fast-xml-parser";
+import Select from "./select/Select";
 
 export default function Modal(props) {
   const [open, setOpen] = useState(props.show_modal);
   const cancelButtonRef = useRef(null);
   const [option, setOption] = useState("nada");
-  const [arrayAtributos, setArrayAtributos] = useState()
+  const [arrayRegistros, setArrayRegistros] = useState([]);
+  const [arrayCampos, setArrayCampos] = useState([]);
 
   const base_url = import.meta.env.VITE_API_URL;
   const [owsGeoUrl, setOwsGeoUrl] = useState(base_url + "/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=");
@@ -20,48 +21,50 @@ export default function Modal(props) {
 
   useEffect(() => {
     const getXMLResponse = async () => {
-      const resp = axios.get(urlAux, {
-        headers: {
-          'Content-Type': 'application/xml'
-        }
-      }).then((response) => {
+      try {
+        const response = await axios.get(urlAux, {
+          headers: {
+            'Content-Type': 'application/xml',
+          },
+        });
 
         const parser = new XMLParser();
         let obj = parser.parse(response.data);
-        console.log("Entra")
-        console.log(obj)
-        // console.log(obj.WMS_Capabilities.Capability.Layer.Layer)
-        // setCapas(obj.WMS_Capabilities.Capability.Layer.Layer);
-
-        // setItems(obj.WMS_Capabilities.Capability.Layer.Layer);
         let campos = obj['wfs:FeatureCollection']['gml:featureMember'];
 
-        campos.map((value, index) => {
+        campos = Array.isArray(campos) ? campos : [campos];
 
-          // console.log("index " + index)
-          // console.log("value " + value)
-          // console.log("Registro " + value["copade:" + props.name])
+        let arrayRegistroAux = [];
+        let arrayCamposAux = [];
 
-          let a = Object.entries(value["copade:" + props.name])
+        campos.forEach((value) => {
+          let registro = Object.entries(value["copade:" + props.name]);
+          arrayRegistroAux.push(registro);
 
-          setArrayAtributos([a])
-
-
-        })
-
-        console.log("arrayAtributos")
-        console.log(arrayAtributos)
-        console.log("arrayAtributos")
-
-      })
-        .catch((error) => {
-          console.log(error);
+          registro.forEach((v) => {
+            arrayCamposAux.push(v[0].split(":")[1]);
+          });
         });
-    };
 
+        setArrayRegistros(arrayRegistroAux);
+        arrayCamposAux = [...new Set(arrayCamposAux)];
+
+        setArrayCampos(arrayCamposAux);
+      } catch (error) {
+        console.error(error);
+      }
+    };
     getXMLResponse();
   }, []);
 
+  useEffect(() => {
+    console.log("arrayRegistros", arrayRegistros);
+    if (Array.isArray(arrayRegistros)) {
+      arrayRegistros.forEach((params) => {
+        console.log(params);
+      });
+    }
+  }, [arrayRegistros]);
 
   const file_type = [
     { name: "ShapeFile", value: owsGeoUrl + props.name + "&outputformat=SHAPE-ZIP&SRSNAME=EPSG:4326" },
@@ -71,17 +74,12 @@ export default function Modal(props) {
     { name: "Jsonp", value: owsGeoUrl + props.name + "&outputFormat=application/json" },
     { name: "gml2", value: owsGeoUrl + props.name + "&info_format=application/vnd.ogc.gml" },
     { name: "gml3", value: owsGeoUrl + props.name + "&outputFormat=application/vnd.ogc.gml/3.1.1" },
-  ]
-
-  // console.log("AAA")
-  // console.log(props);
+  ];
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     setOption(e.target.value);
-    if (e.target.value != "nada") {
-      // window.location.href = e.target.value;
-      window.open(e.target.value, '_blank')
+    if (e.target.value !== "nada") {
+      window.open(e.target.value, '_blank');
     }
   };
 
@@ -117,69 +115,36 @@ export default function Modal(props) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              {/* <Dialog.Panel className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full"> */}
-              <Dialog.Panel className="relative bg-white rounded-lg text-right overflow-hidden shadow-xl dark:shadow-indigo-500/50 transform transition-all w-full sm:my-8 sm:w-5/6">
-
-                {/* <div className=" inline-flex  bg:white dark:bg-slate-900 px-1 py-1 sm:px-1 sm:flex sm:flex-row-reverse mt-100">
-                  <h2 className="mt-1 inline-flex justify-center rounded-md px-5 py-5 bg-white text-base font-medium text-gray-900 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">{props.name}</h2>
-
-                  <button
-                    type="button"
-                    className="mt-1 inline-flex justify-left rounded-md px-5 py-5 bg-white text-base font-medium text-gray-900 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-                    onClick={() => props.setShow_modal(!props.show_modal)}
-                    ref={cancelButtonRef}
+              <Dialog.Panel className="relative bg-white dark:bg-slate-900 rounded-lg text-right overflow-hidden shadow-xl  dark:shadow-indigo-500/50 transform transition-all w-full sm:my-8 sm:w-5/6">
+                <div className="flex items-center p-2 border-b border-solid border-blueGray-200 rounded-t justify-between">
+                  <div></div>
+                  <Dialog.Title
+                    className="text-2xl leading-6 font-mono font-bold text-nqn-verde hover:underline decoration-4"
                   >
-                    X
-                  </button>
-                </div> */}
-
-                {/************************************ */}
-                <div className="flex items-center p-2 border-b border-solid border-blueGray-200 rounded-t">
-                  <h3 className="text-3xl font-semibold">
-                    {/* {props.name} */}
-                  </h3>
-                  <button
-                    className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setShowModal(false)}
-                  >
-                    {/* <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                      <RiCloseLine />
-                    </span> */}
-                  </button>
-                  <button
-                    type="button"
-                    className="mt-1 inline-flex justify-left rounded-md px-5 py-2 bg-white text-base font-medium text-gray-900 sm:mt-0 sm:ml-3 sm:w-auto sm:text-base"
+                    Capa: {props.title}
+                  </Dialog.Title>
+                  <button className="text-2xl leading-6 font-mono font-bold text-nqn-verde hover:underline decoration-4"
                     onClick={() => props.setShow_modal(!props.show_modal)}
                     ref={cancelButtonRef}
                   >
                     <RiCloseLine />
                   </button>
                 </div>
-                {/************************************ */}
 
-                <div className="bg:white dark:bg-slate-900 px-4 pt-5 pb-4 md:p-2 sm:p-6 sm:pb-1 columns-1 sm:columns-2">
+                <div className=" px-4 pt-5 pb-4 md:p-2 sm:p-6 sm:pb-1 columns-1 sm:columns-2">
                   <div className="h-96 basis-1 sm:basis-1/2 border-pink-900">
                     <MapPreview className="border-sky-900"
                       baseGeoUrl={props.baseGeoUrl}
                       name={props.name}
                     />
-                    {/* <Presentaciones position={"relative"} /> */}
                   </div>
                   <div className="basis-1 sm:basis-1/2">
-                    {/* <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                      <MapIcon
-                        className="h-6 w-6 text-blue-600"
-                        aria-hidden="true"
-                      />
-                    </div> */}
-
                     <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                      <Dialog.Title
-
-                        className="text-2xl leading-6 font-mono font-bold text-sky-700 dark:text-red-500 hover:underline decoration-4"
+                      {/* <Dialog.Title
+                        className="text-2xl leading-6 font-mono font-bold text-nqn-verde hover:underline decoration-4"
                       >
                         {props.title}
-                      </Dialog.Title>
+                      </Dialog.Title> */}
                       <div className="mt-5 mb-5">
                         <p className="text-sm text-black dark:text-white">
                           {props.abstract}
@@ -190,7 +155,7 @@ export default function Modal(props) {
                         <div className="mb-3 xl:w-96">
                           <label for="country" className="block text--d font-medium text-gray-700">Descargar</label>
                           <select
-                            className="mt-1 block w-full py-2 px-3 border-2 text-default input-per rounded-md shadow-sm "
+                            className="w-full rounded bg-transparent border border-black dark:border-white focus:border-nqn-verde dark:focus:border-nqn-verde outline-none text-black dark:text-white py-3 px-3 leading-8 transition-colors duration-200 ease-in-out"
                             aria-label="Default select example"
                             value={option}
                             onChange={handleChange}
@@ -198,43 +163,19 @@ export default function Modal(props) {
                             <option selected value="nada">
                               Seleccionar...
                             </option>
-                            {
-                              file_type.map((opcion) =>
-
-                                <option value={opcion.value}>{opcion.name}</option>
-                              )}
-
-                            {/* <option value={shapeFile}>ShapeFile</option>
-                            <option value={csv}>CSV</option> */}
+                            {file_type.map((opcion) => (
+                              <option key={opcion.name} value={opcion.value}>
+                                {opcion.name}
+                              </option>
+                            ))}
                           </select>
                         </div>
                       </div>
-
                     </div>
-
                   </div>
 
+                  <Select options={arrayCampos} />
                 </div>
-                {/* <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b pb-0">
-                  <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => props.setShow_modal(!props.show_modal)}
-                    ref={cancelButtonRef}
-                  >
-                    Close
-                  </button>
-                  <button
-                    className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => props.setShow_modal(!props.show_modal)}
-                    ref={cancelButtonRef}
-                  >
-                    Save Changes
-                  </button>
-                </div> */}
-
-
               </Dialog.Panel>
             </Transition.Child>
           </div>

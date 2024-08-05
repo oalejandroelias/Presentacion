@@ -49,7 +49,7 @@ const Contacto = () => {
                 type="text"
                 id="name"
                 name="name"
-                className="w-full rounded bg-transparent border border-black dark:border-white focus:border-nqn-verde dark:focus:border-nqn-verde text-base outline-none text-black dark:text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full rounded bg-transparent border border-black dark:border-white focus:border-nqn-verde dark:focus:border-nqn-verde outline-none text-black dark:text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
             <div className="relative mb-4">
@@ -63,7 +63,7 @@ const Contacto = () => {
                 type="email"
                 id="email"
                 name="email"
-                className="w-full  rounded bg-transparent border border-black dark:border-white focus:border-nqn-verde dark:focus:border-nqn-verde text-base outline-none text-black dark:text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full  rounded bg-transparent border border-black dark:border-white focus:border-nqn-verde dark:focus:border-nqn-verde outline-none text-black dark:text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
             <div className="relative mb-4">
@@ -76,7 +76,7 @@ const Contacto = () => {
               <textarea
                 id="message"
                 name="message"
-                className="w-full rounded bg-transparent border border-black dark:border-white focus:border-nqn-verde dark:focus:border-nqn-verde h-64 text-base outline-none text-black dark:text-white py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                className="w-full rounded bg-transparent border border-black dark:border-white focus:border-nqn-verde dark:focus:border-nqn-verde h-64 outline-none text-black dark:text-white py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
               ></textarea>
             </div>
             <button className="font-bold text-white bg-nqn-azul border-0 py-2 px-6 focus:outline-none hover:bg-nqn-verde rounded text-lg">

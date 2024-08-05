@@ -67,11 +67,8 @@ const TimeCarousel = () => {
                             </div>
 
                         </SwiperSlide>
-
                         <SwiperSlide><img src={sig_2} /></SwiperSlide>
                         <SwiperSlide><img src={sig_3} /></SwiperSlide>
-
-
                     </Swiper>
                 </div>
             </section>
