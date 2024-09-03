@@ -13,7 +13,7 @@ const Footer = () => {
 
 
         return (
-            <footer className="bg-nqn-azul dark:bg-gray-900">
+            <footer className="bg-nqn-verde dark:bg-gray-900">
                 <div className="container px-6 py-12 mx-auto font-manrope">
                     {/* <div className="md:flex md:-mx-3 md:items-center md:justify-between">
                         <h1 className="text-xl manropebold tracking-tight text-white md:mx-3 xl:text-2xl dark:text-white"></h1>

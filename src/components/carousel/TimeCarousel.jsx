@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import sig_1 from '../../img/sig_1.jpeg'
 import sig_2 from '../../img/sig_2.png'
 import sig_3 from '../../img/sig_3.png'
+import sig_4 from '../../img/mosaico_neuquen.jpg'
 
 // Import Swiper styles
 // import 'swiper/css';
@@ -69,6 +70,7 @@ const TimeCarousel = () => {
                         </SwiperSlide>
                         <SwiperSlide><img src={sig_2} /></SwiperSlide>
                         <SwiperSlide><img src={sig_3} /></SwiperSlide>
+                        <SwiperSlide><img src={sig_4} /></SwiperSlide>
                     </Swiper>
                 </div>
             </section>

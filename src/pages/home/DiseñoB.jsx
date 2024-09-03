@@ -1,5 +1,6 @@
 import React from 'react'
 import visor from '../../img/visor.png'
+import visor_gif from '../../img/gifs/prueba.gif'
 const DiseñoB = () => {
     return (
         <>
@@ -21,7 +22,7 @@ const DiseñoB = () => {
                     </div>
 
                     <div className="flex items-center justify-center w-full h-96 lg:w-1/2">
-                        <img className="object-cover w-full  mx-auto rounded-md lg:max-w-2xl" src={visor} alt="visor_sig" />
+                        <img className="object-cover w-full  mx-auto rounded-md lg:max-w-2xl" src={visor_gif} alt="visor_sig" />
                     </div>
                 </div>
             </section>

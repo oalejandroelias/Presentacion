@@ -41,7 +41,7 @@ const Home = () => {
       <DiseñoBa />
       {/* <Regiones /> */}
 
-      <img src={demo} alt="loading..." />
+      {/* <img src={demo} alt="loading..." /> */}
 
       {/* <Banner /> */}
       {/* <PasosA /> */}

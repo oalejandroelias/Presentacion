@@ -16,11 +16,10 @@ const Mapas = () => {
                     <div className=''>
                         <Carousel />
                     </div>
-                    {/* <div className='container flex justify-center '>
-                        <Regiones />
-                    </div> */}
+
                 </div>
             </section>
+
 
         </>
     )

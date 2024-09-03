@@ -3,7 +3,7 @@
 import cors_proxy from 'cors-anywhere';
 
 const host = 'localhost';
-const port = 8080;
+const port = 4000;
 
 cors_proxy.createServer({
     originWhitelist: [], // Permite todas las orígenes
