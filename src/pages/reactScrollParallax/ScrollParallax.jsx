@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParallaxController, ParallaxProvider, Parallax, useParallax, ParallaxBanner } from 'react-scroll-parallax';
-import sig from "./../../../img/sig_fondo_a.png";
+import sig from "./../../img/mosaico_neuquen.jpg";
 
 const Istyles = {
   background: '#fff',
@@ -13,7 +13,10 @@ const Istyles = {
 
 const ScrollParallax = () => {
   const parallaxController = useParallaxController();
-  return <img src={sig} onLoad={() => parallaxController.update()} />;
+  return <ParallaxBanner
+    layers={[{ sig, speed: -15 }]}
+    className="aspect-[2/1]"
+  />
 };
 
 export default ScrollParallax

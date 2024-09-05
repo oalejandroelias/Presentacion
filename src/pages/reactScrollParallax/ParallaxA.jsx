@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParallaxController, ParallaxProvider, Parallax, useParallax, ParallaxBanner } from 'react-scroll-parallax';
-import sig from "./../../img/sig_fondo_a.png";
+import sig from "./../../img/mosaico_neuquen.jpg";
 
 const Istyles = {
     background: '#fff',
@@ -13,16 +13,11 @@ const Istyles = {
 
 const ParallaxA = () => {
     return (
-        <div style={{ heigth: "100vh" }}>
-            <Parallax bgImage={sig} strength={400}>
-                <div style={{ heigth: "100vh" }}>
-                    <div style={Istyles}>
-                        Nuevo GIS
-                    </div>
-                </div>
-            </Parallax>
-        </div>
-    )
+        <ParallaxBanner
+            layers={[{ image: '/static/banner.jpg', speed: -15 }]}
+            className="aspect-[2/1]"
+        />
+    );
 }
 
 export default ParallaxA

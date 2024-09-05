@@ -39,8 +39,8 @@ function App() {
           <Route path='/presentaciones' element={<Presentaciones />} />
           <Route path='/contacto' element={<Contacto />} />
           <Route path='/graficos' element={<Graficos />} />
-          {/* <Route path='/scrollMotion' element={<ScrollMotion />} />
-          <Route path='/scrollParallax' element={<ParallaxContainer />} /> */}
+          {/* <Route path='/scrollMotion' element={<ScrollMotion />} /> */}
+          {/* <Route path='/scrollParallax' element={<ParallaxContainer />} /> */}
           <Route path='/pasos' element={<Pasos />} />
           <Route path='/vistaSimple' element={<VistaSimple />} />
           <Route path='/test' element={<MapsScroll />} />

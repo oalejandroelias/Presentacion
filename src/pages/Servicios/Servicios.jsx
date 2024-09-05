@@ -4,6 +4,7 @@ import TreeLayers from './TreeLayers'
 import Regiones from '../Regiones'
 import LayerList from '../LayerList'
 import service from '../../../src/img/geoserver_service.png'
+import Servicios_descripcion from './Servicios_descripcion'
 
 const Servicios = () => {
     return (
@@ -16,7 +17,7 @@ const Servicios = () => {
             <h2 className="px-6 text-1xl font-semibold text-left lg:text-2xl text-black dark:text-white mb-5">
                 COPADE pone a disposición sus geoservicios
             </h2>
-            <div className=" mx-auto align-middle grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="w-3/4 mx-auto align-middle grid grid-cols-1 gap-8 md:grid-cols-3">
                 <div>
                     <Geoservicios />
                 </div>
@@ -46,6 +47,8 @@ const Servicios = () => {
             <div className='flex items-center justify-center'>
                 <LayerList />
             </div>
+
+            <Servicios_descripcion />
 
         </div>
     )

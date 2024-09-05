@@ -17,20 +17,19 @@ const LinkGis = () => {
                     </h1> */}
 
                     <div className="max-w-screen-xl mx-auto mt-14">
-                        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3">
-                            <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">
+                        <div className="grid grid-cols-1 gap-20 md:grid-cols-3 lg:grid-cols-3">
+                            <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1 hover:scale-125 transition-all duration-500 cursor-pointer">
                                 <a href='https://giscopade.neuquen.gov.ar/sig_copade/' target='_black'>
                                     <img className="h-24 mt-2 " src={logo_sig} alt="glasses photo" />
                                 </a>
                             </div>
-                            <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">
+                            <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1 hover:scale-125 transition-all duration-500 cursor-pointer">
                                 <a href='http://localhost:4001/#/servicios' target='_black'>
                                     <img className="h-24 mt-2 " src={logo_geoservicio} alt="glasses photo" />
                                 </a>
                             </div>
-
-                            <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">
-                                <a href='http://localhost:4001/#/servicios' target='_black'>
+                            <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1 hover:scale-125 transition-all duration-500 cursor-pointer">
+                                <a href='http://localhost:4001/#/mapa_tematico' target='_black'>
                                     <img className="h-24 mt-2 " src={logo_mapa} alt="glasses photo" />
                                 </a>
                             </div>
