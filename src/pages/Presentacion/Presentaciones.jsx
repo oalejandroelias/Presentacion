@@ -51,7 +51,7 @@ function App(props) {
     // elemento padre. Asegúrate de que el padre no tenga altura 0.
     <div className={`reveal ${position} bg-white`} ref={deckDivRef}>
 
-      <div className="slides font-manrope ">
+      <div className="slides font-manrope">
         {/* <section className="snap-y snap-mandatory overflow-y-scroll h-5/6 flex-grow z-0 mt-10 mb-20" data-background-color="white">
           <div className="container px-0 py-24 mx-auto">
             <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
@@ -133,7 +133,7 @@ function App(props) {
           <p className="text-sm" data-fragment-index="2">Además, se establece las figura de los delegados regionales con un rol fundamental, que consiste promover instancias de coordinación para la planificación del desarrollo regional con los gobiernos locales y los actores territoriales y su articulación con las políticas públicas regionales.</p>
         </section>
         <section >
-          <div className="r-stack flex items-center" >
+          <div className="r-stack flex items-center">
             <img className="w-1/2"
               src="https://www.copade.gob.ar/wp-content/uploads/2024/05/mapa-regionalizacion-scaled.jpg"
             />
